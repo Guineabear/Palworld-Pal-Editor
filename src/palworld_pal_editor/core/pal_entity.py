@@ -18,7 +18,7 @@ from palworld_pal_editor.utils.util import type_guard
 
 
 class PalEntity:
-    MAX_LEVEL = 60
+    MAX_LEVEL = 80
     MAX_INVALID_LEVEL = 100
 
     def __init__(self, pal_obj: dict) -> None:

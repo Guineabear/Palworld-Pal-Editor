@@ -10,7 +10,7 @@ from palworld_pal_editor.utils.util import clamp, type_guard
 
 
 class PlayerEntity:
-    MAX_LEVEL = 60
+    MAX_LEVEL = 80
     MAX_INVALID_LEVEL = 100
 
     def __init__(

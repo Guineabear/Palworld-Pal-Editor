@@ -5,7 +5,11 @@ import requests
 import json
 import re
 import os
-from urllib.parse import quote
+import sys
+from urllib.parse import quote, unquote
+
+if hasattr(sys.stdout, "reconfigure"):
+    sys.stdout.reconfigure(encoding="utf-8", errors="backslashreplace")
 
 # URLs for the different languages
 urls = {
@@ -14,6 +18,28 @@ urls = {
     "ja": "https://paldb.cc/ja/",
     "fr": "https://paldb.cc/fr/",
 }
+requested_languages = os.environ.get("PAL_EDITOR_UPDATE_LANGS", ",".join(urls))
+active_languages = [lang.strip() for lang in requested_languages.split(",") if lang.strip()]
+unknown_languages = set(active_languages) - set(urls)
+if unknown_languages:
+    raise ValueError(f"Unknown languages: {sorted(unknown_languages)}")
+
+session = requests.Session()
+
+
+def fetch_page(url, attempts=4):
+    last_error = None
+    for attempt in range(1, attempts + 1):
+        try:
+            response = session.get(url, timeout=30)
+            response.raise_for_status()
+            return response
+        except requests.RequestException as error:
+            last_error = error
+            print(f"Failed to fetch {url} ({attempt}/{attempts}): {error}")
+            if attempt < attempts:
+                time.sleep(min(2**attempt, 10))
+    raise last_error
 
 
 def pal_t(internal_name):
@@ -126,26 +152,43 @@ name_set = get_json_names(external_res)
 def extract_pals():
     pal_data = {}
 
-    response = requests.get(f"{urls["en"]}Pals")
-    while response.status_code != 200:
-        print(f"Failed to fetch {urls["en"]}Pals")
-        time.sleep(5)
-        response = requests.get(f"{urls["en"]}Pals")
+    response = fetch_page(f"{urls['en']}Pals")
 
     soup = BeautifulSoup(response.text, "html.parser")
     cards = soup.find_all("div", class_="col")
     for card in cards:
         # <span class="text-white-50 small">#1</span>, and extract the string after #
+        paldeck_node = card.find("span", class_="text-white-50 small")
+        if paldeck_node is None:
+            continue
         paldeck_id = re.sub(
-            r"#", "", card.find("span", class_="text-white-50 small").text
+            r"#", "", paldeck_node.text
         )
 
-        # <a class="itemname" data-hover="?s=Pals/SheepBall" href="Lamball">Lamball</a>
-        name_node = card.find(
-            "a", attrs={"class": "itemname", "data-hover": re.compile(r"\?s=Pals/.+")}
-        )
+        # PalDB 1.0 pages use opaque cache URLs in data-hover. The stable internal
+        # name is still present in the icon filename: T_<InternalName>_icon_normal.
+        name_node = card.find("a", attrs={"class": "itemname", "href": True})
+        if name_node is None:
+            raise ValueError(
+                f"Pal card #{paldeck_id} has no supported internal-name link: "
+                f"{str(card)[:800]}"
+            )
         link = name_node["href"]
-        internal_name = name_node["data-hover"].split("/")[-1].strip()
+        icon_node = card.find(
+            "img",
+            {
+                "src": re.compile(
+                    r"https://cdn\.paldb\.cc/image/Pal/Texture/PalIcon/Normal/.+\.webp"
+                )
+            },
+        )
+        if icon_node is None:
+            raise ValueError(f"Pal card #{paldeck_id} has no normal Pal icon")
+        icon_url = icon_node["src"]
+        internal_name_match = re.search(r"/T_(.+)_icon_normal\.webp$", icon_url)
+        if internal_name_match is None:
+            raise ValueError(f"Unable to derive internal name from icon URL: {icon_url}")
+        internal_name = internal_name_match.group(1)
         pal_links[internal_name] = link
         name = name_node.text.strip()
         print("# ", internal_name)
@@ -157,23 +200,15 @@ def extract_pals():
         if not paldeck_id:
             pal["Invalid"] = True
 
-        icon_url = card.find(
-            "img",
-            {
-                "src": re.compile(
-                    r"https://cdn\.paldb\.cc/image/Pal/Texture/PalIcon/Normal/.+\.webp"
-                )
-            },
-        )["src"]
         if icon_url:
             png_filename = f"{internal_name}.png"
             if not os.path.exists(f"../icons/pals/{png_filename}"):
                 try:
                     print(f"downloading icon for {internal_name}")
-                    response = requests.get(icon_url, timeout=10)
+                    response = session.get(icon_url, timeout=10)
                     if response.status_code == 200:
                         # Open the image (likely WebP) and convert to RGBA
-                        with open(f"./{png_filename}", "wb") as f:
+                        with open(f"../icons/pals/{png_filename}", "wb") as f:
                             f.write(response.content)
                 except Exception as err:
                     print(
@@ -224,13 +259,9 @@ def extract_pals():
 
 def extract_pal_details(internal_name, link, pal):
     pal_variants = {}
-    for lang in urls:
+    for lang in active_languages:
         url = f"{urls[lang]}{link}"
-        response = requests.get(url)
-        while response.status_code != 200:
-            print(f"Failed to fetch {url}")
-            time.sleep(10)
-            response = requests.get(url)
+        response = fetch_page(url)
 
         detail_soup = BeautifulSoup(response.text, "html.parser")
 
@@ -238,17 +269,17 @@ def extract_pal_details(internal_name, link, pal):
             # debug
             pass
 
-        # <a class="itemname" data-hover="?s=Pals/SheepBall" href="Lamball">Lamball</a>
-        anchor_node = detail_soup.find(
-            "a",
-            attrs={"class": "itemname", "data-hover": f"?s=Pals/{internal_name}"},
-            string=True,
-        )
-        potential_root = anchor_node.find_parent(
-            "div", attrs={"id": re.compile(r"Pals(?:-\d+)?")}
-        )
+        # PalDB tabs are keyed by the page link. Scope parsing to that tab so
+        # quest variants embedded later on the page do not overwrite the Pal.
+        potential_root = detail_soup.find("div", id=link)
         if potential_root:
             detail_soup = potential_root
+
+        anchor_node = detail_soup.find(
+            "a", attrs={"class": "itemname", "href": link}, string=True
+        )
+        if anchor_node is None:
+            raise ValueError(f"Unable to find detail header for {internal_name}: {url}")
         
         i18n_name = anchor_node.text.strip()
         if i18n_name in name_replace_map:
@@ -263,6 +294,19 @@ def extract_pal_details(internal_name, link, pal):
         )
 
         if lang == "en":
+            def read_numeric_stat(label):
+                for label_node in detail_soup.find_all("div"):
+                    if label_node.get_text(strip=True) != label:
+                        continue
+                    row = label_node.parent
+                    cells = row.find_all("div", recursive=False)
+                    if not cells:
+                        continue
+                    value = cells[-1].get_text(strip=True)
+                    if re.fullmatch(r"-?\d+", value):
+                        return int(value)
+                raise ValueError(f"Unable to find numeric stat {label} for {internal_name}")
+
             basic_info_root = anchor_node.find_parent("div", class_="card itemPopup")
             if basic_info_root:
                 # <div class="border-bottom d-flex justify-content-between py-1 px-3">
@@ -291,69 +335,22 @@ def extract_pal_details(internal_name, link, pal):
             #   <div>105</div>
             # </div>
             # Get the health value, there is always an img with src="https://cdn.paldb.cc/image/Pal/Texture/UI/Main_Menu/T_icon_status_00.webp" before the health value
-            health = int(
-                detail_soup.find(
-                    "img",
-                    {
-                        "src": "https://cdn.paldb.cc/image/Pal/Texture/UI/Main_Menu/T_icon_status_00.webp"
-                    },
-                )
-                .find_next("div")
-                .text
-            )
+            health = read_numeric_stat("Health")
             print("\t", "Health: ", health)
-            food = int(
-                detail_soup.find_all(
-                    "img",
-                    {
-                        "src": "https://cdn.paldb.cc/image/Pal/Texture/UI/Main_Menu/T_Icon_foodamount_off.webp"
-                    },
-                )[-1]
-                .find_next("div")
-                .text
-            )
+            food = read_numeric_stat("Food")
             print("\t", "Food: ", food)
             # <div class="d-flex justify-content-between p-2 align-items-center border-bottom">
             #                 <div>MeleeAttack</div>
             #                 <div>70</div>
             #             </div>
             # Get the MeleeAttack values
-            melee_attack = int(
-                detail_soup.find("div", string="MeleeAttack").find_next("div").text
-            )
+            melee_attack = read_numeric_stat("MeleeAttack")
             print("\t", "Melee Attack: ", melee_attack)
-            attack = int(
-                detail_soup.find(
-                    "img",
-                    {
-                        "src": "https://cdn.paldb.cc/image/Pal/Texture/UI/Main_Menu/T_icon_status_02.webp"
-                    },
-                )
-                .find_next("div")
-                .text
-            )
+            attack = read_numeric_stat("Attack")
             print("\t", "Attack: ", attack)
-            defense = int(
-                detail_soup.find(
-                    "img",
-                    {
-                        "src": "https://cdn.paldb.cc/image/Pal/Texture/UI/Main_Menu/T_icon_status_03.webp"
-                    },
-                )
-                .find_next("div")
-                .text
-            )
+            defense = read_numeric_stat("Defense")
             print("\t", "Defense: ", defense)
-            work_speed = int(
-                detail_soup.find(
-                    "img",
-                    {
-                        "src": "https://cdn.paldb.cc/image/Pal/Texture/UI/Main_Menu/T_icon_status_05.webp"
-                    },
-                )
-                .find_next("div")
-                .text
-            )
+            work_speed = read_numeric_stat("Work Speed")
             print("\t", "Work Speed: ", work_speed)
 
             pal["Stats"]["HP"] = health
@@ -371,13 +368,12 @@ def extract_pal_details(internal_name, link, pal):
                 pal["Attacks"] = {}
                 cols = skills_body.find_all("div", class_="col", recursive=True)
                 for col in cols:
-                    atk_node = col.find(
-                        "a", attrs={"data-hover": re.compile(r"\?s=Waza/.+")}
-                    )
+                    atk_node = col.find("a", attrs={"data-hover": re.compile(r"Waza")})
+                    if atk_node is None:
+                        continue
                     atk_internal_name = (
-                        atk_node["data-hover"]
+                        unquote(atk_node["data-hover"])
                         .split("/")[-1]
-                        .replace("%3A%3A", "::")
                         .strip()
                     )
                     parent_text = atk_node.parent.get_text(
@@ -399,15 +395,24 @@ def extract_pal_details(internal_name, link, pal):
             )
             # <tr><td><a class="itemname" data-hover="?s=Pals/BOSS_SheepBall" href="Big_Floof_Lamball"><div class="size32alpha"></div><img loading="lazy" src="https://cdn.paldb.cc/image/Pal/Texture/PalIcon/Normal/T_SheepBall_icon_normal.webp" class="size32 rounded-circle border border-danger">Big Floof Lamball</a></td><td>Tribe Boss</td></tr>
             for tribe_row in tribes_row:
-                name_node = tribe_row.find(
-                    "a",
-                    attrs={
-                        "class": "itemname",
-                        "data-hover": re.compile(r"\?s=Pals/.+"),
-                    },
-                )
+                name_node = tribe_row.find("a", class_="itemname")
+                if name_node is None:
+                    continue
                 v_link = name_node["href"]
-                v_internal_name = name_node["data-hover"].split("/")[-1].strip()
+                hover = unquote(name_node.get("data-hover", ""))
+                if "Pals/" in hover:
+                    v_internal_name = hover.split("/")[-1].strip()
+                else:
+                    # PalDB now hides common Pal identifiers behind cache URLs.
+                    # The linked detail page still exposes the exact save-game ID.
+                    variant_response = fetch_page(f"{urls['en']}{v_link}")
+                    variant_soup = BeautifulSoup(variant_response.text, "html.parser")
+                    variant_header = variant_soup.find(
+                        "a", attrs={"data-hover": re.compile(r"^\?s=Pals%2F")}
+                    )
+                    if variant_header is None:
+                        raise ValueError(f"Unable to resolve variant ID from {v_link}")
+                    v_internal_name = unquote(variant_header["data-hover"]).split("/")[-1]
                 if v_internal_name not in pal_links:
                     pal_links[v_internal_name] = v_link
                 v_name = name_node.text.strip()
@@ -420,6 +425,9 @@ def extract_pal_details(internal_name, link, pal):
 
 pal_links = {}
 all_pals_raw = extract_pals()
+update_limit = int(os.environ.get("PAL_EDITOR_UPDATE_LIMIT", "0"))
+if update_limit > 0:
+    all_pals_raw = dict(list(all_pals_raw.items())[:update_limit])
 all_pals = {}
 
 pal_internal_names = list(all_pals_raw.keys())
@@ -428,8 +436,10 @@ while len(pal_internal_names) > 0:
     pal = all_pals_raw[internal_name]
     try:
         pal_variants = extract_pal_details(internal_name, pal_links[internal_name], pal)
-    except:
-        print(f"Failed to extract details for {internal_name}")
+    except Exception as error:
+        print(f"Failed to extract details for {internal_name}: {error}")
+        if update_limit > 0:
+            raise
         continue
     for variant_internal_name in pal_variants:
         if (
@@ -461,6 +471,18 @@ while len(pal_internal_names) > 0:
         pal["Invalid"] = True
 
     all_pals[internal_name] = pal
+
+with open("../data/pal_data.json", "r", encoding="utf-8") as existing_file:
+    existing_pals = json.load(existing_file)
+for internal_name, existing_pal in existing_pals.items():
+    # Keep discontinued and event-only IDs readable in older worlds even when
+    # PalDB no longer exposes them in the current catalog.
+    all_pals.setdefault(internal_name, existing_pal)
+for internal_name, pal in all_pals.items():
+    existing_i18n = existing_pals.get(internal_name, {}).get("I18n", {})
+    for lang in urls:
+        if lang not in active_languages:
+            pal["I18n"][lang] = existing_i18n.get(lang) or pal["I18n"]["en"]
 
 pal_json = json.dumps(all_pals, indent=4, ensure_ascii=False)
 with open("tmp_pal_data.json", "w", encoding="utf-8") as file:

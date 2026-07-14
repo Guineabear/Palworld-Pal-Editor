@@ -3,6 +3,12 @@ from bs4 import BeautifulSoup
 import requests
 import json
 import re
+import os
+import sys
+from urllib.parse import unquote
+
+if hasattr(sys.stdout, "reconfigure"):
+    sys.stdout.reconfigure(encoding="utf-8", errors="backslashreplace")
 
 # URLs for the different languages
 urls = {
@@ -11,6 +17,8 @@ urls = {
     "ja": "https://paldb.cc/ja/Active_Skills",
     "fr": "https://paldb.cc/fr/Active_Skills",
 }
+requested_languages = os.environ.get("PAL_EDITOR_UPDATE_LANGS", ",".join(urls))
+active_languages = [lang.strip() for lang in requested_languages.split(",") if lang.strip()]
 
 
 def skill(internal_name):
@@ -79,12 +87,10 @@ def get_node_id(lang, type):
 def extract_skills():
     skills_data = {}
 
-    for lang, url in urls.items():
-        response = requests.get(url)
-        while response.status_code != 200:
-            print(f"Failed to fetch {url}, retrying...")
-            time.sleep(10)
-            response = requests.get(url)
+    for lang in active_languages:
+        url = urls[lang]
+        response = requests.get(url, timeout=30)
+        response.raise_for_status()
 
         soup = BeautifulSoup(response.text, "html.parser")
 
@@ -95,13 +101,15 @@ def extract_skills():
                 cards = skills_div.find_all("div", class_="col")
                 for card in cards:
                     name_node = card.find(
-                        "a", attrs={"data-hover": re.compile(r"\?s=Waza/.+")}
+                        "a", attrs={"data-hover": re.compile(r"Waza")}
                     )
 
+                    if name_node is None:
+                        continue
+
                     internal_name = (
-                        name_node["data-hover"]
+                        unquote(name_node["data-hover"])
                         .split("/")[-1]
-                        .replace("%3A%3A", "::")
                         .strip()
                     )
                     name = name_node.text.strip()
@@ -111,9 +119,9 @@ def extract_skills():
                     if internal_name in skills_data:
                         if type == "UnrevealedActiveSkills":
                             if not name or "text" in re.split(r'[_ ]', name.lower()):
-                                name = skill_data["I18n"]["en"]["Name"]
+                                name = skills_data[internal_name]["I18n"]["en"]["Name"]
                             if not desc or "text" in re.split(r'[_ ]', desc.lower()):
-                                desc = skill_data["I18n"]["en"]["Description"]
+                                desc = skills_data[internal_name]["I18n"]["en"]["Description"]
 
                         skills_data[internal_name]["I18n"][lang] = {
                             "Name": name,
@@ -164,6 +172,17 @@ def extract_skills():
 
 # Fetch and parse HTML for each language
 all_skills = extract_skills()
+with open("../data/pal_attacks.json", "r", encoding="utf-8") as existing_file:
+    existing_skills = json.load(existing_file)
+for internal_name, existing_skill in existing_skills.items():
+    all_skills.setdefault(internal_name, existing_skill)
+for internal_name, skill_data in all_skills.items():
+    if not skill_data["Element"] or skill_data["CT"] < 0 or skill_data["Power"] < 0:
+        skill_data["Invalid"] = True
+    existing_i18n = existing_skills.get(internal_name, {}).get("I18n", {})
+    for lang in urls:
+        if lang not in active_languages:
+            skill_data["I18n"][lang] = existing_i18n.get(lang) or skill_data["I18n"]["en"]
 skills_json = json.dumps(all_skills, indent=4, ensure_ascii=False)
 with open("tmp_pal_attacks.json", "w", encoding="utf-8") as file:
     file.write(skills_json)

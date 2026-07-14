@@ -1,5 +1,17 @@
 # Palworld Pal Editor
 
+> [!NOTE]
+> This local fork adds compatibility for Palworld 1.0. It reads the game's new
+> Oodle-compressed `PlM` saves and writes game-compatible double-zlib `PlZ`
+> saves, which Palworld can load and upgrade on its next save. The 1.0 player
+> and Pal level cap is 80.
+>
+> Current bundled data includes 702 Pal save IDs, 384 active-skill IDs, 420
+> passive-skill IDs, and the revised 1.0 experience curve. The editor still
+> uses its original world-folder workflow and expects a `Level.sav` plus its
+> `Players` folder; direct `GlobalPalStorage.sav` editing is not yet exposed in
+> this UI.
+
 <h3 align="center">
    <strong>English</strong> | <a href="/README.cn.md">简体中文</a>
 </h3>
@@ -273,6 +285,8 @@ https://github.com/KrisCris/Palworld-Pal-Editor/assets/38860226/02284dda-f1d7-40
 
 - Fast game save loading code by [MagicBear](https://github.com/magicbear).
 - Save conversion between GVAS and `.sav` by [palworld-save-tools](https://github.com/cheahjs/palworld-save-tools).
+- Palworld 1.0 passive-skill identifiers and experience data cross-checked
+  against [Palworld Save Pal](https://github.com/oMaN-Rod/palworld-save-pal).
 - Inspired by [MagicBear](https://github.com/magicbear)'s awesome [Palworld-Server-Toolkit](https://github.com/magicbear/palworld-server-toolkit).
 - Inspired by [EternalWraith](https://github.com/EternalWraith)'s [PalEdit](https://github.com/EternalWraith/PalEdit).
 
