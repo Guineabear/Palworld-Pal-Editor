@@ -34,6 +34,13 @@
 </p>
 
 <p align='center'>
+<strong>Support the Palworld 1.0 fork maintainer</strong><br>
+<a href="https://ko-fi.com/guineabear"><img alt="Support Guineabear on Ko-fi" src="https://img.shields.io/badge/Ko--fi-Guineabear-F16061?style=for-the-badge&logo=ko-fi&logoColor=white"></a>&nbsp;
+<a href="https://paypal.me/guineabear"><img alt="Support Guineabear on PayPal" src="https://img.shields.io/badge/PayPal-Guineabear-00457C?style=for-the-badge&logo=paypal&logoColor=white"></a>&nbsp;
+</p>
+
+<p align='center'>
+<strong>Support the original developer</strong><br>
 <a href="https://ko-fi.com/connlost"><img alt="Ko-Fi" src="https://img.shields.io/badge/Ko--fi-F16061?style=for-the-badge&logo=ko-fi&logoColor=white"></a>&nbsp;
 <a href="https://www.paypal.com/paypalme/c0nnlost?country.x=US&locale.x=en_US"><img alt="PayPal" src="https://img.shields.io/badge/PayPal-00457C?style=for-the-badge&logo=paypal&logoColor=white"></a>&nbsp;
 <a href="https://afdian.com/a/_connlost"><img width="100" src="https://pic1.afdiancdn.com/static/img/welcome/button-sponsorme.png" alt=""></a>&nbsp;
@@ -265,7 +272,20 @@ https://github.com/KrisCris/Palworld-Pal-Editor/assets/38860226/02284dda-f1d7-40
 
 ## Sponsor
 
-**If you like this tool, consider supporting me to help me continue developing and maintaining it.**
+### Support the Palworld 1.0 fork maintainer
+
+If this 1.0 compatibility update helped you, consider supporting Guineabear's continued maintenance of the fork.
+
+<p align='center'>
+<a href="https://ko-fi.com/guineabear"><img alt="Support Guineabear on Ko-fi" src="https://img.shields.io/badge/Ko--fi-Guineabear-F16061?style=for-the-badge&logo=ko-fi&logoColor=white"></a>&nbsp;
+<a href="https://paypal.me/guineabear"><img alt="Support Guineabear on PayPal" src="https://img.shields.io/badge/PayPal-Guineabear-00457C?style=for-the-badge&logo=paypal&logoColor=white"></a>&nbsp;
+</p>
+
+[Guineabear on Ko-fi](https://ko-fi.com/guineabear) · [Guineabear on PayPal](https://paypal.me/guineabear)
+
+### Support the original developer
+
+The original project and the majority of the editor were created by _connlost. Consider supporting the original work as well.
 
 <p align='center'>
 <a href="https://ko-fi.com/connlost"><img alt="Ko-Fi" src="https://img.shields.io/badge/Ko--fi-F16061?style=for-the-badge&logo=ko-fi&logoColor=white"></a>&nbsp;
