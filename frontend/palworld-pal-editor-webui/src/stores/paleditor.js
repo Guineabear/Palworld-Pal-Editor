@@ -3,7 +3,7 @@ import { defineStore } from "pinia";
 import axios from "axios";
 
 export const usePalEditorStore = defineStore("paleditor", () => {
-    const MAX_LEVEL = 80;
+    const MAX_LEVEL = 85;
     const MAX_FRIENDSHIP_LEVEL = 10;
     const MAX_INVALID_LEVEL = 100;
     const MAX_SOULS_LEVEL = 20;

@@ -18,7 +18,7 @@ from palworld_pal_editor.utils.util import type_guard
 
 
 class PalEntity:
-    MAX_LEVEL = 80
+    MAX_LEVEL = 85
     MAX_INVALID_LEVEL = 100
 
     def __init__(self, pal_obj: dict) -> None:
@@ -959,7 +959,7 @@ class PalEntity:
 
         if (self.Rank or 0) >= 5:
             for suit in suits:
-                suits[suit] += 1 if suits[suit] < 5 else 0
+                suits[suit] += 1 if suits[suit] < 10 else 0
 
         return suits
 

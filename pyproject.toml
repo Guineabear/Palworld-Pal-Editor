@@ -34,8 +34,8 @@ classifiers = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/KrisCris/Palworld-Pal-Editor"
-Documentation = "https://github.com/KrisCris/Palworld-Pal-Editor"
-Repository = "https://github.com/KrisCris/Palworld-Pal-Editor.git"
-Issues = "https://github.com/KrisCris/Palworld-Pal-Editor/issues"
-Changelog = "https://github.com/KrisCris/Palworld-Pal-Editor"
+Homepage = "https://github.com/Guineabear/Palworld-Pal-Editor"
+Documentation = "https://github.com/Guineabear/Palworld-Pal-Editor"
+Repository = "https://github.com/Guineabear/Palworld-Pal-Editor.git"
+Issues = "https://github.com/Guineabear/Palworld-Pal-Editor/issues"
+Changelog = "https://github.com/Guineabear/Palworld-Pal-Editor/releases"

@@ -1,16 +1,21 @@
 # Palworld Pal Editor
 
 > [!NOTE]
-> This local fork adds compatibility for Palworld 1.0. It reads the game's new
+> This community fork of [KrisCris/Palworld-Pal-Editor](https://github.com/KrisCris/Palworld-Pal-Editor)
+> adds compatibility for Palworld 1.0. It reads the game's new
 > Oodle-compressed `PlM` saves and writes game-compatible double-zlib `PlZ`
 > saves, which Palworld can load and upgrade on its next save. The 1.0 player
-> and Pal level cap is 80.
+> and Pal level cap is 85.
 >
 > Current bundled data includes 702 Pal save IDs, 384 active-skill IDs, 420
 > passive-skill IDs, and the revised 1.0 experience curve. The editor still
 > uses its original world-folder workflow and expects a `Level.sav` plus its
 > `Players` folder; direct `GlobalPalStorage.sav` editing is not yet exposed in
 > this UI.
+>
+> The Windows build has been tested with a Palworld 1.0.0 Steam dedicated-server
+> save, including edit, save, disk reload, and loading the edited save in-game.
+> Always keep a separate backup of your save before editing.
 
 <h3 align="center">
    <strong>English</strong> | <a href="/README.cn.md">简体中文</a>
@@ -18,8 +23,8 @@
 
 <p align='center'>
 <a href="https://github.com/KrisCris/Palworld-Pal-Editor"><img alt="GitHub Repo Stars" src="https://img.shields.io/github/stars/KrisCris/Palworld-Pal-Editor?style=for-the-badge"></a>&nbsp;
-<a href="https://github.com/KrisCris/Palworld-Pal-Editor/releases/latest"><img alt="GitHub Release" src="https://img.shields.io/github/v/release/kriscris/palworld-pal-editor?display_name=tag&style=for-the-badge"></a>
-<a href="https://github.com/KrisCris/Palworld-Pal-Editor/releases/latest"><img alt="GitHub Repo Downloads" src="https://img.shields.io/github/downloads/KrisCris/Palworld-Pal-Editor/total?style=for-the-badge"></a>&nbsp;
+<a href="https://github.com/Guineabear/Palworld-Pal-Editor/releases/latest"><img alt="GitHub Release" src="https://img.shields.io/github/v/release/Guineabear/Palworld-Pal-Editor?display_name=tag&style=for-the-badge"></a>
+<a href="https://github.com/Guineabear/Palworld-Pal-Editor/releases/latest"><img alt="GitHub Repo Downloads" src="https://img.shields.io/github/downloads/Guineabear/Palworld-Pal-Editor/total?style=for-the-badge"></a>&nbsp;
 </p>
 
 <p align='center'>
@@ -75,7 +80,7 @@
 > [!IMPORTANT]
 > ***Always backup your save in case corruption happens. (The tool does backup files for you.)***
 >
-> ***[LET ME KNOW](https://github.com/KrisCris/Palworld-Pal-Editor/issues) IF ANY BUG PRESENTS.***
+> ***[LET ME KNOW](https://github.com/Guineabear/Palworld-Pal-Editor/issues) IF ANY BUG PRESENTS.***
 
 <img width="720" alt="Screenshot" src="https://github.com/KrisCris/Palworld-Pal-Editor/assets/38860226/51a9c262-a71a-4008-b2a3-f4a68e78046a">
 
@@ -147,9 +152,9 @@
 
 - Release Version:
   - [Nexusmods](https://www.nexusmods.com/palworld/mods/995)
-  - [Github Release](https://github.com/KrisCris/Palworld-Pal-Editor/releases)
+  - [Github Release](https://github.com/Guineabear/Palworld-Pal-Editor/releases)
 - Dev Builds:
-  - [Github Actions Artifacts](https://github.com/KrisCris/Palworld-Pal-Editor/actions)
+  - [Github Actions Artifacts](https://github.com/Guineabear/Palworld-Pal-Editor/actions)
 
 > [!NOTE]
 > There is no need for you to read further if your goal is simply downloading the tool and modify your game save.
@@ -254,7 +259,7 @@ https://github.com/KrisCris/Palworld-Pal-Editor/assets/38860226/02284dda-f1d7-40
 
 ## Contribution
 
-1. If you found a bug, or are looking for a feature, please check [Issues](https://github.com/KrisCris/Palworld-Pal-Editor/issues) first.
+1. If you found a bug, or are looking for a feature, please check [Issues](https://github.com/Guineabear/Palworld-Pal-Editor/issues) first.
 2. If you want to contribute code, please check out the latest branch.
 3. Open a PR so everyone knows what you are working on.
 
