@@ -18,7 +18,7 @@ from palworld_pal_editor.utils.util import type_guard
 
 
 class PalEntity:
-    MAX_LEVEL = 85
+    MAX_LEVEL = 80
     MAX_INVALID_LEVEL = 100
     MAX_WORK_SUITABILITY_LEVEL = 10
 

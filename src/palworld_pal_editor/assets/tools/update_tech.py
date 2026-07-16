@@ -38,9 +38,11 @@ def extract_techs():
         soup = BeautifulSoup(response.text, "html.parser")
         rows = soup.select("div.col.pt-2.pb-1.border-bottom")
         for row in rows:
-            # 1) Extract the "Level" from the first d-inline-block with a position: relative style
-            #    e.g. <div class="d-inline-block" style="position: relative;height: 128px;width:64px;"> 
-            level_div = row.select_one('div.d-inline-block[style^="position: relative"]')
+            # 1) Extract the level from the leading centered cell in each row.
+            # PalDB changed this from a positioned d-inline-block in July 2026.
+            level_div = row.select_one(
+                "div.d-flex.flex-wrap > div.d-flex.justify-content-center.align-items-center"
+            )
             
             level = 0
             if level_div:
@@ -100,7 +102,7 @@ def extract_techs():
                             if response.status_code == 200:
                                 # Open the image (likely WebP) and convert to RGBA
                                 image = Image.open(BytesIO(response.content)).convert("RGBA")
-                                image.save(png_filename, "PNG")
+                                image.save(f"../icons/tech/{png_filename}", "PNG")
                         except Exception as err:
                             print(f"Failed to download/convert {icon_url} for {internal_name}: {err}")
 
