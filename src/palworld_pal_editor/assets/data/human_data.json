@@ -16479,5 +16479,907 @@
             "EPalWorkSuitability::MonsterFarm": 0
         },
         "HasIcon": false
+    },
+    "Arena_Legend_1": {
+        "InternalName": "Arena_Legend_1",
+        "Elements": [],
+        "Attacks": {
+            "EPalWazaID::Human_Punch": 1
+        },
+        "Human": true,
+        "I18n": {
+            "en": "Arena Legend 1",
+            "zh-CN": "Arena Legend 1",
+            "ja": "Arena Legend 1",
+            "fr": "Arena Legend 1"
+        },
+        "Stats": {
+            "HP": 100,
+            "ATK": 100,
+            "DEF": 50,
+            "MELEE": 20,
+            "CRAFTSPEED": 100,
+            "FOOD": 100
+        },
+        "SortingKey": {
+            "paldeck": ""
+        },
+        "Suitabilities": {
+            "EPalWorkSuitability::EmitFlame": 0,
+            "EPalWorkSuitability::Watering": 0,
+            "EPalWorkSuitability::Seeding": 0,
+            "EPalWorkSuitability::GenerateElectricity": 0,
+            "EPalWorkSuitability::Handcraft": 1,
+            "EPalWorkSuitability::Collection": 0,
+            "EPalWorkSuitability::Deforest": 0,
+            "EPalWorkSuitability::Mining": 1,
+            "EPalWorkSuitability::ProductMedicine": 0,
+            "EPalWorkSuitability::Cool": 0,
+            "EPalWorkSuitability::Transport": 1,
+            "EPalWorkSuitability::MonsterFarm": 0
+        },
+        "HasIcon": false,
+        "Experimental": true
+    },
+    "Arena_Legend_10": {
+        "InternalName": "Arena_Legend_10",
+        "Elements": [],
+        "Attacks": {
+            "EPalWazaID::Human_Punch": 1
+        },
+        "Human": true,
+        "I18n": {
+            "en": "Arena Legend 10",
+            "zh-CN": "Arena Legend 10",
+            "ja": "Arena Legend 10",
+            "fr": "Arena Legend 10"
+        },
+        "Stats": {
+            "HP": 100,
+            "ATK": 100,
+            "DEF": 50,
+            "MELEE": 20,
+            "CRAFTSPEED": 100,
+            "FOOD": 100
+        },
+        "SortingKey": {
+            "paldeck": ""
+        },
+        "Suitabilities": {
+            "EPalWorkSuitability::EmitFlame": 0,
+            "EPalWorkSuitability::Watering": 0,
+            "EPalWorkSuitability::Seeding": 0,
+            "EPalWorkSuitability::GenerateElectricity": 0,
+            "EPalWorkSuitability::Handcraft": 1,
+            "EPalWorkSuitability::Collection": 0,
+            "EPalWorkSuitability::Deforest": 0,
+            "EPalWorkSuitability::Mining": 1,
+            "EPalWorkSuitability::ProductMedicine": 0,
+            "EPalWorkSuitability::Cool": 0,
+            "EPalWorkSuitability::Transport": 1,
+            "EPalWorkSuitability::MonsterFarm": 0
+        },
+        "HasIcon": false,
+        "Experimental": true
+    },
+    "Arena_Legend_11": {
+        "InternalName": "Arena_Legend_11",
+        "Elements": [],
+        "Attacks": {
+            "EPalWazaID::Human_Punch": 1
+        },
+        "Human": true,
+        "I18n": {
+            "en": "Arena Legend 11",
+            "zh-CN": "Arena Legend 11",
+            "ja": "Arena Legend 11",
+            "fr": "Arena Legend 11"
+        },
+        "Stats": {
+            "HP": 100,
+            "ATK": 100,
+            "DEF": 50,
+            "MELEE": 20,
+            "CRAFTSPEED": 100,
+            "FOOD": 100
+        },
+        "SortingKey": {
+            "paldeck": ""
+        },
+        "Suitabilities": {
+            "EPalWorkSuitability::EmitFlame": 0,
+            "EPalWorkSuitability::Watering": 0,
+            "EPalWorkSuitability::Seeding": 0,
+            "EPalWorkSuitability::GenerateElectricity": 0,
+            "EPalWorkSuitability::Handcraft": 1,
+            "EPalWorkSuitability::Collection": 0,
+            "EPalWorkSuitability::Deforest": 0,
+            "EPalWorkSuitability::Mining": 1,
+            "EPalWorkSuitability::ProductMedicine": 0,
+            "EPalWorkSuitability::Cool": 0,
+            "EPalWorkSuitability::Transport": 1,
+            "EPalWorkSuitability::MonsterFarm": 0
+        },
+        "HasIcon": false,
+        "Experimental": true
+    },
+    "Arena_Legend_12": {
+        "InternalName": "Arena_Legend_12",
+        "Elements": [],
+        "Attacks": {
+            "EPalWazaID::Human_Punch": 1
+        },
+        "Human": true,
+        "I18n": {
+            "en": "Arena Legend 12",
+            "zh-CN": "Arena Legend 12",
+            "ja": "Arena Legend 12",
+            "fr": "Arena Legend 12"
+        },
+        "Stats": {
+            "HP": 100,
+            "ATK": 100,
+            "DEF": 50,
+            "MELEE": 20,
+            "CRAFTSPEED": 100,
+            "FOOD": 100
+        },
+        "SortingKey": {
+            "paldeck": ""
+        },
+        "Suitabilities": {
+            "EPalWorkSuitability::EmitFlame": 0,
+            "EPalWorkSuitability::Watering": 0,
+            "EPalWorkSuitability::Seeding": 0,
+            "EPalWorkSuitability::GenerateElectricity": 0,
+            "EPalWorkSuitability::Handcraft": 1,
+            "EPalWorkSuitability::Collection": 0,
+            "EPalWorkSuitability::Deforest": 0,
+            "EPalWorkSuitability::Mining": 1,
+            "EPalWorkSuitability::ProductMedicine": 0,
+            "EPalWorkSuitability::Cool": 0,
+            "EPalWorkSuitability::Transport": 1,
+            "EPalWorkSuitability::MonsterFarm": 0
+        },
+        "HasIcon": false,
+        "Experimental": true
+    },
+    "Arena_Legend_13": {
+        "InternalName": "Arena_Legend_13",
+        "Elements": [],
+        "Attacks": {
+            "EPalWazaID::Human_Punch": 1
+        },
+        "Human": true,
+        "I18n": {
+            "en": "Arena Legend 13",
+            "zh-CN": "Arena Legend 13",
+            "ja": "Arena Legend 13",
+            "fr": "Arena Legend 13"
+        },
+        "Stats": {
+            "HP": 100,
+            "ATK": 100,
+            "DEF": 50,
+            "MELEE": 20,
+            "CRAFTSPEED": 100,
+            "FOOD": 100
+        },
+        "SortingKey": {
+            "paldeck": ""
+        },
+        "Suitabilities": {
+            "EPalWorkSuitability::EmitFlame": 0,
+            "EPalWorkSuitability::Watering": 0,
+            "EPalWorkSuitability::Seeding": 0,
+            "EPalWorkSuitability::GenerateElectricity": 0,
+            "EPalWorkSuitability::Handcraft": 1,
+            "EPalWorkSuitability::Collection": 0,
+            "EPalWorkSuitability::Deforest": 0,
+            "EPalWorkSuitability::Mining": 1,
+            "EPalWorkSuitability::ProductMedicine": 0,
+            "EPalWorkSuitability::Cool": 0,
+            "EPalWorkSuitability::Transport": 1,
+            "EPalWorkSuitability::MonsterFarm": 0
+        },
+        "HasIcon": false,
+        "Experimental": true
+    },
+    "Arena_Legend_14": {
+        "InternalName": "Arena_Legend_14",
+        "Elements": [],
+        "Attacks": {
+            "EPalWazaID::Human_Punch": 1
+        },
+        "Human": true,
+        "I18n": {
+            "en": "Arena Legend 14",
+            "zh-CN": "Arena Legend 14",
+            "ja": "Arena Legend 14",
+            "fr": "Arena Legend 14"
+        },
+        "Stats": {
+            "HP": 100,
+            "ATK": 100,
+            "DEF": 50,
+            "MELEE": 20,
+            "CRAFTSPEED": 100,
+            "FOOD": 100
+        },
+        "SortingKey": {
+            "paldeck": ""
+        },
+        "Suitabilities": {
+            "EPalWorkSuitability::EmitFlame": 0,
+            "EPalWorkSuitability::Watering": 0,
+            "EPalWorkSuitability::Seeding": 0,
+            "EPalWorkSuitability::GenerateElectricity": 0,
+            "EPalWorkSuitability::Handcraft": 1,
+            "EPalWorkSuitability::Collection": 0,
+            "EPalWorkSuitability::Deforest": 0,
+            "EPalWorkSuitability::Mining": 1,
+            "EPalWorkSuitability::ProductMedicine": 0,
+            "EPalWorkSuitability::Cool": 0,
+            "EPalWorkSuitability::Transport": 1,
+            "EPalWorkSuitability::MonsterFarm": 0
+        },
+        "HasIcon": false,
+        "Experimental": true
+    },
+    "Arena_Legend_15": {
+        "InternalName": "Arena_Legend_15",
+        "Elements": [],
+        "Attacks": {
+            "EPalWazaID::Human_Punch": 1
+        },
+        "Human": true,
+        "I18n": {
+            "en": "Arena Legend 15",
+            "zh-CN": "Arena Legend 15",
+            "ja": "Arena Legend 15",
+            "fr": "Arena Legend 15"
+        },
+        "Stats": {
+            "HP": 100,
+            "ATK": 100,
+            "DEF": 50,
+            "MELEE": 20,
+            "CRAFTSPEED": 100,
+            "FOOD": 100
+        },
+        "SortingKey": {
+            "paldeck": ""
+        },
+        "Suitabilities": {
+            "EPalWorkSuitability::EmitFlame": 0,
+            "EPalWorkSuitability::Watering": 0,
+            "EPalWorkSuitability::Seeding": 0,
+            "EPalWorkSuitability::GenerateElectricity": 0,
+            "EPalWorkSuitability::Handcraft": 1,
+            "EPalWorkSuitability::Collection": 0,
+            "EPalWorkSuitability::Deforest": 0,
+            "EPalWorkSuitability::Mining": 1,
+            "EPalWorkSuitability::ProductMedicine": 0,
+            "EPalWorkSuitability::Cool": 0,
+            "EPalWorkSuitability::Transport": 1,
+            "EPalWorkSuitability::MonsterFarm": 0
+        },
+        "HasIcon": false,
+        "Experimental": true
+    },
+    "Arena_Legend_16": {
+        "InternalName": "Arena_Legend_16",
+        "Elements": [],
+        "Attacks": {
+            "EPalWazaID::Human_Punch": 1
+        },
+        "Human": true,
+        "I18n": {
+            "en": "Arena Legend 16",
+            "zh-CN": "Arena Legend 16",
+            "ja": "Arena Legend 16",
+            "fr": "Arena Legend 16"
+        },
+        "Stats": {
+            "HP": 100,
+            "ATK": 100,
+            "DEF": 50,
+            "MELEE": 20,
+            "CRAFTSPEED": 100,
+            "FOOD": 100
+        },
+        "SortingKey": {
+            "paldeck": ""
+        },
+        "Suitabilities": {
+            "EPalWorkSuitability::EmitFlame": 0,
+            "EPalWorkSuitability::Watering": 0,
+            "EPalWorkSuitability::Seeding": 0,
+            "EPalWorkSuitability::GenerateElectricity": 0,
+            "EPalWorkSuitability::Handcraft": 1,
+            "EPalWorkSuitability::Collection": 0,
+            "EPalWorkSuitability::Deforest": 0,
+            "EPalWorkSuitability::Mining": 1,
+            "EPalWorkSuitability::ProductMedicine": 0,
+            "EPalWorkSuitability::Cool": 0,
+            "EPalWorkSuitability::Transport": 1,
+            "EPalWorkSuitability::MonsterFarm": 0
+        },
+        "HasIcon": false,
+        "Experimental": true
+    },
+    "Arena_Legend_17": {
+        "InternalName": "Arena_Legend_17",
+        "Elements": [],
+        "Attacks": {
+            "EPalWazaID::Human_Punch": 1
+        },
+        "Human": true,
+        "I18n": {
+            "en": "Arena Legend 17",
+            "zh-CN": "Arena Legend 17",
+            "ja": "Arena Legend 17",
+            "fr": "Arena Legend 17"
+        },
+        "Stats": {
+            "HP": 100,
+            "ATK": 100,
+            "DEF": 50,
+            "MELEE": 20,
+            "CRAFTSPEED": 100,
+            "FOOD": 100
+        },
+        "SortingKey": {
+            "paldeck": ""
+        },
+        "Suitabilities": {
+            "EPalWorkSuitability::EmitFlame": 0,
+            "EPalWorkSuitability::Watering": 0,
+            "EPalWorkSuitability::Seeding": 0,
+            "EPalWorkSuitability::GenerateElectricity": 0,
+            "EPalWorkSuitability::Handcraft": 1,
+            "EPalWorkSuitability::Collection": 0,
+            "EPalWorkSuitability::Deforest": 0,
+            "EPalWorkSuitability::Mining": 1,
+            "EPalWorkSuitability::ProductMedicine": 0,
+            "EPalWorkSuitability::Cool": 0,
+            "EPalWorkSuitability::Transport": 1,
+            "EPalWorkSuitability::MonsterFarm": 0
+        },
+        "HasIcon": false,
+        "Experimental": true
+    },
+    "Arena_Legend_18": {
+        "InternalName": "Arena_Legend_18",
+        "Elements": [],
+        "Attacks": {
+            "EPalWazaID::Human_Punch": 1
+        },
+        "Human": true,
+        "I18n": {
+            "en": "Arena Legend 18",
+            "zh-CN": "Arena Legend 18",
+            "ja": "Arena Legend 18",
+            "fr": "Arena Legend 18"
+        },
+        "Stats": {
+            "HP": 100,
+            "ATK": 100,
+            "DEF": 50,
+            "MELEE": 20,
+            "CRAFTSPEED": 100,
+            "FOOD": 100
+        },
+        "SortingKey": {
+            "paldeck": ""
+        },
+        "Suitabilities": {
+            "EPalWorkSuitability::EmitFlame": 0,
+            "EPalWorkSuitability::Watering": 0,
+            "EPalWorkSuitability::Seeding": 0,
+            "EPalWorkSuitability::GenerateElectricity": 0,
+            "EPalWorkSuitability::Handcraft": 1,
+            "EPalWorkSuitability::Collection": 0,
+            "EPalWorkSuitability::Deforest": 0,
+            "EPalWorkSuitability::Mining": 1,
+            "EPalWorkSuitability::ProductMedicine": 0,
+            "EPalWorkSuitability::Cool": 0,
+            "EPalWorkSuitability::Transport": 1,
+            "EPalWorkSuitability::MonsterFarm": 0
+        },
+        "HasIcon": false,
+        "Experimental": true
+    },
+    "Arena_Legend_19": {
+        "InternalName": "Arena_Legend_19",
+        "Elements": [],
+        "Attacks": {
+            "EPalWazaID::Human_Punch": 1
+        },
+        "Human": true,
+        "I18n": {
+            "en": "Arena Legend 19",
+            "zh-CN": "Arena Legend 19",
+            "ja": "Arena Legend 19",
+            "fr": "Arena Legend 19"
+        },
+        "Stats": {
+            "HP": 100,
+            "ATK": 100,
+            "DEF": 50,
+            "MELEE": 20,
+            "CRAFTSPEED": 100,
+            "FOOD": 100
+        },
+        "SortingKey": {
+            "paldeck": ""
+        },
+        "Suitabilities": {
+            "EPalWorkSuitability::EmitFlame": 0,
+            "EPalWorkSuitability::Watering": 0,
+            "EPalWorkSuitability::Seeding": 0,
+            "EPalWorkSuitability::GenerateElectricity": 0,
+            "EPalWorkSuitability::Handcraft": 1,
+            "EPalWorkSuitability::Collection": 0,
+            "EPalWorkSuitability::Deforest": 0,
+            "EPalWorkSuitability::Mining": 1,
+            "EPalWorkSuitability::ProductMedicine": 0,
+            "EPalWorkSuitability::Cool": 0,
+            "EPalWorkSuitability::Transport": 1,
+            "EPalWorkSuitability::MonsterFarm": 0
+        },
+        "HasIcon": false,
+        "Experimental": true
+    },
+    "Arena_Legend_2": {
+        "InternalName": "Arena_Legend_2",
+        "Elements": [],
+        "Attacks": {
+            "EPalWazaID::Human_Punch": 1
+        },
+        "Human": true,
+        "I18n": {
+            "en": "Arena Legend 2",
+            "zh-CN": "Arena Legend 2",
+            "ja": "Arena Legend 2",
+            "fr": "Arena Legend 2"
+        },
+        "Stats": {
+            "HP": 100,
+            "ATK": 100,
+            "DEF": 50,
+            "MELEE": 20,
+            "CRAFTSPEED": 100,
+            "FOOD": 100
+        },
+        "SortingKey": {
+            "paldeck": ""
+        },
+        "Suitabilities": {
+            "EPalWorkSuitability::EmitFlame": 0,
+            "EPalWorkSuitability::Watering": 0,
+            "EPalWorkSuitability::Seeding": 0,
+            "EPalWorkSuitability::GenerateElectricity": 0,
+            "EPalWorkSuitability::Handcraft": 1,
+            "EPalWorkSuitability::Collection": 0,
+            "EPalWorkSuitability::Deforest": 0,
+            "EPalWorkSuitability::Mining": 1,
+            "EPalWorkSuitability::ProductMedicine": 0,
+            "EPalWorkSuitability::Cool": 0,
+            "EPalWorkSuitability::Transport": 1,
+            "EPalWorkSuitability::MonsterFarm": 0
+        },
+        "HasIcon": false,
+        "Experimental": true
+    },
+    "Arena_Legend_20": {
+        "InternalName": "Arena_Legend_20",
+        "Elements": [],
+        "Attacks": {
+            "EPalWazaID::Human_Punch": 1
+        },
+        "Human": true,
+        "I18n": {
+            "en": "Arena Legend 20",
+            "zh-CN": "Arena Legend 20",
+            "ja": "Arena Legend 20",
+            "fr": "Arena Legend 20"
+        },
+        "Stats": {
+            "HP": 100,
+            "ATK": 100,
+            "DEF": 50,
+            "MELEE": 20,
+            "CRAFTSPEED": 100,
+            "FOOD": 100
+        },
+        "SortingKey": {
+            "paldeck": ""
+        },
+        "Suitabilities": {
+            "EPalWorkSuitability::EmitFlame": 0,
+            "EPalWorkSuitability::Watering": 0,
+            "EPalWorkSuitability::Seeding": 0,
+            "EPalWorkSuitability::GenerateElectricity": 0,
+            "EPalWorkSuitability::Handcraft": 1,
+            "EPalWorkSuitability::Collection": 0,
+            "EPalWorkSuitability::Deforest": 0,
+            "EPalWorkSuitability::Mining": 1,
+            "EPalWorkSuitability::ProductMedicine": 0,
+            "EPalWorkSuitability::Cool": 0,
+            "EPalWorkSuitability::Transport": 1,
+            "EPalWorkSuitability::MonsterFarm": 0
+        },
+        "HasIcon": false,
+        "Experimental": true
+    },
+    "Arena_Legend_3": {
+        "InternalName": "Arena_Legend_3",
+        "Elements": [],
+        "Attacks": {
+            "EPalWazaID::Human_Punch": 1
+        },
+        "Human": true,
+        "I18n": {
+            "en": "Arena Legend 3",
+            "zh-CN": "Arena Legend 3",
+            "ja": "Arena Legend 3",
+            "fr": "Arena Legend 3"
+        },
+        "Stats": {
+            "HP": 100,
+            "ATK": 100,
+            "DEF": 50,
+            "MELEE": 20,
+            "CRAFTSPEED": 100,
+            "FOOD": 100
+        },
+        "SortingKey": {
+            "paldeck": ""
+        },
+        "Suitabilities": {
+            "EPalWorkSuitability::EmitFlame": 0,
+            "EPalWorkSuitability::Watering": 0,
+            "EPalWorkSuitability::Seeding": 0,
+            "EPalWorkSuitability::GenerateElectricity": 0,
+            "EPalWorkSuitability::Handcraft": 1,
+            "EPalWorkSuitability::Collection": 0,
+            "EPalWorkSuitability::Deforest": 0,
+            "EPalWorkSuitability::Mining": 1,
+            "EPalWorkSuitability::ProductMedicine": 0,
+            "EPalWorkSuitability::Cool": 0,
+            "EPalWorkSuitability::Transport": 1,
+            "EPalWorkSuitability::MonsterFarm": 0
+        },
+        "HasIcon": false,
+        "Experimental": true
+    },
+    "Arena_Legend_4": {
+        "InternalName": "Arena_Legend_4",
+        "Elements": [],
+        "Attacks": {
+            "EPalWazaID::Human_Punch": 1
+        },
+        "Human": true,
+        "I18n": {
+            "en": "Arena Legend 4",
+            "zh-CN": "Arena Legend 4",
+            "ja": "Arena Legend 4",
+            "fr": "Arena Legend 4"
+        },
+        "Stats": {
+            "HP": 100,
+            "ATK": 100,
+            "DEF": 50,
+            "MELEE": 20,
+            "CRAFTSPEED": 100,
+            "FOOD": 100
+        },
+        "SortingKey": {
+            "paldeck": ""
+        },
+        "Suitabilities": {
+            "EPalWorkSuitability::EmitFlame": 0,
+            "EPalWorkSuitability::Watering": 0,
+            "EPalWorkSuitability::Seeding": 0,
+            "EPalWorkSuitability::GenerateElectricity": 0,
+            "EPalWorkSuitability::Handcraft": 1,
+            "EPalWorkSuitability::Collection": 0,
+            "EPalWorkSuitability::Deforest": 0,
+            "EPalWorkSuitability::Mining": 1,
+            "EPalWorkSuitability::ProductMedicine": 0,
+            "EPalWorkSuitability::Cool": 0,
+            "EPalWorkSuitability::Transport": 1,
+            "EPalWorkSuitability::MonsterFarm": 0
+        },
+        "HasIcon": false,
+        "Experimental": true
+    },
+    "Arena_Legend_5": {
+        "InternalName": "Arena_Legend_5",
+        "Elements": [],
+        "Attacks": {
+            "EPalWazaID::Human_Punch": 1
+        },
+        "Human": true,
+        "I18n": {
+            "en": "Arena Legend 5",
+            "zh-CN": "Arena Legend 5",
+            "ja": "Arena Legend 5",
+            "fr": "Arena Legend 5"
+        },
+        "Stats": {
+            "HP": 100,
+            "ATK": 100,
+            "DEF": 50,
+            "MELEE": 20,
+            "CRAFTSPEED": 100,
+            "FOOD": 100
+        },
+        "SortingKey": {
+            "paldeck": ""
+        },
+        "Suitabilities": {
+            "EPalWorkSuitability::EmitFlame": 0,
+            "EPalWorkSuitability::Watering": 0,
+            "EPalWorkSuitability::Seeding": 0,
+            "EPalWorkSuitability::GenerateElectricity": 0,
+            "EPalWorkSuitability::Handcraft": 1,
+            "EPalWorkSuitability::Collection": 0,
+            "EPalWorkSuitability::Deforest": 0,
+            "EPalWorkSuitability::Mining": 1,
+            "EPalWorkSuitability::ProductMedicine": 0,
+            "EPalWorkSuitability::Cool": 0,
+            "EPalWorkSuitability::Transport": 1,
+            "EPalWorkSuitability::MonsterFarm": 0
+        },
+        "HasIcon": false,
+        "Experimental": true
+    },
+    "Arena_Legend_6": {
+        "InternalName": "Arena_Legend_6",
+        "Elements": [],
+        "Attacks": {
+            "EPalWazaID::Human_Punch": 1
+        },
+        "Human": true,
+        "I18n": {
+            "en": "Arena Legend 6",
+            "zh-CN": "Arena Legend 6",
+            "ja": "Arena Legend 6",
+            "fr": "Arena Legend 6"
+        },
+        "Stats": {
+            "HP": 100,
+            "ATK": 100,
+            "DEF": 50,
+            "MELEE": 20,
+            "CRAFTSPEED": 100,
+            "FOOD": 100
+        },
+        "SortingKey": {
+            "paldeck": ""
+        },
+        "Suitabilities": {
+            "EPalWorkSuitability::EmitFlame": 0,
+            "EPalWorkSuitability::Watering": 0,
+            "EPalWorkSuitability::Seeding": 0,
+            "EPalWorkSuitability::GenerateElectricity": 0,
+            "EPalWorkSuitability::Handcraft": 1,
+            "EPalWorkSuitability::Collection": 0,
+            "EPalWorkSuitability::Deforest": 0,
+            "EPalWorkSuitability::Mining": 1,
+            "EPalWorkSuitability::ProductMedicine": 0,
+            "EPalWorkSuitability::Cool": 0,
+            "EPalWorkSuitability::Transport": 1,
+            "EPalWorkSuitability::MonsterFarm": 0
+        },
+        "HasIcon": false,
+        "Experimental": true
+    },
+    "Arena_Legend_7": {
+        "InternalName": "Arena_Legend_7",
+        "Elements": [],
+        "Attacks": {
+            "EPalWazaID::Human_Punch": 1
+        },
+        "Human": true,
+        "I18n": {
+            "en": "Arena Legend 7",
+            "zh-CN": "Arena Legend 7",
+            "ja": "Arena Legend 7",
+            "fr": "Arena Legend 7"
+        },
+        "Stats": {
+            "HP": 100,
+            "ATK": 100,
+            "DEF": 50,
+            "MELEE": 20,
+            "CRAFTSPEED": 100,
+            "FOOD": 100
+        },
+        "SortingKey": {
+            "paldeck": ""
+        },
+        "Suitabilities": {
+            "EPalWorkSuitability::EmitFlame": 0,
+            "EPalWorkSuitability::Watering": 0,
+            "EPalWorkSuitability::Seeding": 0,
+            "EPalWorkSuitability::GenerateElectricity": 0,
+            "EPalWorkSuitability::Handcraft": 1,
+            "EPalWorkSuitability::Collection": 0,
+            "EPalWorkSuitability::Deforest": 0,
+            "EPalWorkSuitability::Mining": 1,
+            "EPalWorkSuitability::ProductMedicine": 0,
+            "EPalWorkSuitability::Cool": 0,
+            "EPalWorkSuitability::Transport": 1,
+            "EPalWorkSuitability::MonsterFarm": 0
+        },
+        "HasIcon": false,
+        "Experimental": true
+    },
+    "Arena_Legend_8": {
+        "InternalName": "Arena_Legend_8",
+        "Elements": [],
+        "Attacks": {
+            "EPalWazaID::Human_Punch": 1
+        },
+        "Human": true,
+        "I18n": {
+            "en": "Arena Legend 8",
+            "zh-CN": "Arena Legend 8",
+            "ja": "Arena Legend 8",
+            "fr": "Arena Legend 8"
+        },
+        "Stats": {
+            "HP": 100,
+            "ATK": 100,
+            "DEF": 50,
+            "MELEE": 20,
+            "CRAFTSPEED": 100,
+            "FOOD": 100
+        },
+        "SortingKey": {
+            "paldeck": ""
+        },
+        "Suitabilities": {
+            "EPalWorkSuitability::EmitFlame": 0,
+            "EPalWorkSuitability::Watering": 0,
+            "EPalWorkSuitability::Seeding": 0,
+            "EPalWorkSuitability::GenerateElectricity": 0,
+            "EPalWorkSuitability::Handcraft": 1,
+            "EPalWorkSuitability::Collection": 0,
+            "EPalWorkSuitability::Deforest": 0,
+            "EPalWorkSuitability::Mining": 1,
+            "EPalWorkSuitability::ProductMedicine": 0,
+            "EPalWorkSuitability::Cool": 0,
+            "EPalWorkSuitability::Transport": 1,
+            "EPalWorkSuitability::MonsterFarm": 0
+        },
+        "HasIcon": false,
+        "Experimental": true
+    },
+    "Arena_Legend_9": {
+        "InternalName": "Arena_Legend_9",
+        "Elements": [],
+        "Attacks": {
+            "EPalWazaID::Human_Punch": 1
+        },
+        "Human": true,
+        "I18n": {
+            "en": "Arena Legend 9",
+            "zh-CN": "Arena Legend 9",
+            "ja": "Arena Legend 9",
+            "fr": "Arena Legend 9"
+        },
+        "Stats": {
+            "HP": 100,
+            "ATK": 100,
+            "DEF": 50,
+            "MELEE": 20,
+            "CRAFTSPEED": 100,
+            "FOOD": 100
+        },
+        "SortingKey": {
+            "paldeck": ""
+        },
+        "Suitabilities": {
+            "EPalWorkSuitability::EmitFlame": 0,
+            "EPalWorkSuitability::Watering": 0,
+            "EPalWorkSuitability::Seeding": 0,
+            "EPalWorkSuitability::GenerateElectricity": 0,
+            "EPalWorkSuitability::Handcraft": 1,
+            "EPalWorkSuitability::Collection": 0,
+            "EPalWorkSuitability::Deforest": 0,
+            "EPalWorkSuitability::Mining": 1,
+            "EPalWorkSuitability::ProductMedicine": 0,
+            "EPalWorkSuitability::Cool": 0,
+            "EPalWorkSuitability::Transport": 1,
+            "EPalWorkSuitability::MonsterFarm": 0
+        },
+        "HasIcon": false,
+        "Experimental": true
+    },
+    "Negotiator": {
+        "InternalName": "Negotiator",
+        "Elements": [],
+        "Attacks": {
+            "EPalWazaID::Human_Punch": 1
+        },
+        "Human": true,
+        "I18n": {
+            "en": "Negotiator",
+            "zh-CN": "Negotiator",
+            "ja": "Negotiator",
+            "fr": "Negotiator"
+        },
+        "Stats": {
+            "HP": 20,
+            "ATK": 50,
+            "DEF": 10,
+            "MELEE": 20,
+            "CRAFTSPEED": 100,
+            "FOOD": 100
+        },
+        "SortingKey": {
+            "paldeck": ""
+        },
+        "Suitabilities": {
+            "EPalWorkSuitability::EmitFlame": 0,
+            "EPalWorkSuitability::Watering": 0,
+            "EPalWorkSuitability::Seeding": 1,
+            "EPalWorkSuitability::GenerateElectricity": 0,
+            "EPalWorkSuitability::Handcraft": 1,
+            "EPalWorkSuitability::Collection": 0,
+            "EPalWorkSuitability::Deforest": 1,
+            "EPalWorkSuitability::Mining": 1,
+            "EPalWorkSuitability::ProductMedicine": 0,
+            "EPalWorkSuitability::Cool": 0,
+            "EPalWorkSuitability::Transport": 0,
+            "EPalWorkSuitability::MonsterFarm": 0
+        },
+        "HasIcon": false,
+        "Experimental": true
+    },
+    "WorldTree_Hunter_MissileLauncher_test": {
+        "InternalName": "WorldTree_Hunter_MissileLauncher_test",
+        "Elements": [],
+        "Attacks": {
+            "EPalWazaID::Human_Punch": 1
+        },
+        "Human": true,
+        "I18n": {
+            "en": "World Tree Missile Gunner (test)",
+            "zh-CN": "World Tree Missile Gunner (test)",
+            "ja": "World Tree Missile Gunner (test)",
+            "fr": "World Tree Missile Gunner (test)"
+        },
+        "Stats": {
+            "HP": 100,
+            "ATK": 10,
+            "DEF": 50,
+            "MELEE": 100,
+            "CRAFTSPEED": 100,
+            "FOOD": 100
+        },
+        "SortingKey": {
+            "paldeck": ""
+        },
+        "Suitabilities": {
+            "EPalWorkSuitability::EmitFlame": 0,
+            "EPalWorkSuitability::Watering": 0,
+            "EPalWorkSuitability::Seeding": 0,
+            "EPalWorkSuitability::GenerateElectricity": 0,
+            "EPalWorkSuitability::Handcraft": 1,
+            "EPalWorkSuitability::Collection": 0,
+            "EPalWorkSuitability::Deforest": 1,
+            "EPalWorkSuitability::Mining": 1,
+            "EPalWorkSuitability::ProductMedicine": 0,
+            "EPalWorkSuitability::Cool": 1,
+            "EPalWorkSuitability::Transport": 0,
+            "EPalWorkSuitability::MonsterFarm": 0
+        },
+        "HasIcon": false,
+        "Experimental": true
     }
 }
