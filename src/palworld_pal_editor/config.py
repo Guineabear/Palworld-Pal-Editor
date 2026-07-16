@@ -48,7 +48,7 @@ def is_gh_build() -> bool:
 async def get_new_version() -> Optional[tuple[str, str]]:
     if not is_gh_build():
         return None
-    releases_url = "https://api.github.com/repos/KrisCris/Palworld-Pal-Editor/releases/latest"
+    releases_url = "https://api.github.com/repos/Guineabear/Palworld-Pal-Editor/releases/latest"
     async def fetch_latest_release():
         async with aiohttp.ClientSession() as session:
             async with session.get(releases_url) as resp:
