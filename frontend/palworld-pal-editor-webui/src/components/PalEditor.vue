@@ -24,7 +24,7 @@ function formatString(input) {
 function filterInvalid(list) {
   return list.filter(item => {
     if (palStore.HIDE_INVALID_OPTIONS) {
-      return !(item.Invalid || item.IsHuman)
+      return !(item.Invalid || item.Experimental || item.IsHuman)
     }
     return true
   })
@@ -95,7 +95,7 @@ const suitabilityIconSrc = key => {
           <select class="selector" name="CharacterID" v-model="palStore.SELECTED_PAL_DATA.DataAccessKey">
             <option class="" v-for="pal in filterInvalid(palStore.PAL_STATIC_DATA_LIST)" :value="pal.InternalName"
               :key="pal.InternalName" :title="pal.InternalName"> {{ `
-              ${pal.Invalid || pal.IsHuman ? '⚠️' : ""}
+              ${pal.Experimental ? `🧪 ${palStore.getTranslatedText("Editor_Experimental")}` : pal.Invalid || pal.IsHuman ? '⚠️' : ""}
               ${formatString(pal.SortingKey) || ""}
               ${palStore.displayPalElement(pal.InternalName)}
               ${pal.I18n}${palStore.HIDE_INVALID_OPTIONS ? '' : ` | ${pal.InternalName}`}`
@@ -339,6 +339,9 @@ const suitabilityIconSrc = key => {
       <p class="cat">
         {{ palStore.getTranslatedText("Editor_Passive_Skills") }}
       </p>
+      <p v-if="palStore.SELECTED_PAL_DATA.PassiveSkillList.length > 4" class="passive-warning">
+        {{ palStore.getTranslatedText("Editor_Passive_Skills_Hidden_Warning") }}
+      </p>
       <div class="flex-h">
         <div class="editField skillList">
           <div v-for="skill in palStore.SELECTED_PAL_DATA.PassiveSkillList">
@@ -354,7 +357,7 @@ const suitabilityIconSrc = key => {
               :disabled="palStore.LOADING_FLAG">❌</button>
           </div>
           <div class="editField"
-            v-if="!palStore.HIDE_INVALID_OPTIONS || palStore.SELECTED_PAL_DATA.PassiveSkillList.length < 4">
+            v-if="!palStore.HIDE_INVALID_OPTIONS || palStore.SELECTED_PAL_DATA.PassiveSkillList.length < 6">
             <select class="PassiveSkill selector" name="add_PassiveSkillList"
               v-model="palStore.PAL_PASSIVE_SELECTED_ITEM">
               <option class="PassiveSkill" value="" key="">
@@ -535,6 +538,12 @@ button {
 p.cat {
   margin-top: -.8rem;
   margin-left: -.5rem;
+}
+
+p.passive-warning {
+  margin: 0 0 .4rem 0;
+  color: #ffd166;
+  font-size: .85rem;
 }
 
 div {

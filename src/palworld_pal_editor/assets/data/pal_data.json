@@ -33278,5 +33278,84 @@
             "EPalWorkSuitability::MonsterFarm": 0
         },
         "Invalid": true
+    },
+    "BlackFurDragon": {
+        "InternalName": "BlackFurDragon",
+        "Elements": [
+            "Dark",
+            "Dragon"
+        ],
+        "Attacks": {},
+        "Stats": {
+            "HP": 130,
+            "ATK": 130,
+            "DEF": 110,
+            "MELEE": 100,
+            "CRAFTSPEED": 100,
+            "FOOD": 530
+        },
+        "I18n": {
+            "en": "Dragostrophe",
+            "zh-CN": "zh_Hans_Text",
+            "ja": "Dragostrophe",
+            "fr": "Dragostrophe"
+        },
+        "SortingKey": {
+            "paldeck": ""
+        },
+        "Suitabilities": {
+            "EPalWorkSuitability::EmitFlame": 0,
+            "EPalWorkSuitability::Watering": 0,
+            "EPalWorkSuitability::Seeding": 0,
+            "EPalWorkSuitability::GenerateElectricity": 0,
+            "EPalWorkSuitability::Handcraft": 0,
+            "EPalWorkSuitability::Collection": 0,
+            "EPalWorkSuitability::Deforest": 0,
+            "EPalWorkSuitability::Mining": 0,
+            "EPalWorkSuitability::ProductMedicine": 0,
+            "EPalWorkSuitability::Cool": 0,
+            "EPalWorkSuitability::Transport": 0,
+            "EPalWorkSuitability::MonsterFarm": 0
+        },
+        "Experimental": true
+    },
+    "ElecLion": {
+        "InternalName": "ElecLion",
+        "Elements": [
+            "Electric"
+        ],
+        "Attacks": {},
+        "Stats": {
+            "HP": 100,
+            "ATK": 110,
+            "DEF": 70,
+            "MELEE": 100,
+            "CRAFTSPEED": 100,
+            "FOOD": 350
+        },
+        "I18n": {
+            "en": "Boltmane",
+            "zh-CN": "zh_Hans_Text",
+            "ja": "Boltmane",
+            "fr": "Boltmane"
+        },
+        "SortingKey": {
+            "paldeck": ""
+        },
+        "Suitabilities": {
+            "EPalWorkSuitability::EmitFlame": 0,
+            "EPalWorkSuitability::Watering": 0,
+            "EPalWorkSuitability::Seeding": 0,
+            "EPalWorkSuitability::GenerateElectricity": 0,
+            "EPalWorkSuitability::Handcraft": 0,
+            "EPalWorkSuitability::Collection": 0,
+            "EPalWorkSuitability::Deforest": 0,
+            "EPalWorkSuitability::Mining": 0,
+            "EPalWorkSuitability::ProductMedicine": 0,
+            "EPalWorkSuitability::Cool": 0,
+            "EPalWorkSuitability::Transport": 0,
+            "EPalWorkSuitability::MonsterFarm": 0
+        },
+        "Experimental": true
     }
 }

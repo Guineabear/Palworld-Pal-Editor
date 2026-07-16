@@ -59,6 +59,8 @@ export default {
     Editor_Condenser: "パル濃縮",
     Editor_Condenser_Rank: "濃縮ランク: ",
     Editor_Passive_Skills: "パッシブスキル",
+    Editor_Experimental: "実験的",
+    Editor_Passive_Skills_Hidden_Warning: "スロット5と6のパッシブも適用されますが、ゲーム内では最初の4つだけが表示されます。追加スロットを使用する前にセーブデータをバックアップしてください。",
     Editor_Select_Skill: "スキルを追加",
     Editor_Equipped_Skills: "装備中のアクティブスキル",
     Editor_Skill_ATK: "攻撃力: ",
