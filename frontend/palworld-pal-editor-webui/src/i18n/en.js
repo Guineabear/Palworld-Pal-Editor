@@ -58,6 +58,7 @@ export default {
     Editor_Condenser: "CONDENSER UPGRADE",
     Editor_Condenser_Rank: "Rank: ",
     Editor_Passive_Skills: "PASSIVE SKILLS",
+    Editor_Passive_Skills_Hidden_Warning: "Palworld only displays the first four passives in-game. Extra slots are hidden; back up your save before using them.",
     Editor_Select_Skill: "Add Skills",
     Editor_Equipped_Skills: "EQUIPPED ACTIVE SKILLS",
     Editor_Skill_ATK: "Attack: ",

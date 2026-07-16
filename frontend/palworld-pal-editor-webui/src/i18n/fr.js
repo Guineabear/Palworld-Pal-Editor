@@ -60,6 +60,7 @@ export default {
     Editor_Condenser: "AMÉLIORATION DU CONDENSEUR",
     Editor_Condenser_Rank: "Rang : ",
     Editor_Passive_Skills: "COMPÉTENCES PASSIVES",
+    Editor_Passive_Skills_Hidden_Warning: "Palworld n'affiche que les quatre premiers passifs en jeu. Les emplacements supplémentaires sont masqués ; sauvegardez votre partie avant de les utiliser.",
     Editor_Select_Skill: "Ajouter des compétences",
     Editor_Equipped_Skills: "COMPÉTENCES ACTIVES ÉQUIPÉES",
     Editor_Skill_ATK: "Attaque : ",

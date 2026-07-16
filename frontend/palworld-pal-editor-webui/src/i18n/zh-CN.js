@@ -60,6 +60,7 @@ export default {
     Editor_Condenser: "帕鲁浓缩机",
     Editor_Condenser_Rank: "浓缩等级: ",
     Editor_Passive_Skills: "被动技能",
+    Editor_Passive_Skills_Hidden_Warning: "游戏内只显示前四个被动技能。额外栏位会被隐藏；使用前请备份存档。",
     Editor_Select_Skill: "选择添加的技能",
     Editor_Equipped_Skills: "装备的主动技能",
     Editor_Skill_ATK: "攻击力: ",
