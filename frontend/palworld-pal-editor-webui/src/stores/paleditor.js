@@ -7,7 +7,7 @@ export const usePalEditorStore = defineStore("paleditor", () => {
     const MAX_FRIENDSHIP_LEVEL = 10;
     const MAX_INVALID_LEVEL = 100;
     const MAX_SOULS_LEVEL = 20;
-    const MAX_SUITABILITY_LEVEL = 5;
+    const MAX_SUITABILITY_LEVEL = 10;
     const MAX_PASSIVE_SKILLS = 6;
     class Player {
         constructor(obj) {
@@ -329,7 +329,7 @@ export const usePalEditorStore = defineStore("paleditor", () => {
                 PAL_STATIC_DATA.value[SELECTED_PAL_DATA.value.DataAccessKey]
                     ?.Suitabilities[name];
             const max = MAX_SUITABILITY_LEVEL;
-            if (HIDE_INVALID_OPTIONS.value && min == 0 && e.target.value != 0) {
+            if (HIDE_INVALID_OPTIONS.value && min == 0 && value != 0) {
                 alert(
                     "Invalid suitability level, You can only modify suitabilities that the Pal is capable of."
                 );
