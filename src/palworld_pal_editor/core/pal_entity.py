@@ -800,7 +800,7 @@ class PalEntity:
             LOGGER.warning(f"{self} already has passive {skill}, skipping")
             return False
 
-        if not force and len(self.PassiveSkillList) >= 4:
+        if not force and len(self.PassiveSkillList) >= 6:
             LOGGER.warning(
                 f"{self} PassiveSkillList has maxed out: {self.PassiveSkillList}, skipping"
             )

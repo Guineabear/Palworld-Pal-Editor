@@ -8,6 +8,7 @@ export const usePalEditorStore = defineStore("paleditor", () => {
     const MAX_INVALID_LEVEL = 100;
     const MAX_SOULS_LEVEL = 20;
     const MAX_SUITABILITY_LEVEL = 5;
+    const MAX_PASSIVE_SKILLS = 6;
     class Player {
         constructor(obj) {
             this.InstanceId = obj.InstanceId;
@@ -228,9 +229,9 @@ export const usePalEditorStore = defineStore("paleditor", () => {
             }
             if (
                 HIDE_INVALID_OPTIONS.value &&
-                this.PassiveSkillList.length >= 4
+                this.PassiveSkillList.length >= MAX_PASSIVE_SKILLS
             ) {
-                alert("you can't add more than 4 passive skills");
+                alert(`you can't add more than ${MAX_PASSIVE_SKILLS} passive skills`);
                 return;
             }
             updatePal({

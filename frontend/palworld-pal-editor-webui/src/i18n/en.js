@@ -59,6 +59,7 @@ export default {
     Editor_Condenser_Rank: "Rank: ",
     Editor_Passive_Skills: "PASSIVE SKILLS",
     Editor_Experimental: "EXPERIMENTAL",
+    Editor_Passive_Skills_Hidden_Warning: "Palworld applies passives in slots 5 and 6, but only displays the first four in-game. Back up your save before using extra slots.",
     Editor_Select_Skill: "Add Skills",
     Editor_Equipped_Skills: "EQUIPPED ACTIVE SKILLS",
     Editor_Skill_ATK: "Attack: ",
