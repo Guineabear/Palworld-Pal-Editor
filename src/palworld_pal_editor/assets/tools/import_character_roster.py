@@ -47,6 +47,29 @@ EXPERIMENTAL_HUMAN_IDS = {
 
 EXPERIMENTAL_PAL_IDS = ("BlackFurDragon", "ElecLion")
 
+# These 1.0 human-table rows are present in the shipped game data but are not
+# yet exported by palworld-save-pal-reference. They are deliberately kept
+# experimental: most are internal arena/test templates rather than ordinary
+# overworld NPCs.
+SUPPLEMENTAL_EXPERIMENTAL_HUMANS = {
+    "Negotiator": {
+        "name": "Negotiator",
+        "stats": {"HP": 20, "ATK": 50, "DEF": 10, "MELEE": 20},
+        "works": {"Seeding": 1, "Handcraft": 1, "Deforest": 1, "Mining": 1},
+    },
+    "WorldTree_Hunter_MissileLauncher_test": {
+        "name": "World Tree Missile Gunner (test)",
+        "stats": {"HP": 100, "ATK": 10, "DEF": 50, "MELEE": 100},
+        "works": {"Handcraft": 1, "Deforest": 1, "Mining": 1, "Cool": 1},
+    },
+}
+for arena_index in range(1, 21):
+    SUPPLEMENTAL_EXPERIMENTAL_HUMANS[f"Arena_Legend_{arena_index}"] = {
+        "name": f"Arena Legend {arena_index}",
+        "stats": {"HP": 100, "ATK": 100, "DEF": 50, "MELEE": 20},
+        "works": {"Handcraft": 1, "Mining": 1, "Transport": 1},
+    }
+
 # These are intentionally not imported. They are aliases, quest duplicates, or
 # individual raid components that should not be selectable as complete Pals.
 EXCLUDED_PAL_IDS = {
@@ -151,6 +174,35 @@ def convert_pal(key: str, raw: dict, localizations: dict[str, dict]) -> dict:
         f"EPalWazaID::{attack}": level
         for attack, level in raw.get("skill_set", {}).items()
     }
+
+
+def convert_supplemental_human(key: str, raw: dict) -> dict:
+    stats = {
+        "HP": raw["stats"]["HP"],
+        "ATK": raw["stats"]["ATK"],
+        "DEF": raw["stats"]["DEF"],
+        "MELEE": raw["stats"]["MELEE"],
+        "CRAFTSPEED": 100,
+        "FOOD": 100,
+    }
+    works = {
+        editor_name: raw.get("works", {}).get(reference_name, 0)
+        for reference_name, editor_name in WORK_SUITABILITY_MAP.items()
+    }
+    return {
+        "InternalName": key,
+        "Elements": [],
+        "Attacks": {"EPalWazaID::Human_Punch": 1},
+        "Human": True,
+        "I18n": {
+            locale: raw["name"] for locale in ("en", "zh-CN", "ja", "fr")
+        },
+        "Stats": stats,
+        "SortingKey": {"paldeck": ""},
+        "Suitabilities": works,
+        "HasIcon": False,
+        "Experimental": True,
+    }
     return {
         "InternalName": key,
         "Elements": [
@@ -198,6 +250,14 @@ def main() -> None:
     for key in missing_humans:
         humans[key] = convert_human(key, reference[key], localizations)
 
+    supplemental_humans = sorted(
+        key for key in SUPPLEMENTAL_EXPERIMENTAL_HUMANS if key not in humans
+    )
+    for key in supplemental_humans:
+        humans[key] = convert_supplemental_human(
+            key, SUPPLEMENTAL_EXPERIMENTAL_HUMANS[key]
+        )
+
     added_pals = []
     for key in EXPERIMENTAL_PAL_IDS:
         if key not in pals:
@@ -212,11 +272,12 @@ def main() -> None:
 
     write_json(args.human_output, humans)
     write_json(args.pal_output, pals)
+    added_humans = missing_humans + supplemental_humans
     experimental_humans = sum(
-        bool(humans[key].get("Experimental")) for key in missing_humans
+        bool(humans[key].get("Experimental")) for key in added_humans
     )
     print(
-        f"Added {len(missing_humans)} humans "
+        f"Added {len(added_humans)} humans "
         f"({experimental_humans} experimental) and {len(added_pals)} experimental Pals"
     )
 

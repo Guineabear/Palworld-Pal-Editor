@@ -17,11 +17,12 @@ A community-maintained Windows save editor updated and tested for **Palworld 1.0
 
 - Opens Steam local saves and Steam dedicated-server world folders.
 - Reads the newer Oodle-compressed `PlM` saves and writes game-compatible `PlZ` saves.
+- Supports Palworld 1.0 recovery-party timestamps stored as signed 64-bit map values.
 - Supports the revised Palworld 1.0 guild-role and permission save layout.
 - Edits Pal level, experience, rank, souls, IVs, work suitability, passives, active skills, and more.
 - Supports up to six active passive skills. Palworld applies slots five and six but only displays the first four in its Pal details screen.
 - Supports level 85, friendship level 10, soul enhancement level 20, and work suitability up to level 10.
-- Includes refreshed 1.0 data: 704 Pal IDs, 411 human NPC IDs, 384 active skills, 420 passive skills, and the 1.0 experience curve.
+- Includes refreshed 1.0 data: 704 Pal IDs, 433 human NPC IDs, 384 active skills, 420 passive skills, and the 1.0 experience curve.
 - Edits player technology points, ancient technology points, unlocked recipes, and fast-travel points.
 - Makes timestamped backups before writing changes.
 
@@ -47,6 +48,7 @@ This fork has been checked with:
 - Current merchant variants loading on a dedicated server with working buy and sell interactions.
 - The production web interface and packaged Windows executable.
 - Real Palworld 1.0 saves using the full `PlM → PlZ → reload` round trip.
+- A reported 93 MB decompressed dedicated-server save with signed 64-bit recovery timestamps, including a complete save-and-reopen round trip.
 - A dedicated server successfully loading saves written by the editor.
 - Six-passive testing on an ordinary Jetragon: `Immortality` produced the exact expected in-game Attack increase from both slot five and slot six while remaining hidden on the Pal details screen.
 - Python compilation and the frontend production build.
