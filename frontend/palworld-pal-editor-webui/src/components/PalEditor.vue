@@ -24,7 +24,7 @@ function formatString(input) {
 function filterInvalid(list) {
   return list.filter(item => {
     if (palStore.HIDE_INVALID_OPTIONS) {
-      return !(item.Invalid || item.IsHuman)
+      return !(item.Invalid || item.Experimental || item.IsHuman)
     }
     return true
   })
@@ -95,7 +95,7 @@ const suitabilityIconSrc = key => {
           <select class="selector" name="CharacterID" v-model="palStore.SELECTED_PAL_DATA.DataAccessKey">
             <option class="" v-for="pal in filterInvalid(palStore.PAL_STATIC_DATA_LIST)" :value="pal.InternalName"
               :key="pal.InternalName" :title="pal.InternalName"> {{ `
-              ${pal.Invalid || pal.IsHuman ? '⚠️' : ""}
+              ${pal.Experimental ? `🧪 ${palStore.getTranslatedText("Editor_Experimental")}` : pal.Invalid || pal.IsHuman ? '⚠️' : ""}
               ${formatString(pal.SortingKey) || ""}
               ${palStore.displayPalElement(pal.InternalName)}
               ${pal.I18n}${palStore.HIDE_INVALID_OPTIONS ? '' : ` | ${pal.InternalName}`}`

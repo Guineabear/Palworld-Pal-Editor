@@ -60,6 +60,7 @@ export default {
     Editor_Condenser: "AMÉLIORATION DU CONDENSEUR",
     Editor_Condenser_Rank: "Rang : ",
     Editor_Passive_Skills: "COMPÉTENCES PASSIVES",
+    Editor_Experimental: "EXPÉRIMENTAL",
     Editor_Select_Skill: "Ajouter des compétences",
     Editor_Equipped_Skills: "COMPÉTENCES ACTIVES ÉQUIPÉES",
     Editor_Skill_ATK: "Attaque : ",

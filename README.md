@@ -19,7 +19,7 @@ A community-maintained Windows save editor updated and tested for **Palworld 1.0
 - Reads the newer Oodle-compressed `PlM` saves and writes game-compatible `PlZ` saves.
 - Edits Pal level, experience, rank, souls, IVs, work suitability, passives, active skills, and more.
 - Supports level 85, friendship level 10, soul enhancement level 20, and the expanded work-suitability range.
-- Includes refreshed 1.0 data: 702 Pal IDs, 384 active skills, 420 passive skills, and the 1.0 experience curve.
+- Includes refreshed 1.0 data: 704 Pal IDs, 411 human NPC IDs, 384 active skills, 420 passive skills, and the 1.0 experience curve.
 - Edits player technology points, ancient technology points, unlocked recipes, and fast-travel points.
 - Makes timestamped backups before writing changes.
 
@@ -42,6 +42,7 @@ Dedicated: ...\PalServer\Pal\Saved\SaveGames\0\<WorldID>
 
 This fork has been checked with:
 
+- Current merchant variants loading on a dedicated server with working buy and sell interactions.
 - The production web interface and packaged Windows executable.
 - Real Palworld 1.0 saves using the full `PlM → PlZ → reload` round trip.
 - A dedicated server successfully loading saves written by the editor.
@@ -51,6 +52,7 @@ This fork has been checked with:
 
 - Steam-format saves are supported. Xbox/Game Pass save conversion is not included.
 - Direct editing of `GlobalPalStorage.sav` is not exposed in the interface.
+- Combat-only, drone, reward, and quest NPCs plus unreleased Pals are marked **Experimental** and hidden unless cheat options are shown.
 - This is an unofficial community tool. Back up your world before every editing session.
 
 Found a problem? [Open an issue](https://github.com/Guineabear/Palworld-Pal-Editor/issues) and include the editor version, whether the save is local or dedicated, and the error message. Do not upload private save files publicly.

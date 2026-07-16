@@ -12438,5 +12438,4046 @@
             "EPalWorkSuitability::MonsterFarm": 0
         },
         "HasIcon": false
+    },
+    "BOSS_Hunter_Fat_GatlingGun_Quest_StrongOldMan": {
+        "InternalName": "BOSS_Hunter_Fat_GatlingGun_Quest_StrongOldMan",
+        "Elements": [],
+        "Attacks": {
+            "EPalWazaID::Human_Punch": 1
+        },
+        "Human": true,
+        "I18n": {
+            "en": "Elder",
+            "zh-CN": "通缉犯 埃尔达",
+            "ja": "Elder",
+            "fr": "Recherché : Elder"
+        },
+        "Stats": {
+            "HP": 100,
+            "ATK": 50,
+            "DEF": 50,
+            "MELEE": 100,
+            "CRAFTSPEED": 100,
+            "FOOD": 100
+        },
+        "SortingKey": {
+            "paldeck": ""
+        },
+        "Suitabilities": {
+            "EPalWorkSuitability::EmitFlame": 0,
+            "EPalWorkSuitability::Watering": 0,
+            "EPalWorkSuitability::Seeding": 0,
+            "EPalWorkSuitability::GenerateElectricity": 0,
+            "EPalWorkSuitability::Handcraft": 1,
+            "EPalWorkSuitability::Collection": 0,
+            "EPalWorkSuitability::Deforest": 1,
+            "EPalWorkSuitability::Mining": 1,
+            "EPalWorkSuitability::ProductMedicine": 0,
+            "EPalWorkSuitability::Cool": 0,
+            "EPalWorkSuitability::Transport": 3,
+            "EPalWorkSuitability::MonsterFarm": 0
+        },
+        "HasIcon": false,
+        "Experimental": true
+    },
+    "Believer_Fat_Cane_Tower": {
+        "InternalName": "Believer_Fat_Cane_Tower",
+        "Elements": [],
+        "Attacks": {
+            "EPalWazaID::Human_Punch": 1
+        },
+        "Human": true,
+        "I18n": {
+            "en": "Free Pal Alliance Judicator",
+            "zh-CN": "帕鲁保护团体 审判官",
+            "ja": "Free Pal Alliance Judicator",
+            "fr": "Ligue pour la Protection des Pals - Juge"
+        },
+        "Stats": {
+            "HP": 100,
+            "ATK": 100,
+            "DEF": 50,
+            "MELEE": 100,
+            "CRAFTSPEED": 100,
+            "FOOD": 100
+        },
+        "SortingKey": {
+            "paldeck": ""
+        },
+        "Suitabilities": {
+            "EPalWorkSuitability::EmitFlame": 0,
+            "EPalWorkSuitability::Watering": 0,
+            "EPalWorkSuitability::Seeding": 0,
+            "EPalWorkSuitability::GenerateElectricity": 0,
+            "EPalWorkSuitability::Handcraft": 1,
+            "EPalWorkSuitability::Collection": 3,
+            "EPalWorkSuitability::Deforest": 2,
+            "EPalWorkSuitability::Mining": 1,
+            "EPalWorkSuitability::ProductMedicine": 0,
+            "EPalWorkSuitability::Cool": 0,
+            "EPalWorkSuitability::Transport": 0,
+            "EPalWorkSuitability::MonsterFarm": 0
+        },
+        "HasIcon": false,
+        "Experimental": true
+    },
+    "CaravanLeader04": {
+        "InternalName": "CaravanLeader04",
+        "Elements": [],
+        "Attacks": {
+            "EPalWazaID::Human_Punch": 1
+        },
+        "Human": true,
+        "I18n": {
+            "en": "Caravan Leader",
+            "zh-CN": "流民商队长",
+            "ja": "Caravan Leader",
+            "fr": "Capitaine de Caravane"
+        },
+        "Stats": {
+            "HP": 50,
+            "ATK": 100,
+            "DEF": 50,
+            "MELEE": 100,
+            "CRAFTSPEED": 100,
+            "FOOD": 100
+        },
+        "SortingKey": {
+            "paldeck": ""
+        },
+        "Suitabilities": {
+            "EPalWorkSuitability::EmitFlame": 0,
+            "EPalWorkSuitability::Watering": 0,
+            "EPalWorkSuitability::Seeding": 0,
+            "EPalWorkSuitability::GenerateElectricity": 0,
+            "EPalWorkSuitability::Handcraft": 1,
+            "EPalWorkSuitability::Collection": 0,
+            "EPalWorkSuitability::Deforest": 1,
+            "EPalWorkSuitability::Mining": 1,
+            "EPalWorkSuitability::ProductMedicine": 0,
+            "EPalWorkSuitability::Cool": 0,
+            "EPalWorkSuitability::Transport": 3,
+            "EPalWorkSuitability::MonsterFarm": 0
+        },
+        "HasIcon": false
+    },
+    "Female_DTairikuPeople01_v01": {
+        "InternalName": "Female_DTairikuPeople01_v01",
+        "Elements": [],
+        "Attacks": {
+            "EPalWazaID::Human_Punch": 1
+        },
+        "Human": true,
+        "I18n": {
+            "en": "Islander",
+            "zh-CN": "岛民",
+            "ja": "Islander",
+            "fr": "Habitant de l'Île"
+        },
+        "Stats": {
+            "HP": 20,
+            "ATK": 50,
+            "DEF": 10,
+            "MELEE": 100,
+            "CRAFTSPEED": 100,
+            "FOOD": 100
+        },
+        "SortingKey": {
+            "paldeck": ""
+        },
+        "Suitabilities": {
+            "EPalWorkSuitability::EmitFlame": 0,
+            "EPalWorkSuitability::Watering": 0,
+            "EPalWorkSuitability::Seeding": 1,
+            "EPalWorkSuitability::GenerateElectricity": 0,
+            "EPalWorkSuitability::Handcraft": 2,
+            "EPalWorkSuitability::Collection": 0,
+            "EPalWorkSuitability::Deforest": 2,
+            "EPalWorkSuitability::Mining": 1,
+            "EPalWorkSuitability::ProductMedicine": 0,
+            "EPalWorkSuitability::Cool": 0,
+            "EPalWorkSuitability::Transport": 0,
+            "EPalWorkSuitability::MonsterFarm": 0
+        },
+        "HasIcon": false
+    },
+    "Female_Farmer01_v05": {
+        "InternalName": "Female_Farmer01_v05",
+        "Elements": [],
+        "Attacks": {
+            "EPalWazaID::Human_Punch": 1
+        },
+        "Human": true,
+        "I18n": {
+            "en": "Islander",
+            "zh-CN": "岛民",
+            "ja": "Islander",
+            "fr": "Habitant de l'Île"
+        },
+        "Stats": {
+            "HP": 20,
+            "ATK": 50,
+            "DEF": 10,
+            "MELEE": 100,
+            "CRAFTSPEED": 100,
+            "FOOD": 100
+        },
+        "SortingKey": {
+            "paldeck": ""
+        },
+        "Suitabilities": {
+            "EPalWorkSuitability::EmitFlame": 0,
+            "EPalWorkSuitability::Watering": 0,
+            "EPalWorkSuitability::Seeding": 2,
+            "EPalWorkSuitability::GenerateElectricity": 0,
+            "EPalWorkSuitability::Handcraft": 1,
+            "EPalWorkSuitability::Collection": 0,
+            "EPalWorkSuitability::Deforest": 1,
+            "EPalWorkSuitability::Mining": 1,
+            "EPalWorkSuitability::ProductMedicine": 0,
+            "EPalWorkSuitability::Cool": 0,
+            "EPalWorkSuitability::Transport": 0,
+            "EPalWorkSuitability::MonsterFarm": 0
+        },
+        "HasIcon": false
+    },
+    "Female_Kunoichi01": {
+        "InternalName": "Female_Kunoichi01",
+        "Elements": [],
+        "Attacks": {
+            "EPalWazaID::Human_Punch": 1
+        },
+        "Human": true,
+        "I18n": {
+            "en": "Azure Covenant Enforcer",
+            "zh-CN": "苍天的盟约 执行者",
+            "ja": "Azure Covenant Enforcer",
+            "fr": "Alliance Azurée — Exécuteur"
+        },
+        "Stats": {
+            "HP": 100,
+            "ATK": 100,
+            "DEF": 100,
+            "MELEE": 100,
+            "CRAFTSPEED": 100,
+            "FOOD": 100
+        },
+        "SortingKey": {
+            "paldeck": ""
+        },
+        "Suitabilities": {
+            "EPalWorkSuitability::EmitFlame": 0,
+            "EPalWorkSuitability::Watering": 4,
+            "EPalWorkSuitability::Seeding": 1,
+            "EPalWorkSuitability::GenerateElectricity": 0,
+            "EPalWorkSuitability::Handcraft": 3,
+            "EPalWorkSuitability::Collection": 0,
+            "EPalWorkSuitability::Deforest": 1,
+            "EPalWorkSuitability::Mining": 1,
+            "EPalWorkSuitability::ProductMedicine": 0,
+            "EPalWorkSuitability::Cool": 0,
+            "EPalWorkSuitability::Transport": 2,
+            "EPalWorkSuitability::MonsterFarm": 0
+        },
+        "HasIcon": false,
+        "Experimental": true
+    },
+    "Female_Nomad01_v05": {
+        "InternalName": "Female_Nomad01_v05",
+        "Elements": [],
+        "Attacks": {
+            "EPalWazaID::Human_Punch": 1
+        },
+        "Human": true,
+        "I18n": {
+            "en": "Islander",
+            "zh-CN": "岛民",
+            "ja": "Islander",
+            "fr": "Habitant de l'Île"
+        },
+        "Stats": {
+            "HP": 20,
+            "ATK": 50,
+            "DEF": 10,
+            "MELEE": 100,
+            "CRAFTSPEED": 100,
+            "FOOD": 100
+        },
+        "SortingKey": {
+            "paldeck": ""
+        },
+        "Suitabilities": {
+            "EPalWorkSuitability::EmitFlame": 0,
+            "EPalWorkSuitability::Watering": 0,
+            "EPalWorkSuitability::Seeding": 1,
+            "EPalWorkSuitability::GenerateElectricity": 0,
+            "EPalWorkSuitability::Handcraft": 1,
+            "EPalWorkSuitability::Collection": 0,
+            "EPalWorkSuitability::Deforest": 1,
+            "EPalWorkSuitability::Mining": 2,
+            "EPalWorkSuitability::ProductMedicine": 0,
+            "EPalWorkSuitability::Cool": 0,
+            "EPalWorkSuitability::Transport": 0,
+            "EPalWorkSuitability::MonsterFarm": 0
+        },
+        "HasIcon": false
+    },
+    "Female_Ranger01_v05": {
+        "InternalName": "Female_Ranger01_v05",
+        "Elements": [],
+        "Attacks": {
+            "EPalWazaID::Human_Punch": 1
+        },
+        "Human": true,
+        "I18n": {
+            "en": "Islander",
+            "zh-CN": "岛民",
+            "ja": "Islander",
+            "fr": "Habitant de l'Île"
+        },
+        "Stats": {
+            "HP": 50,
+            "ATK": 100,
+            "DEF": 50,
+            "MELEE": 100,
+            "CRAFTSPEED": 100,
+            "FOOD": 100
+        },
+        "SortingKey": {
+            "paldeck": ""
+        },
+        "Suitabilities": {
+            "EPalWorkSuitability::EmitFlame": 0,
+            "EPalWorkSuitability::Watering": 0,
+            "EPalWorkSuitability::Seeding": 1,
+            "EPalWorkSuitability::GenerateElectricity": 0,
+            "EPalWorkSuitability::Handcraft": 2,
+            "EPalWorkSuitability::Collection": 0,
+            "EPalWorkSuitability::Deforest": 1,
+            "EPalWorkSuitability::Mining": 1,
+            "EPalWorkSuitability::ProductMedicine": 0,
+            "EPalWorkSuitability::Cool": 0,
+            "EPalWorkSuitability::Transport": 0,
+            "EPalWorkSuitability::MonsterFarm": 0
+        },
+        "HasIcon": false
+    },
+    "Female_SakurajimaPeople01": {
+        "InternalName": "Female_SakurajimaPeople01",
+        "Elements": [],
+        "Attacks": {
+            "EPalWazaID::Human_Punch": 1
+        },
+        "Human": true,
+        "I18n": {
+            "en": "Islander",
+            "zh-CN": "岛民",
+            "ja": "Islander",
+            "fr": "Habitant de l'Île"
+        },
+        "Stats": {
+            "HP": 20,
+            "ATK": 50,
+            "DEF": 10,
+            "MELEE": 100,
+            "CRAFTSPEED": 100,
+            "FOOD": 100
+        },
+        "SortingKey": {
+            "paldeck": ""
+        },
+        "Suitabilities": {
+            "EPalWorkSuitability::EmitFlame": 0,
+            "EPalWorkSuitability::Watering": 0,
+            "EPalWorkSuitability::Seeding": 1,
+            "EPalWorkSuitability::GenerateElectricity": 0,
+            "EPalWorkSuitability::Handcraft": 3,
+            "EPalWorkSuitability::Collection": 0,
+            "EPalWorkSuitability::Deforest": 1,
+            "EPalWorkSuitability::Mining": 1,
+            "EPalWorkSuitability::ProductMedicine": 0,
+            "EPalWorkSuitability::Cool": 0,
+            "EPalWorkSuitability::Transport": 3,
+            "EPalWorkSuitability::MonsterFarm": 0
+        },
+        "HasIcon": false
+    },
+    "Female_SnowPeople01": {
+        "InternalName": "Female_SnowPeople01",
+        "Elements": [],
+        "Attacks": {
+            "EPalWazaID::Human_Punch": 1
+        },
+        "Human": true,
+        "I18n": {
+            "en": "Islander",
+            "zh-CN": "岛民",
+            "ja": "Islander",
+            "fr": "Habitant de l'Île"
+        },
+        "Stats": {
+            "HP": 20,
+            "ATK": 50,
+            "DEF": 10,
+            "MELEE": 100,
+            "CRAFTSPEED": 100,
+            "FOOD": 100
+        },
+        "SortingKey": {
+            "paldeck": ""
+        },
+        "Suitabilities": {
+            "EPalWorkSuitability::EmitFlame": 0,
+            "EPalWorkSuitability::Watering": 0,
+            "EPalWorkSuitability::Seeding": 1,
+            "EPalWorkSuitability::GenerateElectricity": 0,
+            "EPalWorkSuitability::Handcraft": 1,
+            "EPalWorkSuitability::Collection": 0,
+            "EPalWorkSuitability::Deforest": 1,
+            "EPalWorkSuitability::Mining": 1,
+            "EPalWorkSuitability::ProductMedicine": 0,
+            "EPalWorkSuitability::Cool": 3,
+            "EPalWorkSuitability::Transport": 0,
+            "EPalWorkSuitability::MonsterFarm": 0
+        },
+        "HasIcon": false
+    },
+    "Female_SorajimaPeople01": {
+        "InternalName": "Female_SorajimaPeople01",
+        "Elements": [],
+        "Attacks": {
+            "EPalWazaID::Human_Punch": 1
+        },
+        "Human": true,
+        "I18n": {
+            "en": "Islander",
+            "zh-CN": "岛民",
+            "ja": "Islander",
+            "fr": "Habitant de l'Île"
+        },
+        "Stats": {
+            "HP": 20,
+            "ATK": 50,
+            "DEF": 10,
+            "MELEE": 100,
+            "CRAFTSPEED": 100,
+            "FOOD": 100
+        },
+        "SortingKey": {
+            "paldeck": ""
+        },
+        "Suitabilities": {
+            "EPalWorkSuitability::EmitFlame": 0,
+            "EPalWorkSuitability::Watering": 3,
+            "EPalWorkSuitability::Seeding": 0,
+            "EPalWorkSuitability::GenerateElectricity": 0,
+            "EPalWorkSuitability::Handcraft": 3,
+            "EPalWorkSuitability::Collection": 2,
+            "EPalWorkSuitability::Deforest": 0,
+            "EPalWorkSuitability::Mining": 1,
+            "EPalWorkSuitability::ProductMedicine": 0,
+            "EPalWorkSuitability::Cool": 0,
+            "EPalWorkSuitability::Transport": 0,
+            "EPalWorkSuitability::MonsterFarm": 0
+        },
+        "HasIcon": false
+    },
+    "Female_SurveyGirl01": {
+        "InternalName": "Female_SurveyGirl01",
+        "Elements": [],
+        "Attacks": {
+            "EPalWazaID::Human_Punch": 1
+        },
+        "Human": true,
+        "I18n": {
+            "en": "Fia",
+            "zh-CN": "菲亚",
+            "ja": "Fia",
+            "fr": "Fia"
+        },
+        "Stats": {
+            "HP": 20,
+            "ATK": 50,
+            "DEF": 10,
+            "MELEE": 100,
+            "CRAFTSPEED": 100,
+            "FOOD": 100
+        },
+        "SortingKey": {
+            "paldeck": ""
+        },
+        "Suitabilities": {
+            "EPalWorkSuitability::EmitFlame": 0,
+            "EPalWorkSuitability::Watering": 0,
+            "EPalWorkSuitability::Seeding": 0,
+            "EPalWorkSuitability::GenerateElectricity": 0,
+            "EPalWorkSuitability::Handcraft": 1,
+            "EPalWorkSuitability::Collection": 0,
+            "EPalWorkSuitability::Deforest": 0,
+            "EPalWorkSuitability::Mining": 1,
+            "EPalWorkSuitability::ProductMedicine": 0,
+            "EPalWorkSuitability::Cool": 0,
+            "EPalWorkSuitability::Transport": 1,
+            "EPalWorkSuitability::MonsterFarm": 0
+        },
+        "HasIcon": false
+    },
+    "Female_SurveyGirl02": {
+        "InternalName": "Female_SurveyGirl02",
+        "Elements": [],
+        "Attacks": {
+            "EPalWazaID::Human_Punch": 1
+        },
+        "Human": true,
+        "I18n": {
+            "en": "Fia",
+            "zh-CN": "菲亚",
+            "ja": "Fia",
+            "fr": "Fia"
+        },
+        "Stats": {
+            "HP": 20,
+            "ATK": 50,
+            "DEF": 20,
+            "MELEE": 100,
+            "CRAFTSPEED": 100,
+            "FOOD": 100
+        },
+        "SortingKey": {
+            "paldeck": ""
+        },
+        "Suitabilities": {
+            "EPalWorkSuitability::EmitFlame": 0,
+            "EPalWorkSuitability::Watering": 0,
+            "EPalWorkSuitability::Seeding": 0,
+            "EPalWorkSuitability::GenerateElectricity": 0,
+            "EPalWorkSuitability::Handcraft": 1,
+            "EPalWorkSuitability::Collection": 0,
+            "EPalWorkSuitability::Deforest": 0,
+            "EPalWorkSuitability::Mining": 1,
+            "EPalWorkSuitability::ProductMedicine": 0,
+            "EPalWorkSuitability::Cool": 0,
+            "EPalWorkSuitability::Transport": 1,
+            "EPalWorkSuitability::MonsterFarm": 0
+        },
+        "HasIcon": false
+    },
+    "Female_SurveyGirl03": {
+        "InternalName": "Female_SurveyGirl03",
+        "Elements": [],
+        "Attacks": {
+            "EPalWazaID::Human_Punch": 1
+        },
+        "Human": true,
+        "I18n": {
+            "en": "Fia",
+            "zh-CN": "菲亚",
+            "ja": "Fia",
+            "fr": "Fia"
+        },
+        "Stats": {
+            "HP": 20,
+            "ATK": 50,
+            "DEF": 40,
+            "MELEE": 100,
+            "CRAFTSPEED": 100,
+            "FOOD": 100
+        },
+        "SortingKey": {
+            "paldeck": ""
+        },
+        "Suitabilities": {
+            "EPalWorkSuitability::EmitFlame": 0,
+            "EPalWorkSuitability::Watering": 0,
+            "EPalWorkSuitability::Seeding": 0,
+            "EPalWorkSuitability::GenerateElectricity": 0,
+            "EPalWorkSuitability::Handcraft": 1,
+            "EPalWorkSuitability::Collection": 0,
+            "EPalWorkSuitability::Deforest": 0,
+            "EPalWorkSuitability::Mining": 1,
+            "EPalWorkSuitability::ProductMedicine": 0,
+            "EPalWorkSuitability::Cool": 0,
+            "EPalWorkSuitability::Transport": 1,
+            "EPalWorkSuitability::MonsterFarm": 0
+        },
+        "HasIcon": false
+    },
+    "Female_SurveyGirl04": {
+        "InternalName": "Female_SurveyGirl04",
+        "Elements": [],
+        "Attacks": {
+            "EPalWazaID::Human_Punch": 1
+        },
+        "Human": true,
+        "I18n": {
+            "en": "Fia",
+            "zh-CN": "菲亚",
+            "ja": "Fia",
+            "fr": "Fia"
+        },
+        "Stats": {
+            "HP": 20,
+            "ATK": 50,
+            "DEF": 40,
+            "MELEE": 100,
+            "CRAFTSPEED": 100,
+            "FOOD": 100
+        },
+        "SortingKey": {
+            "paldeck": ""
+        },
+        "Suitabilities": {
+            "EPalWorkSuitability::EmitFlame": 0,
+            "EPalWorkSuitability::Watering": 0,
+            "EPalWorkSuitability::Seeding": 0,
+            "EPalWorkSuitability::GenerateElectricity": 0,
+            "EPalWorkSuitability::Handcraft": 1,
+            "EPalWorkSuitability::Collection": 0,
+            "EPalWorkSuitability::Deforest": 0,
+            "EPalWorkSuitability::Mining": 1,
+            "EPalWorkSuitability::ProductMedicine": 0,
+            "EPalWorkSuitability::Cool": 0,
+            "EPalWorkSuitability::Transport": 1,
+            "EPalWorkSuitability::MonsterFarm": 0
+        },
+        "HasIcon": false
+    },
+    "Female_SurveyWoman01": {
+        "InternalName": "Female_SurveyWoman01",
+        "Elements": [],
+        "Attacks": {
+            "EPalWazaID::Human_Punch": 1
+        },
+        "Human": true,
+        "I18n": {
+            "en": "Carla",
+            "zh-CN": "卡拉",
+            "ja": "Carla",
+            "fr": "Karla"
+        },
+        "Stats": {
+            "HP": 40,
+            "ATK": 60,
+            "DEF": 20,
+            "MELEE": 100,
+            "CRAFTSPEED": 100,
+            "FOOD": 100
+        },
+        "SortingKey": {
+            "paldeck": ""
+        },
+        "Suitabilities": {
+            "EPalWorkSuitability::EmitFlame": 0,
+            "EPalWorkSuitability::Watering": 0,
+            "EPalWorkSuitability::Seeding": 0,
+            "EPalWorkSuitability::GenerateElectricity": 0,
+            "EPalWorkSuitability::Handcraft": 1,
+            "EPalWorkSuitability::Collection": 0,
+            "EPalWorkSuitability::Deforest": 0,
+            "EPalWorkSuitability::Mining": 1,
+            "EPalWorkSuitability::ProductMedicine": 0,
+            "EPalWorkSuitability::Cool": 0,
+            "EPalWorkSuitability::Transport": 1,
+            "EPalWorkSuitability::MonsterFarm": 0
+        },
+        "HasIcon": false
+    },
+    "Female_SurveyWoman02": {
+        "InternalName": "Female_SurveyWoman02",
+        "Elements": [],
+        "Attacks": {
+            "EPalWazaID::Human_Punch": 1
+        },
+        "Human": true,
+        "I18n": {
+            "en": "Carla",
+            "zh-CN": "卡拉",
+            "ja": "Carla",
+            "fr": "Karla"
+        },
+        "Stats": {
+            "HP": 40,
+            "ATK": 60,
+            "DEF": 40,
+            "MELEE": 100,
+            "CRAFTSPEED": 100,
+            "FOOD": 100
+        },
+        "SortingKey": {
+            "paldeck": ""
+        },
+        "Suitabilities": {
+            "EPalWorkSuitability::EmitFlame": 0,
+            "EPalWorkSuitability::Watering": 0,
+            "EPalWorkSuitability::Seeding": 0,
+            "EPalWorkSuitability::GenerateElectricity": 0,
+            "EPalWorkSuitability::Handcraft": 1,
+            "EPalWorkSuitability::Collection": 0,
+            "EPalWorkSuitability::Deforest": 0,
+            "EPalWorkSuitability::Mining": 1,
+            "EPalWorkSuitability::ProductMedicine": 0,
+            "EPalWorkSuitability::Cool": 0,
+            "EPalWorkSuitability::Transport": 1,
+            "EPalWorkSuitability::MonsterFarm": 0
+        },
+        "HasIcon": false
+    },
+    "Female_TenrakuPeople01": {
+        "InternalName": "Female_TenrakuPeople01",
+        "Elements": [],
+        "Attacks": {
+            "EPalWazaID::Human_Punch": 1
+        },
+        "Human": true,
+        "I18n": {
+            "en": "Islander",
+            "zh-CN": "岛民",
+            "ja": "Islander",
+            "fr": "Habitant de l'Île"
+        },
+        "Stats": {
+            "HP": 20,
+            "ATK": 50,
+            "DEF": 10,
+            "MELEE": 100,
+            "CRAFTSPEED": 100,
+            "FOOD": 100
+        },
+        "SortingKey": {
+            "paldeck": ""
+        },
+        "Suitabilities": {
+            "EPalWorkSuitability::EmitFlame": 0,
+            "EPalWorkSuitability::Watering": 0,
+            "EPalWorkSuitability::Seeding": 1,
+            "EPalWorkSuitability::GenerateElectricity": 0,
+            "EPalWorkSuitability::Handcraft": 2,
+            "EPalWorkSuitability::Collection": 0,
+            "EPalWorkSuitability::Deforest": 1,
+            "EPalWorkSuitability::Mining": 1,
+            "EPalWorkSuitability::ProductMedicine": 3,
+            "EPalWorkSuitability::Cool": 0,
+            "EPalWorkSuitability::Transport": 0,
+            "EPalWorkSuitability::MonsterFarm": 0
+        },
+        "HasIcon": false
+    },
+    "Female_WorldTreePeople01": {
+        "InternalName": "Female_WorldTreePeople01",
+        "Elements": [],
+        "Attacks": {
+            "EPalWazaID::Human_Punch": 1
+        },
+        "Human": true,
+        "I18n": {
+            "en": "Islander",
+            "zh-CN": "岛民",
+            "ja": "Islander",
+            "fr": "Habitant de l'Île"
+        },
+        "Stats": {
+            "HP": 100,
+            "ATK": 100,
+            "DEF": 100,
+            "MELEE": 100,
+            "CRAFTSPEED": 100,
+            "FOOD": 100
+        },
+        "SortingKey": {
+            "paldeck": ""
+        },
+        "Suitabilities": {
+            "EPalWorkSuitability::EmitFlame": 0,
+            "EPalWorkSuitability::Watering": 0,
+            "EPalWorkSuitability::Seeding": 5,
+            "EPalWorkSuitability::GenerateElectricity": 0,
+            "EPalWorkSuitability::Handcraft": 1,
+            "EPalWorkSuitability::Collection": 3,
+            "EPalWorkSuitability::Deforest": 2,
+            "EPalWorkSuitability::Mining": 0,
+            "EPalWorkSuitability::ProductMedicine": 0,
+            "EPalWorkSuitability::Cool": 0,
+            "EPalWorkSuitability::Transport": 0,
+            "EPalWorkSuitability::MonsterFarm": 0
+        },
+        "HasIcon": false
+    },
+    "FireCult_GrenadeLauncher": {
+        "InternalName": "FireCult_GrenadeLauncher",
+        "Elements": [],
+        "Attacks": {
+            "EPalWazaID::Human_Punch": 1
+        },
+        "Human": true,
+        "I18n": {
+            "en": "Brothers of the Eternal Pyre Martyr",
+            "zh-CN": "永炎同心会 殉教者",
+            "ja": "Brothers of the Eternal Pyre Martyr",
+            "fr": "Confrérie des Flammes Éternelles - Martyre"
+        },
+        "Stats": {
+            "HP": 50,
+            "ATK": 100,
+            "DEF": 50,
+            "MELEE": 100,
+            "CRAFTSPEED": 100,
+            "FOOD": 100
+        },
+        "SortingKey": {
+            "paldeck": ""
+        },
+        "Suitabilities": {
+            "EPalWorkSuitability::EmitFlame": 2,
+            "EPalWorkSuitability::Watering": 0,
+            "EPalWorkSuitability::Seeding": 0,
+            "EPalWorkSuitability::GenerateElectricity": 0,
+            "EPalWorkSuitability::Handcraft": 2,
+            "EPalWorkSuitability::Collection": 0,
+            "EPalWorkSuitability::Deforest": 1,
+            "EPalWorkSuitability::Mining": 1,
+            "EPalWorkSuitability::ProductMedicine": 0,
+            "EPalWorkSuitability::Cool": 0,
+            "EPalWorkSuitability::Transport": 0,
+            "EPalWorkSuitability::MonsterFarm": 0
+        },
+        "HasIcon": false,
+        "Experimental": true
+    },
+    "FireCult_MissileLauncher": {
+        "InternalName": "FireCult_MissileLauncher",
+        "Elements": [],
+        "Attacks": {
+            "EPalWazaID::Human_Punch": 1
+        },
+        "Human": true,
+        "I18n": {
+            "en": "Brothers of the Eternal Pyre Martyr",
+            "zh-CN": "永炎同心会 殉教者",
+            "ja": "Brothers of the Eternal Pyre Martyr",
+            "fr": "Confrérie des Flammes Éternelles - Martyre"
+        },
+        "Stats": {
+            "HP": 50,
+            "ATK": 100,
+            "DEF": 50,
+            "MELEE": 100,
+            "CRAFTSPEED": 100,
+            "FOOD": 100
+        },
+        "SortingKey": {
+            "paldeck": ""
+        },
+        "Suitabilities": {
+            "EPalWorkSuitability::EmitFlame": 2,
+            "EPalWorkSuitability::Watering": 0,
+            "EPalWorkSuitability::Seeding": 0,
+            "EPalWorkSuitability::GenerateElectricity": 0,
+            "EPalWorkSuitability::Handcraft": 2,
+            "EPalWorkSuitability::Collection": 0,
+            "EPalWorkSuitability::Deforest": 1,
+            "EPalWorkSuitability::Mining": 1,
+            "EPalWorkSuitability::ProductMedicine": 0,
+            "EPalWorkSuitability::Cool": 0,
+            "EPalWorkSuitability::Transport": 0,
+            "EPalWorkSuitability::MonsterFarm": 0
+        },
+        "HasIcon": false,
+        "Experimental": true
+    },
+    "FireCult_RocketLauncher": {
+        "InternalName": "FireCult_RocketLauncher",
+        "Elements": [],
+        "Attacks": {
+            "EPalWazaID::Human_Punch": 1
+        },
+        "Human": true,
+        "I18n": {
+            "en": "Brothers of the Eternal Pyre Martyr",
+            "zh-CN": "永炎同心会 殉教者",
+            "ja": "Brothers of the Eternal Pyre Martyr",
+            "fr": "Confrérie des Flammes Éternelles - Martyre"
+        },
+        "Stats": {
+            "HP": 50,
+            "ATK": 100,
+            "DEF": 50,
+            "MELEE": 100,
+            "CRAFTSPEED": 100,
+            "FOOD": 100
+        },
+        "SortingKey": {
+            "paldeck": ""
+        },
+        "Suitabilities": {
+            "EPalWorkSuitability::EmitFlame": 2,
+            "EPalWorkSuitability::Watering": 0,
+            "EPalWorkSuitability::Seeding": 0,
+            "EPalWorkSuitability::GenerateElectricity": 0,
+            "EPalWorkSuitability::Handcraft": 2,
+            "EPalWorkSuitability::Collection": 0,
+            "EPalWorkSuitability::Deforest": 1,
+            "EPalWorkSuitability::Mining": 1,
+            "EPalWorkSuitability::ProductMedicine": 0,
+            "EPalWorkSuitability::Cool": 0,
+            "EPalWorkSuitability::Transport": 0,
+            "EPalWorkSuitability::MonsterFarm": 0
+        },
+        "HasIcon": false,
+        "Experimental": true
+    },
+    "Hunter_Handgun_Quest_StrongOldMan": {
+        "InternalName": "Hunter_Handgun_Quest_StrongOldMan",
+        "Elements": [],
+        "Attacks": {
+            "EPalWazaID::Human_Punch": 1
+        },
+        "Human": true,
+        "I18n": {
+            "en": "Syndicate Thug",
+            "zh-CN": "盗猎集团 新手",
+            "ja": "Syndicate Thug",
+            "fr": "Braconniers — Nouvelle recrue"
+        },
+        "Stats": {
+            "HP": 50,
+            "ATK": 30,
+            "DEF": 50,
+            "MELEE": 100,
+            "CRAFTSPEED": 100,
+            "FOOD": 100
+        },
+        "SortingKey": {
+            "paldeck": ""
+        },
+        "Suitabilities": {
+            "EPalWorkSuitability::EmitFlame": 0,
+            "EPalWorkSuitability::Watering": 1,
+            "EPalWorkSuitability::Seeding": 0,
+            "EPalWorkSuitability::GenerateElectricity": 0,
+            "EPalWorkSuitability::Handcraft": 1,
+            "EPalWorkSuitability::Collection": 0,
+            "EPalWorkSuitability::Deforest": 1,
+            "EPalWorkSuitability::Mining": 1,
+            "EPalWorkSuitability::ProductMedicine": 0,
+            "EPalWorkSuitability::Cool": 0,
+            "EPalWorkSuitability::Transport": 0,
+            "EPalWorkSuitability::MonsterFarm": 0
+        },
+        "HasIcon": false,
+        "Experimental": true
+    },
+    "Hunter_Rifle_Tower": {
+        "InternalName": "Hunter_Rifle_Tower",
+        "Elements": [],
+        "Attacks": {
+            "EPalWazaID::Human_Punch": 1
+        },
+        "Human": true,
+        "I18n": {
+            "en": "Syndicate Gunner",
+            "zh-CN": "盗猎集团 射手",
+            "ja": "Syndicate Gunner",
+            "fr": "Braconniers — Tireur"
+        },
+        "Stats": {
+            "HP": 80,
+            "ATK": 50,
+            "DEF": 50,
+            "MELEE": 100,
+            "CRAFTSPEED": 100,
+            "FOOD": 100
+        },
+        "SortingKey": {
+            "paldeck": ""
+        },
+        "Suitabilities": {
+            "EPalWorkSuitability::EmitFlame": 0,
+            "EPalWorkSuitability::Watering": 1,
+            "EPalWorkSuitability::Seeding": 0,
+            "EPalWorkSuitability::GenerateElectricity": 0,
+            "EPalWorkSuitability::Handcraft": 1,
+            "EPalWorkSuitability::Collection": 0,
+            "EPalWorkSuitability::Deforest": 1,
+            "EPalWorkSuitability::Mining": 1,
+            "EPalWorkSuitability::ProductMedicine": 0,
+            "EPalWorkSuitability::Cool": 0,
+            "EPalWorkSuitability::Transport": 0,
+            "EPalWorkSuitability::MonsterFarm": 0
+        },
+        "HasIcon": false,
+        "Experimental": true
+    },
+    "Hunter_RocketLauncher_Quest_StrongOldMan": {
+        "InternalName": "Hunter_RocketLauncher_Quest_StrongOldMan",
+        "Elements": [],
+        "Attacks": {
+            "EPalWazaID::Human_Punch": 1
+        },
+        "Human": true,
+        "I18n": {
+            "en": "Syndicate Elite",
+            "zh-CN": "盗猎集团 精英",
+            "ja": "Syndicate Elite",
+            "fr": "Braconniers – Élite"
+        },
+        "Stats": {
+            "HP": 50,
+            "ATK": 100,
+            "DEF": 50,
+            "MELEE": 100,
+            "CRAFTSPEED": 100,
+            "FOOD": 100
+        },
+        "SortingKey": {
+            "paldeck": ""
+        },
+        "Suitabilities": {
+            "EPalWorkSuitability::EmitFlame": 0,
+            "EPalWorkSuitability::Watering": 0,
+            "EPalWorkSuitability::Seeding": 0,
+            "EPalWorkSuitability::GenerateElectricity": 0,
+            "EPalWorkSuitability::Handcraft": 1,
+            "EPalWorkSuitability::Collection": 0,
+            "EPalWorkSuitability::Deforest": 1,
+            "EPalWorkSuitability::Mining": 1,
+            "EPalWorkSuitability::ProductMedicine": 2,
+            "EPalWorkSuitability::Cool": 0,
+            "EPalWorkSuitability::Transport": 0,
+            "EPalWorkSuitability::MonsterFarm": 0
+        },
+        "HasIcon": false,
+        "Experimental": true
+    },
+    "Hunter_Shotgun_Quest_StrongOldMan": {
+        "InternalName": "Hunter_Shotgun_Quest_StrongOldMan",
+        "Elements": [],
+        "Attacks": {
+            "EPalWazaID::Human_Punch": 1
+        },
+        "Human": true,
+        "I18n": {
+            "en": "Syndicate Hunter",
+            "zh-CN": "盗猎集团 猎人",
+            "ja": "Syndicate Hunter",
+            "fr": "Braconniers — Chasseur"
+        },
+        "Stats": {
+            "HP": 50,
+            "ATK": 50,
+            "DEF": 50,
+            "MELEE": 100,
+            "CRAFTSPEED": 100,
+            "FOOD": 100
+        },
+        "SortingKey": {
+            "paldeck": ""
+        },
+        "Suitabilities": {
+            "EPalWorkSuitability::EmitFlame": 0,
+            "EPalWorkSuitability::Watering": 0,
+            "EPalWorkSuitability::Seeding": 0,
+            "EPalWorkSuitability::GenerateElectricity": 0,
+            "EPalWorkSuitability::Handcraft": 1,
+            "EPalWorkSuitability::Collection": 1,
+            "EPalWorkSuitability::Deforest": 1,
+            "EPalWorkSuitability::Mining": 1,
+            "EPalWorkSuitability::ProductMedicine": 0,
+            "EPalWorkSuitability::Cool": 0,
+            "EPalWorkSuitability::Transport": 0,
+            "EPalWorkSuitability::MonsterFarm": 0
+        },
+        "HasIcon": false,
+        "Experimental": true
+    },
+    "Male_Breeder01_v05": {
+        "InternalName": "Male_Breeder01_v05",
+        "Elements": [],
+        "Attacks": {
+            "EPalWazaID::Human_Punch": 1
+        },
+        "Human": true,
+        "I18n": {
+            "en": "Islander",
+            "zh-CN": "岛民",
+            "ja": "Islander",
+            "fr": "Habitant de l'Île"
+        },
+        "Stats": {
+            "HP": 50,
+            "ATK": 100,
+            "DEF": 50,
+            "MELEE": 100,
+            "CRAFTSPEED": 100,
+            "FOOD": 100
+        },
+        "SortingKey": {
+            "paldeck": ""
+        },
+        "Suitabilities": {
+            "EPalWorkSuitability::EmitFlame": 0,
+            "EPalWorkSuitability::Watering": 0,
+            "EPalWorkSuitability::Seeding": 1,
+            "EPalWorkSuitability::GenerateElectricity": 0,
+            "EPalWorkSuitability::Handcraft": 1,
+            "EPalWorkSuitability::Collection": 0,
+            "EPalWorkSuitability::Deforest": 1,
+            "EPalWorkSuitability::Mining": 1,
+            "EPalWorkSuitability::ProductMedicine": 2,
+            "EPalWorkSuitability::Cool": 0,
+            "EPalWorkSuitability::Transport": 0,
+            "EPalWorkSuitability::MonsterFarm": 0
+        },
+        "HasIcon": false
+    },
+    "Male_DTairikuPeople01_v01": {
+        "InternalName": "Male_DTairikuPeople01_v01",
+        "Elements": [],
+        "Attacks": {
+            "EPalWazaID::Human_Punch": 1
+        },
+        "Human": true,
+        "I18n": {
+            "en": "Islander",
+            "zh-CN": "岛民",
+            "ja": "Islander",
+            "fr": "Habitant de l'Île"
+        },
+        "Stats": {
+            "HP": 20,
+            "ATK": 50,
+            "DEF": 10,
+            "MELEE": 100,
+            "CRAFTSPEED": 100,
+            "FOOD": 100
+        },
+        "SortingKey": {
+            "paldeck": ""
+        },
+        "Suitabilities": {
+            "EPalWorkSuitability::EmitFlame": 0,
+            "EPalWorkSuitability::Watering": 0,
+            "EPalWorkSuitability::Seeding": 1,
+            "EPalWorkSuitability::GenerateElectricity": 0,
+            "EPalWorkSuitability::Handcraft": 2,
+            "EPalWorkSuitability::Collection": 0,
+            "EPalWorkSuitability::Deforest": 2,
+            "EPalWorkSuitability::Mining": 1,
+            "EPalWorkSuitability::ProductMedicine": 0,
+            "EPalWorkSuitability::Cool": 0,
+            "EPalWorkSuitability::Transport": 0,
+            "EPalWorkSuitability::MonsterFarm": 0
+        },
+        "HasIcon": false
+    },
+    "Male_DarkTrader01_02": {
+        "InternalName": "Male_DarkTrader01_02",
+        "Elements": [],
+        "Attacks": {
+            "EPalWazaID::Human_Punch": 1
+        },
+        "Human": true,
+        "I18n": {
+            "en": "Black Marketeer",
+            "zh-CN": "黑市商人",
+            "ja": "Black Marketeer",
+            "fr": "Contrebandier"
+        },
+        "Stats": {
+            "HP": 100,
+            "ATK": 100,
+            "DEF": 50,
+            "MELEE": 100,
+            "CRAFTSPEED": 100,
+            "FOOD": 100
+        },
+        "SortingKey": {
+            "paldeck": ""
+        },
+        "Suitabilities": {
+            "EPalWorkSuitability::EmitFlame": 0,
+            "EPalWorkSuitability::Watering": 0,
+            "EPalWorkSuitability::Seeding": 0,
+            "EPalWorkSuitability::GenerateElectricity": 0,
+            "EPalWorkSuitability::Handcraft": 2,
+            "EPalWorkSuitability::Collection": 0,
+            "EPalWorkSuitability::Deforest": 1,
+            "EPalWorkSuitability::Mining": 2,
+            "EPalWorkSuitability::ProductMedicine": 1,
+            "EPalWorkSuitability::Cool": 0,
+            "EPalWorkSuitability::Transport": 2,
+            "EPalWorkSuitability::MonsterFarm": 0
+        },
+        "HasIcon": false
+    },
+    "Male_DarkTrader01_03": {
+        "InternalName": "Male_DarkTrader01_03",
+        "Elements": [],
+        "Attacks": {
+            "EPalWazaID::Human_Punch": 1
+        },
+        "Human": true,
+        "I18n": {
+            "en": "Black Marketeer",
+            "zh-CN": "黑市商人",
+            "ja": "Black Marketeer",
+            "fr": "Contrebandier"
+        },
+        "Stats": {
+            "HP": 100,
+            "ATK": 100,
+            "DEF": 50,
+            "MELEE": 100,
+            "CRAFTSPEED": 100,
+            "FOOD": 100
+        },
+        "SortingKey": {
+            "paldeck": ""
+        },
+        "Suitabilities": {
+            "EPalWorkSuitability::EmitFlame": 0,
+            "EPalWorkSuitability::Watering": 0,
+            "EPalWorkSuitability::Seeding": 0,
+            "EPalWorkSuitability::GenerateElectricity": 0,
+            "EPalWorkSuitability::Handcraft": 2,
+            "EPalWorkSuitability::Collection": 0,
+            "EPalWorkSuitability::Deforest": 1,
+            "EPalWorkSuitability::Mining": 2,
+            "EPalWorkSuitability::ProductMedicine": 1,
+            "EPalWorkSuitability::Cool": 0,
+            "EPalWorkSuitability::Transport": 2,
+            "EPalWorkSuitability::MonsterFarm": 0
+        },
+        "HasIcon": false
+    },
+    "Male_DarkTrader01_04": {
+        "InternalName": "Male_DarkTrader01_04",
+        "Elements": [],
+        "Attacks": {
+            "EPalWazaID::Human_Punch": 1
+        },
+        "Human": true,
+        "I18n": {
+            "en": "Black Marketeer",
+            "zh-CN": "黑市商人",
+            "ja": "Black Marketeer",
+            "fr": "Contrebandier"
+        },
+        "Stats": {
+            "HP": 100,
+            "ATK": 100,
+            "DEF": 50,
+            "MELEE": 100,
+            "CRAFTSPEED": 100,
+            "FOOD": 100
+        },
+        "SortingKey": {
+            "paldeck": ""
+        },
+        "Suitabilities": {
+            "EPalWorkSuitability::EmitFlame": 0,
+            "EPalWorkSuitability::Watering": 0,
+            "EPalWorkSuitability::Seeding": 0,
+            "EPalWorkSuitability::GenerateElectricity": 0,
+            "EPalWorkSuitability::Handcraft": 2,
+            "EPalWorkSuitability::Collection": 0,
+            "EPalWorkSuitability::Deforest": 1,
+            "EPalWorkSuitability::Mining": 2,
+            "EPalWorkSuitability::ProductMedicine": 1,
+            "EPalWorkSuitability::Cool": 0,
+            "EPalWorkSuitability::Transport": 2,
+            "EPalWorkSuitability::MonsterFarm": 0
+        },
+        "HasIcon": false
+    },
+    "Male_Kigurumi01_v01": {
+        "InternalName": "Male_Kigurumi01_v01",
+        "Elements": [],
+        "Attacks": {
+            "EPalWazaID::Human_Punch": 1
+        },
+        "Human": true,
+        "I18n": {
+            "en": "Islander",
+            "zh-CN": "岛民",
+            "ja": "Islander",
+            "fr": "Habitant de l'Île"
+        },
+        "Stats": {
+            "HP": 20,
+            "ATK": 50,
+            "DEF": 10,
+            "MELEE": 100,
+            "CRAFTSPEED": 100,
+            "FOOD": 100
+        },
+        "SortingKey": {
+            "paldeck": ""
+        },
+        "Suitabilities": {
+            "EPalWorkSuitability::EmitFlame": 0,
+            "EPalWorkSuitability::Watering": 0,
+            "EPalWorkSuitability::Seeding": 0,
+            "EPalWorkSuitability::GenerateElectricity": 0,
+            "EPalWorkSuitability::Handcraft": 1,
+            "EPalWorkSuitability::Collection": 0,
+            "EPalWorkSuitability::Deforest": 0,
+            "EPalWorkSuitability::Mining": 1,
+            "EPalWorkSuitability::ProductMedicine": 0,
+            "EPalWorkSuitability::Cool": 0,
+            "EPalWorkSuitability::Transport": 1,
+            "EPalWorkSuitability::MonsterFarm": 0
+        },
+        "HasIcon": false
+    },
+    "Male_Ninja01_Seabase": {
+        "InternalName": "Male_Ninja01_Seabase",
+        "Elements": [],
+        "Attacks": {
+            "EPalWazaID::Human_Punch": 1
+        },
+        "Human": true,
+        "I18n": {
+            "en": "Moonflower Genin",
+            "zh-CN": "月花众 下忍",
+            "ja": "Moonflower Genin",
+            "fr": "Clan des Fleurs Lunaires — Genin"
+        },
+        "Stats": {
+            "HP": 100,
+            "ATK": 100,
+            "DEF": 100,
+            "MELEE": 100,
+            "CRAFTSPEED": 100,
+            "FOOD": 100
+        },
+        "SortingKey": {
+            "paldeck": ""
+        },
+        "Suitabilities": {
+            "EPalWorkSuitability::EmitFlame": 0,
+            "EPalWorkSuitability::Watering": 0,
+            "EPalWorkSuitability::Seeding": 0,
+            "EPalWorkSuitability::GenerateElectricity": 0,
+            "EPalWorkSuitability::Handcraft": 2,
+            "EPalWorkSuitability::Collection": 0,
+            "EPalWorkSuitability::Deforest": 2,
+            "EPalWorkSuitability::Mining": 1,
+            "EPalWorkSuitability::ProductMedicine": 2,
+            "EPalWorkSuitability::Cool": 0,
+            "EPalWorkSuitability::Transport": 0,
+            "EPalWorkSuitability::MonsterFarm": 0
+        },
+        "HasIcon": false,
+        "Experimental": true
+    },
+    "Male_NinjaElite01_Seabase": {
+        "InternalName": "Male_NinjaElite01_Seabase",
+        "Elements": [],
+        "Attacks": {
+            "EPalWazaID::Human_Punch": 1
+        },
+        "Human": true,
+        "I18n": {
+            "en": "Moonflower Jonin",
+            "zh-CN": "月花众 上忍",
+            "ja": "Moonflower Jonin",
+            "fr": "Clan des Fleurs Lunaires — Jonin"
+        },
+        "Stats": {
+            "HP": 100,
+            "ATK": 100,
+            "DEF": 100,
+            "MELEE": 100,
+            "CRAFTSPEED": 100,
+            "FOOD": 100
+        },
+        "SortingKey": {
+            "paldeck": ""
+        },
+        "Suitabilities": {
+            "EPalWorkSuitability::EmitFlame": 0,
+            "EPalWorkSuitability::Watering": 0,
+            "EPalWorkSuitability::Seeding": 0,
+            "EPalWorkSuitability::GenerateElectricity": 0,
+            "EPalWorkSuitability::Handcraft": 2,
+            "EPalWorkSuitability::Collection": 0,
+            "EPalWorkSuitability::Deforest": 2,
+            "EPalWorkSuitability::Mining": 1,
+            "EPalWorkSuitability::ProductMedicine": 4,
+            "EPalWorkSuitability::Cool": 0,
+            "EPalWorkSuitability::Transport": 0,
+            "EPalWorkSuitability::MonsterFarm": 0
+        },
+        "HasIcon": false,
+        "Experimental": true
+    },
+    "Male_SakurajimaPeople01": {
+        "InternalName": "Male_SakurajimaPeople01",
+        "Elements": [],
+        "Attacks": {
+            "EPalWazaID::Human_Punch": 1
+        },
+        "Human": true,
+        "I18n": {
+            "en": "Islander",
+            "zh-CN": "岛民",
+            "ja": "Islander",
+            "fr": "Habitant de l'Île"
+        },
+        "Stats": {
+            "HP": 20,
+            "ATK": 50,
+            "DEF": 10,
+            "MELEE": 100,
+            "CRAFTSPEED": 100,
+            "FOOD": 100
+        },
+        "SortingKey": {
+            "paldeck": ""
+        },
+        "Suitabilities": {
+            "EPalWorkSuitability::EmitFlame": 0,
+            "EPalWorkSuitability::Watering": 0,
+            "EPalWorkSuitability::Seeding": 1,
+            "EPalWorkSuitability::GenerateElectricity": 0,
+            "EPalWorkSuitability::Handcraft": 3,
+            "EPalWorkSuitability::Collection": 0,
+            "EPalWorkSuitability::Deforest": 1,
+            "EPalWorkSuitability::Mining": 1,
+            "EPalWorkSuitability::ProductMedicine": 0,
+            "EPalWorkSuitability::Cool": 0,
+            "EPalWorkSuitability::Transport": 3,
+            "EPalWorkSuitability::MonsterFarm": 0
+        },
+        "HasIcon": false
+    },
+    "Male_Scholar01_v05": {
+        "InternalName": "Male_Scholar01_v05",
+        "Elements": [],
+        "Attacks": {
+            "EPalWazaID::Human_Punch": 1
+        },
+        "Human": true,
+        "I18n": {
+            "en": "Islander",
+            "zh-CN": "岛民",
+            "ja": "Islander",
+            "fr": "Habitant de l'Île"
+        },
+        "Stats": {
+            "HP": 20,
+            "ATK": 50,
+            "DEF": 10,
+            "MELEE": 100,
+            "CRAFTSPEED": 100,
+            "FOOD": 100
+        },
+        "SortingKey": {
+            "paldeck": ""
+        },
+        "Suitabilities": {
+            "EPalWorkSuitability::EmitFlame": 0,
+            "EPalWorkSuitability::Watering": 0,
+            "EPalWorkSuitability::Seeding": 1,
+            "EPalWorkSuitability::GenerateElectricity": 0,
+            "EPalWorkSuitability::Handcraft": 1,
+            "EPalWorkSuitability::Collection": 2,
+            "EPalWorkSuitability::Deforest": 1,
+            "EPalWorkSuitability::Mining": 1,
+            "EPalWorkSuitability::ProductMedicine": 0,
+            "EPalWorkSuitability::Cool": 0,
+            "EPalWorkSuitability::Transport": 0,
+            "EPalWorkSuitability::MonsterFarm": 0
+        },
+        "HasIcon": false
+    },
+    "Male_Scholar02": {
+        "InternalName": "Male_Scholar02",
+        "Elements": [],
+        "Attacks": {
+            "EPalWazaID::Human_Punch": 1
+        },
+        "Human": true,
+        "I18n": {
+            "en": "Islander",
+            "zh-CN": "岛民",
+            "ja": "Islander",
+            "fr": "Habitant de l'Île"
+        },
+        "Stats": {
+            "HP": 100,
+            "ATK": 100,
+            "DEF": 100,
+            "MELEE": 100,
+            "CRAFTSPEED": 100,
+            "FOOD": 100
+        },
+        "SortingKey": {
+            "paldeck": ""
+        },
+        "Suitabilities": {
+            "EPalWorkSuitability::EmitFlame": 0,
+            "EPalWorkSuitability::Watering": 0,
+            "EPalWorkSuitability::Seeding": 2,
+            "EPalWorkSuitability::GenerateElectricity": 0,
+            "EPalWorkSuitability::Handcraft": 1,
+            "EPalWorkSuitability::Collection": 2,
+            "EPalWorkSuitability::Deforest": 0,
+            "EPalWorkSuitability::Mining": 0,
+            "EPalWorkSuitability::ProductMedicine": 0,
+            "EPalWorkSuitability::Cool": 0,
+            "EPalWorkSuitability::Transport": 0,
+            "EPalWorkSuitability::MonsterFarm": 0
+        },
+        "HasIcon": false
+    },
+    "Male_SnowPeople01": {
+        "InternalName": "Male_SnowPeople01",
+        "Elements": [],
+        "Attacks": {
+            "EPalWazaID::Human_Punch": 1
+        },
+        "Human": true,
+        "I18n": {
+            "en": "Islander",
+            "zh-CN": "岛民",
+            "ja": "Islander",
+            "fr": "Habitant de l'Île"
+        },
+        "Stats": {
+            "HP": 20,
+            "ATK": 50,
+            "DEF": 10,
+            "MELEE": 100,
+            "CRAFTSPEED": 100,
+            "FOOD": 100
+        },
+        "SortingKey": {
+            "paldeck": ""
+        },
+        "Suitabilities": {
+            "EPalWorkSuitability::EmitFlame": 0,
+            "EPalWorkSuitability::Watering": 0,
+            "EPalWorkSuitability::Seeding": 1,
+            "EPalWorkSuitability::GenerateElectricity": 0,
+            "EPalWorkSuitability::Handcraft": 1,
+            "EPalWorkSuitability::Collection": 0,
+            "EPalWorkSuitability::Deforest": 1,
+            "EPalWorkSuitability::Mining": 1,
+            "EPalWorkSuitability::ProductMedicine": 0,
+            "EPalWorkSuitability::Cool": 3,
+            "EPalWorkSuitability::Transport": 0,
+            "EPalWorkSuitability::MonsterFarm": 0
+        },
+        "HasIcon": false
+    },
+    "Male_SorajimaPeople01": {
+        "InternalName": "Male_SorajimaPeople01",
+        "Elements": [],
+        "Attacks": {
+            "EPalWazaID::Human_Punch": 1
+        },
+        "Human": true,
+        "I18n": {
+            "en": "Islander",
+            "zh-CN": "岛民",
+            "ja": "Islander",
+            "fr": "Habitant de l'Île"
+        },
+        "Stats": {
+            "HP": 20,
+            "ATK": 50,
+            "DEF": 10,
+            "MELEE": 100,
+            "CRAFTSPEED": 100,
+            "FOOD": 100
+        },
+        "SortingKey": {
+            "paldeck": ""
+        },
+        "Suitabilities": {
+            "EPalWorkSuitability::EmitFlame": 0,
+            "EPalWorkSuitability::Watering": 3,
+            "EPalWorkSuitability::Seeding": 0,
+            "EPalWorkSuitability::GenerateElectricity": 0,
+            "EPalWorkSuitability::Handcraft": 3,
+            "EPalWorkSuitability::Collection": 2,
+            "EPalWorkSuitability::Deforest": 0,
+            "EPalWorkSuitability::Mining": 1,
+            "EPalWorkSuitability::ProductMedicine": 0,
+            "EPalWorkSuitability::Cool": 0,
+            "EPalWorkSuitability::Transport": 0,
+            "EPalWorkSuitability::MonsterFarm": 0
+        },
+        "HasIcon": false
+    },
+    "Male_StrongOldMan01": {
+        "InternalName": "Male_StrongOldMan01",
+        "Elements": [],
+        "Attacks": {
+            "EPalWazaID::Human_Punch": 1
+        },
+        "Human": true,
+        "I18n": {
+            "en": "Harold",
+            "zh-CN": "哈罗德",
+            "ja": "Harold",
+            "fr": "Harold"
+        },
+        "Stats": {
+            "HP": 500,
+            "ATK": 100,
+            "DEF": 500,
+            "MELEE": 100,
+            "CRAFTSPEED": 100,
+            "FOOD": 100
+        },
+        "SortingKey": {
+            "paldeck": ""
+        },
+        "Suitabilities": {
+            "EPalWorkSuitability::EmitFlame": 0,
+            "EPalWorkSuitability::Watering": 0,
+            "EPalWorkSuitability::Seeding": 0,
+            "EPalWorkSuitability::GenerateElectricity": 0,
+            "EPalWorkSuitability::Handcraft": 1,
+            "EPalWorkSuitability::Collection": 0,
+            "EPalWorkSuitability::Deforest": 0,
+            "EPalWorkSuitability::Mining": 1,
+            "EPalWorkSuitability::ProductMedicine": 0,
+            "EPalWorkSuitability::Cool": 0,
+            "EPalWorkSuitability::Transport": 1,
+            "EPalWorkSuitability::MonsterFarm": 0
+        },
+        "HasIcon": false
+    },
+    "Male_StrongOldMan02": {
+        "InternalName": "Male_StrongOldMan02",
+        "Elements": [],
+        "Attacks": {
+            "EPalWazaID::Human_Punch": 1
+        },
+        "Human": true,
+        "I18n": {
+            "en": "Harold",
+            "zh-CN": "哈罗德",
+            "ja": "Harold",
+            "fr": "Harold"
+        },
+        "Stats": {
+            "HP": 500,
+            "ATK": 100,
+            "DEF": 500,
+            "MELEE": 100,
+            "CRAFTSPEED": 100,
+            "FOOD": 100
+        },
+        "SortingKey": {
+            "paldeck": ""
+        },
+        "Suitabilities": {
+            "EPalWorkSuitability::EmitFlame": 0,
+            "EPalWorkSuitability::Watering": 0,
+            "EPalWorkSuitability::Seeding": 0,
+            "EPalWorkSuitability::GenerateElectricity": 0,
+            "EPalWorkSuitability::Handcraft": 1,
+            "EPalWorkSuitability::Collection": 0,
+            "EPalWorkSuitability::Deforest": 0,
+            "EPalWorkSuitability::Mining": 1,
+            "EPalWorkSuitability::ProductMedicine": 0,
+            "EPalWorkSuitability::Cool": 0,
+            "EPalWorkSuitability::Transport": 1,
+            "EPalWorkSuitability::MonsterFarm": 0
+        },
+        "HasIcon": false
+    },
+    "Male_SurveyMan01": {
+        "InternalName": "Male_SurveyMan01",
+        "Elements": [],
+        "Attacks": {
+            "EPalWazaID::Human_Punch": 1
+        },
+        "Human": true,
+        "I18n": {
+            "en": "Gadel",
+            "zh-CN": "加德尔",
+            "ja": "Gadel",
+            "fr": "Gaedel"
+        },
+        "Stats": {
+            "HP": 60,
+            "ATK": 80,
+            "DEF": 10,
+            "MELEE": 100,
+            "CRAFTSPEED": 100,
+            "FOOD": 100
+        },
+        "SortingKey": {
+            "paldeck": ""
+        },
+        "Suitabilities": {
+            "EPalWorkSuitability::EmitFlame": 0,
+            "EPalWorkSuitability::Watering": 0,
+            "EPalWorkSuitability::Seeding": 0,
+            "EPalWorkSuitability::GenerateElectricity": 0,
+            "EPalWorkSuitability::Handcraft": 1,
+            "EPalWorkSuitability::Collection": 0,
+            "EPalWorkSuitability::Deforest": 0,
+            "EPalWorkSuitability::Mining": 1,
+            "EPalWorkSuitability::ProductMedicine": 0,
+            "EPalWorkSuitability::Cool": 0,
+            "EPalWorkSuitability::Transport": 1,
+            "EPalWorkSuitability::MonsterFarm": 0
+        },
+        "HasIcon": false
+    },
+    "Male_SurveyMan02": {
+        "InternalName": "Male_SurveyMan02",
+        "Elements": [],
+        "Attacks": {
+            "EPalWazaID::Human_Punch": 1
+        },
+        "Human": true,
+        "I18n": {
+            "en": "Gadel",
+            "zh-CN": "加德尔",
+            "ja": "Gadel",
+            "fr": "Gaedel"
+        },
+        "Stats": {
+            "HP": 60,
+            "ATK": 80,
+            "DEF": 20,
+            "MELEE": 100,
+            "CRAFTSPEED": 100,
+            "FOOD": 100
+        },
+        "SortingKey": {
+            "paldeck": ""
+        },
+        "Suitabilities": {
+            "EPalWorkSuitability::EmitFlame": 0,
+            "EPalWorkSuitability::Watering": 0,
+            "EPalWorkSuitability::Seeding": 0,
+            "EPalWorkSuitability::GenerateElectricity": 0,
+            "EPalWorkSuitability::Handcraft": 1,
+            "EPalWorkSuitability::Collection": 0,
+            "EPalWorkSuitability::Deforest": 0,
+            "EPalWorkSuitability::Mining": 1,
+            "EPalWorkSuitability::ProductMedicine": 0,
+            "EPalWorkSuitability::Cool": 0,
+            "EPalWorkSuitability::Transport": 1,
+            "EPalWorkSuitability::MonsterFarm": 0
+        },
+        "HasIcon": false
+    },
+    "Male_SurveyMan03": {
+        "InternalName": "Male_SurveyMan03",
+        "Elements": [],
+        "Attacks": {
+            "EPalWazaID::Human_Punch": 1
+        },
+        "Human": true,
+        "I18n": {
+            "en": "Gadel",
+            "zh-CN": "加德尔",
+            "ja": "Gadel",
+            "fr": "Gaedel"
+        },
+        "Stats": {
+            "HP": 60,
+            "ATK": 80,
+            "DEF": 40,
+            "MELEE": 100,
+            "CRAFTSPEED": 100,
+            "FOOD": 100
+        },
+        "SortingKey": {
+            "paldeck": ""
+        },
+        "Suitabilities": {
+            "EPalWorkSuitability::EmitFlame": 0,
+            "EPalWorkSuitability::Watering": 0,
+            "EPalWorkSuitability::Seeding": 0,
+            "EPalWorkSuitability::GenerateElectricity": 0,
+            "EPalWorkSuitability::Handcraft": 1,
+            "EPalWorkSuitability::Collection": 0,
+            "EPalWorkSuitability::Deforest": 0,
+            "EPalWorkSuitability::Mining": 1,
+            "EPalWorkSuitability::ProductMedicine": 0,
+            "EPalWorkSuitability::Cool": 0,
+            "EPalWorkSuitability::Transport": 1,
+            "EPalWorkSuitability::MonsterFarm": 0
+        },
+        "HasIcon": false
+    },
+    "Male_TenrakuPeople01": {
+        "InternalName": "Male_TenrakuPeople01",
+        "Elements": [],
+        "Attacks": {
+            "EPalWazaID::Human_Punch": 1
+        },
+        "Human": true,
+        "I18n": {
+            "en": "Islander",
+            "zh-CN": "岛民",
+            "ja": "Islander",
+            "fr": "Habitant de l'Île"
+        },
+        "Stats": {
+            "HP": 20,
+            "ATK": 50,
+            "DEF": 10,
+            "MELEE": 100,
+            "CRAFTSPEED": 100,
+            "FOOD": 100
+        },
+        "SortingKey": {
+            "paldeck": ""
+        },
+        "Suitabilities": {
+            "EPalWorkSuitability::EmitFlame": 0,
+            "EPalWorkSuitability::Watering": 0,
+            "EPalWorkSuitability::Seeding": 1,
+            "EPalWorkSuitability::GenerateElectricity": 0,
+            "EPalWorkSuitability::Handcraft": 2,
+            "EPalWorkSuitability::Collection": 0,
+            "EPalWorkSuitability::Deforest": 1,
+            "EPalWorkSuitability::Mining": 1,
+            "EPalWorkSuitability::ProductMedicine": 3,
+            "EPalWorkSuitability::Cool": 0,
+            "EPalWorkSuitability::Transport": 0,
+            "EPalWorkSuitability::MonsterFarm": 0
+        },
+        "HasIcon": false
+    },
+    "Male_Trader01_v04": {
+        "InternalName": "Male_Trader01_v04",
+        "Elements": [],
+        "Attacks": {
+            "EPalWazaID::Human_Punch": 1
+        },
+        "Human": true,
+        "I18n": {
+            "en": "Butcher in Training",
+            "zh-CN": "肉铺学徒",
+            "ja": "Butcher in Training",
+            "fr": "Apprenti boucher"
+        },
+        "Stats": {
+            "HP": 50,
+            "ATK": 50,
+            "DEF": 50,
+            "MELEE": 100,
+            "CRAFTSPEED": 100,
+            "FOOD": 100
+        },
+        "SortingKey": {
+            "paldeck": ""
+        },
+        "Suitabilities": {
+            "EPalWorkSuitability::EmitFlame": 0,
+            "EPalWorkSuitability::Watering": 0,
+            "EPalWorkSuitability::Seeding": 1,
+            "EPalWorkSuitability::GenerateElectricity": 0,
+            "EPalWorkSuitability::Handcraft": 1,
+            "EPalWorkSuitability::Collection": 0,
+            "EPalWorkSuitability::Deforest": 1,
+            "EPalWorkSuitability::Mining": 1,
+            "EPalWorkSuitability::ProductMedicine": 0,
+            "EPalWorkSuitability::Cool": 2,
+            "EPalWorkSuitability::Transport": 0,
+            "EPalWorkSuitability::MonsterFarm": 0
+        },
+        "HasIcon": false
+    },
+    "Male_Trader01_v05": {
+        "InternalName": "Male_Trader01_v05",
+        "Elements": [],
+        "Attacks": {
+            "EPalWazaID::Human_Punch": 1
+        },
+        "Human": true,
+        "I18n": {
+            "en": "Village Grocer",
+            "zh-CN": "蔬果摊老板",
+            "ja": "Village Grocer",
+            "fr": "Maraîcher du village"
+        },
+        "Stats": {
+            "HP": 50,
+            "ATK": 50,
+            "DEF": 50,
+            "MELEE": 100,
+            "CRAFTSPEED": 100,
+            "FOOD": 100
+        },
+        "SortingKey": {
+            "paldeck": ""
+        },
+        "Suitabilities": {
+            "EPalWorkSuitability::EmitFlame": 0,
+            "EPalWorkSuitability::Watering": 0,
+            "EPalWorkSuitability::Seeding": 2,
+            "EPalWorkSuitability::GenerateElectricity": 0,
+            "EPalWorkSuitability::Handcraft": 1,
+            "EPalWorkSuitability::Collection": 0,
+            "EPalWorkSuitability::Deforest": 1,
+            "EPalWorkSuitability::Mining": 1,
+            "EPalWorkSuitability::ProductMedicine": 0,
+            "EPalWorkSuitability::Cool": 0,
+            "EPalWorkSuitability::Transport": 0,
+            "EPalWorkSuitability::MonsterFarm": 0
+        },
+        "HasIcon": false
+    },
+    "Male_Trader01_v06": {
+        "InternalName": "Male_Trader01_v06",
+        "Elements": [],
+        "Attacks": {
+            "EPalWazaID::Human_Punch": 1
+        },
+        "Human": true,
+        "I18n": {
+            "en": "Smugglers' Lackey",
+            "zh-CN": "走私者的跑腿小弟",
+            "ja": "Smugglers' Lackey",
+            "fr": "Coursier des contrebandiers"
+        },
+        "Stats": {
+            "HP": 50,
+            "ATK": 50,
+            "DEF": 50,
+            "MELEE": 100,
+            "CRAFTSPEED": 100,
+            "FOOD": 100
+        },
+        "SortingKey": {
+            "paldeck": ""
+        },
+        "Suitabilities": {
+            "EPalWorkSuitability::EmitFlame": 0,
+            "EPalWorkSuitability::Watering": 0,
+            "EPalWorkSuitability::Seeding": 1,
+            "EPalWorkSuitability::GenerateElectricity": 0,
+            "EPalWorkSuitability::Handcraft": 2,
+            "EPalWorkSuitability::Collection": 0,
+            "EPalWorkSuitability::Deforest": 1,
+            "EPalWorkSuitability::Mining": 1,
+            "EPalWorkSuitability::ProductMedicine": 0,
+            "EPalWorkSuitability::Cool": 0,
+            "EPalWorkSuitability::Transport": 0,
+            "EPalWorkSuitability::MonsterFarm": 0
+        },
+        "HasIcon": false
+    },
+    "Male_Trader01_v07": {
+        "InternalName": "Male_Trader01_v07",
+        "Elements": [],
+        "Attacks": {
+            "EPalWazaID::Human_Punch": 1
+        },
+        "Human": true,
+        "I18n": {
+            "en": "Foraging Merchant",
+            "zh-CN": "捡材料的商人",
+            "ja": "Foraging Merchant",
+            "fr": "Chineur de matériaux"
+        },
+        "Stats": {
+            "HP": 50,
+            "ATK": 50,
+            "DEF": 50,
+            "MELEE": 100,
+            "CRAFTSPEED": 100,
+            "FOOD": 100
+        },
+        "SortingKey": {
+            "paldeck": ""
+        },
+        "Suitabilities": {
+            "EPalWorkSuitability::EmitFlame": 0,
+            "EPalWorkSuitability::Watering": 0,
+            "EPalWorkSuitability::Seeding": 1,
+            "EPalWorkSuitability::GenerateElectricity": 0,
+            "EPalWorkSuitability::Handcraft": 1,
+            "EPalWorkSuitability::Collection": 0,
+            "EPalWorkSuitability::Deforest": 1,
+            "EPalWorkSuitability::Mining": 1,
+            "EPalWorkSuitability::ProductMedicine": 0,
+            "EPalWorkSuitability::Cool": 0,
+            "EPalWorkSuitability::Transport": 2,
+            "EPalWorkSuitability::MonsterFarm": 0
+        },
+        "HasIcon": false
+    },
+    "Male_Trader01_v08": {
+        "InternalName": "Male_Trader01_v08",
+        "Elements": [],
+        "Attacks": {
+            "EPalWazaID::Human_Punch": 1
+        },
+        "Human": true,
+        "I18n": {
+            "en": "Bakery Stand Baker",
+            "zh-CN": "小摊面包师",
+            "ja": "Bakery Stand Baker",
+            "fr": "Boulanger ambulant"
+        },
+        "Stats": {
+            "HP": 50,
+            "ATK": 50,
+            "DEF": 50,
+            "MELEE": 100,
+            "CRAFTSPEED": 100,
+            "FOOD": 100
+        },
+        "SortingKey": {
+            "paldeck": ""
+        },
+        "Suitabilities": {
+            "EPalWorkSuitability::EmitFlame": 2,
+            "EPalWorkSuitability::Watering": 0,
+            "EPalWorkSuitability::Seeding": 1,
+            "EPalWorkSuitability::GenerateElectricity": 0,
+            "EPalWorkSuitability::Handcraft": 1,
+            "EPalWorkSuitability::Collection": 0,
+            "EPalWorkSuitability::Deforest": 1,
+            "EPalWorkSuitability::Mining": 1,
+            "EPalWorkSuitability::ProductMedicine": 0,
+            "EPalWorkSuitability::Cool": 0,
+            "EPalWorkSuitability::Transport": 0,
+            "EPalWorkSuitability::MonsterFarm": 0
+        },
+        "HasIcon": false
+    },
+    "Male_Trader01_v09": {
+        "InternalName": "Male_Trader01_v09",
+        "Elements": [],
+        "Attacks": {
+            "EPalWazaID::Human_Punch": 1
+        },
+        "Human": true,
+        "I18n": {
+            "en": "Shady Pharmacist",
+            "zh-CN": "可疑的药贩子",
+            "ja": "Shady Pharmacist",
+            "fr": "Vendeur de remèdes louche"
+        },
+        "Stats": {
+            "HP": 50,
+            "ATK": 50,
+            "DEF": 50,
+            "MELEE": 100,
+            "CRAFTSPEED": 100,
+            "FOOD": 100
+        },
+        "SortingKey": {
+            "paldeck": ""
+        },
+        "Suitabilities": {
+            "EPalWorkSuitability::EmitFlame": 0,
+            "EPalWorkSuitability::Watering": 0,
+            "EPalWorkSuitability::Seeding": 1,
+            "EPalWorkSuitability::GenerateElectricity": 0,
+            "EPalWorkSuitability::Handcraft": 1,
+            "EPalWorkSuitability::Collection": 0,
+            "EPalWorkSuitability::Deforest": 1,
+            "EPalWorkSuitability::Mining": 1,
+            "EPalWorkSuitability::ProductMedicine": 2,
+            "EPalWorkSuitability::Cool": 0,
+            "EPalWorkSuitability::Transport": 0,
+            "EPalWorkSuitability::MonsterFarm": 0
+        },
+        "HasIcon": false
+    },
+    "Male_Trader01_v10": {
+        "InternalName": "Male_Trader01_v10",
+        "Elements": [],
+        "Attacks": {
+            "EPalWazaID::Human_Punch": 1
+        },
+        "Human": true,
+        "I18n": {
+            "en": "Surf & Turf Master",
+            "zh-CN": "熟练渔夫兼肉铺老板",
+            "ja": "Surf & Turf Master",
+            "fr": "Pêcheur-boucher chevronné"
+        },
+        "Stats": {
+            "HP": 50,
+            "ATK": 50,
+            "DEF": 50,
+            "MELEE": 100,
+            "CRAFTSPEED": 100,
+            "FOOD": 100
+        },
+        "SortingKey": {
+            "paldeck": ""
+        },
+        "Suitabilities": {
+            "EPalWorkSuitability::EmitFlame": 0,
+            "EPalWorkSuitability::Watering": 0,
+            "EPalWorkSuitability::Seeding": 1,
+            "EPalWorkSuitability::GenerateElectricity": 0,
+            "EPalWorkSuitability::Handcraft": 2,
+            "EPalWorkSuitability::Collection": 0,
+            "EPalWorkSuitability::Deforest": 1,
+            "EPalWorkSuitability::Mining": 1,
+            "EPalWorkSuitability::ProductMedicine": 0,
+            "EPalWorkSuitability::Cool": 2,
+            "EPalWorkSuitability::Transport": 0,
+            "EPalWorkSuitability::MonsterFarm": 0
+        },
+        "HasIcon": false
+    },
+    "Male_Trader01_v11": {
+        "InternalName": "Male_Trader01_v11",
+        "Elements": [],
+        "Attacks": {
+            "EPalWazaID::Human_Punch": 1
+        },
+        "Human": true,
+        "I18n": {
+            "en": "Expert Hunter",
+            "zh-CN": "狩猎达人",
+            "ja": "Expert Hunter",
+            "fr": "Maître chasseur"
+        },
+        "Stats": {
+            "HP": 50,
+            "ATK": 50,
+            "DEF": 50,
+            "MELEE": 100,
+            "CRAFTSPEED": 100,
+            "FOOD": 100
+        },
+        "SortingKey": {
+            "paldeck": ""
+        },
+        "Suitabilities": {
+            "EPalWorkSuitability::EmitFlame": 0,
+            "EPalWorkSuitability::Watering": 0,
+            "EPalWorkSuitability::Seeding": 1,
+            "EPalWorkSuitability::GenerateElectricity": 0,
+            "EPalWorkSuitability::Handcraft": 2,
+            "EPalWorkSuitability::Collection": 0,
+            "EPalWorkSuitability::Deforest": 1,
+            "EPalWorkSuitability::Mining": 1,
+            "EPalWorkSuitability::ProductMedicine": 0,
+            "EPalWorkSuitability::Cool": 3,
+            "EPalWorkSuitability::Transport": 0,
+            "EPalWorkSuitability::MonsterFarm": 0
+        },
+        "HasIcon": false
+    },
+    "Male_Trader01_v12": {
+        "InternalName": "Male_Trader01_v12",
+        "Elements": [],
+        "Attacks": {
+            "EPalWazaID::Human_Punch": 1
+        },
+        "Human": true,
+        "I18n": {
+            "en": "Legendary Game Hunter",
+            "zh-CN": "传说中的野味猎人",
+            "ja": "Legendary Game Hunter",
+            "fr": "Chasseur de gibier légendaire"
+        },
+        "Stats": {
+            "HP": 50,
+            "ATK": 50,
+            "DEF": 50,
+            "MELEE": 100,
+            "CRAFTSPEED": 100,
+            "FOOD": 100
+        },
+        "SortingKey": {
+            "paldeck": ""
+        },
+        "Suitabilities": {
+            "EPalWorkSuitability::EmitFlame": 0,
+            "EPalWorkSuitability::Watering": 0,
+            "EPalWorkSuitability::Seeding": 1,
+            "EPalWorkSuitability::GenerateElectricity": 0,
+            "EPalWorkSuitability::Handcraft": 2,
+            "EPalWorkSuitability::Collection": 0,
+            "EPalWorkSuitability::Deforest": 1,
+            "EPalWorkSuitability::Mining": 1,
+            "EPalWorkSuitability::ProductMedicine": 0,
+            "EPalWorkSuitability::Cool": 4,
+            "EPalWorkSuitability::Transport": 0,
+            "EPalWorkSuitability::MonsterFarm": 0
+        },
+        "HasIcon": false
+    },
+    "Male_Trader01_v13": {
+        "InternalName": "Male_Trader01_v13",
+        "Elements": [],
+        "Attacks": {
+            "EPalWazaID::Human_Punch": 1
+        },
+        "Human": true,
+        "I18n": {
+            "en": "Mercenary Supplier",
+            "zh-CN": "佣兵的补给官",
+            "ja": "Mercenary Supplier",
+            "fr": "Ravitailleur de mercenaires"
+        },
+        "Stats": {
+            "HP": 50,
+            "ATK": 50,
+            "DEF": 50,
+            "MELEE": 100,
+            "CRAFTSPEED": 100,
+            "FOOD": 100
+        },
+        "SortingKey": {
+            "paldeck": ""
+        },
+        "Suitabilities": {
+            "EPalWorkSuitability::EmitFlame": 0,
+            "EPalWorkSuitability::Watering": 0,
+            "EPalWorkSuitability::Seeding": 1,
+            "EPalWorkSuitability::GenerateElectricity": 0,
+            "EPalWorkSuitability::Handcraft": 2,
+            "EPalWorkSuitability::Collection": 0,
+            "EPalWorkSuitability::Deforest": 1,
+            "EPalWorkSuitability::Mining": 2,
+            "EPalWorkSuitability::ProductMedicine": 0,
+            "EPalWorkSuitability::Cool": 0,
+            "EPalWorkSuitability::Transport": 0,
+            "EPalWorkSuitability::MonsterFarm": 0
+        },
+        "HasIcon": false
+    },
+    "Male_Trader01_v14": {
+        "InternalName": "Male_Trader01_v14",
+        "Elements": [],
+        "Attacks": {
+            "EPalWazaID::Human_Punch": 1
+        },
+        "Human": true,
+        "I18n": {
+            "en": "Heavy Arms Merchant",
+            "zh-CN": "重武装商人",
+            "ja": "Heavy Arms Merchant",
+            "fr": "Marchand lourdement armé"
+        },
+        "Stats": {
+            "HP": 50,
+            "ATK": 50,
+            "DEF": 50,
+            "MELEE": 100,
+            "CRAFTSPEED": 100,
+            "FOOD": 100
+        },
+        "SortingKey": {
+            "paldeck": ""
+        },
+        "Suitabilities": {
+            "EPalWorkSuitability::EmitFlame": 0,
+            "EPalWorkSuitability::Watering": 0,
+            "EPalWorkSuitability::Seeding": 1,
+            "EPalWorkSuitability::GenerateElectricity": 0,
+            "EPalWorkSuitability::Handcraft": 3,
+            "EPalWorkSuitability::Collection": 0,
+            "EPalWorkSuitability::Deforest": 1,
+            "EPalWorkSuitability::Mining": 2,
+            "EPalWorkSuitability::ProductMedicine": 0,
+            "EPalWorkSuitability::Cool": 0,
+            "EPalWorkSuitability::Transport": 0,
+            "EPalWorkSuitability::MonsterFarm": 0
+        },
+        "HasIcon": false
+    },
+    "Male_Trader01_v15": {
+        "InternalName": "Male_Trader01_v15",
+        "Elements": [],
+        "Attacks": {
+            "EPalWazaID::Human_Punch": 1
+        },
+        "Human": true,
+        "I18n": {
+            "en": "Legendary Ammo Merchant",
+            "zh-CN": "传说中的弹药商",
+            "ja": "Legendary Ammo Merchant",
+            "fr": "Marchand de munitions légendaire"
+        },
+        "Stats": {
+            "HP": 50,
+            "ATK": 50,
+            "DEF": 50,
+            "MELEE": 100,
+            "CRAFTSPEED": 100,
+            "FOOD": 100
+        },
+        "SortingKey": {
+            "paldeck": ""
+        },
+        "Suitabilities": {
+            "EPalWorkSuitability::EmitFlame": 0,
+            "EPalWorkSuitability::Watering": 0,
+            "EPalWorkSuitability::Seeding": 1,
+            "EPalWorkSuitability::GenerateElectricity": 0,
+            "EPalWorkSuitability::Handcraft": 4,
+            "EPalWorkSuitability::Collection": 0,
+            "EPalWorkSuitability::Deforest": 1,
+            "EPalWorkSuitability::Mining": 2,
+            "EPalWorkSuitability::ProductMedicine": 0,
+            "EPalWorkSuitability::Cool": 0,
+            "EPalWorkSuitability::Transport": 0,
+            "EPalWorkSuitability::MonsterFarm": 0
+        },
+        "HasIcon": false
+    },
+    "Male_Trader01_v16": {
+        "InternalName": "Male_Trader01_v16",
+        "Elements": [],
+        "Attacks": {
+            "EPalWazaID::Human_Punch": 1
+        },
+        "Human": true,
+        "I18n": {
+            "en": "Farm Peddler",
+            "zh-CN": "旅行的农园商人",
+            "ja": "Farm Peddler",
+            "fr": "Colporteur des fermes"
+        },
+        "Stats": {
+            "HP": 50,
+            "ATK": 50,
+            "DEF": 50,
+            "MELEE": 100,
+            "CRAFTSPEED": 100,
+            "FOOD": 100
+        },
+        "SortingKey": {
+            "paldeck": ""
+        },
+        "Suitabilities": {
+            "EPalWorkSuitability::EmitFlame": 0,
+            "EPalWorkSuitability::Watering": 0,
+            "EPalWorkSuitability::Seeding": 3,
+            "EPalWorkSuitability::GenerateElectricity": 0,
+            "EPalWorkSuitability::Handcraft": 1,
+            "EPalWorkSuitability::Collection": 2,
+            "EPalWorkSuitability::Deforest": 1,
+            "EPalWorkSuitability::Mining": 1,
+            "EPalWorkSuitability::ProductMedicine": 0,
+            "EPalWorkSuitability::Cool": 0,
+            "EPalWorkSuitability::Transport": 0,
+            "EPalWorkSuitability::MonsterFarm": 0
+        },
+        "HasIcon": false
+    },
+    "Male_Trader01_v17": {
+        "InternalName": "Male_Trader01_v17",
+        "Elements": [],
+        "Attacks": {
+            "EPalWazaID::Human_Punch": 1
+        },
+        "Human": true,
+        "I18n": {
+            "en": "Legendary Grocer",
+            "zh-CN": "传说中的蔬果店老板",
+            "ja": "Legendary Grocer",
+            "fr": "Maraîcher légendaire"
+        },
+        "Stats": {
+            "HP": 50,
+            "ATK": 50,
+            "DEF": 50,
+            "MELEE": 100,
+            "CRAFTSPEED": 100,
+            "FOOD": 100
+        },
+        "SortingKey": {
+            "paldeck": ""
+        },
+        "Suitabilities": {
+            "EPalWorkSuitability::EmitFlame": 0,
+            "EPalWorkSuitability::Watering": 0,
+            "EPalWorkSuitability::Seeding": 4,
+            "EPalWorkSuitability::GenerateElectricity": 0,
+            "EPalWorkSuitability::Handcraft": 1,
+            "EPalWorkSuitability::Collection": 2,
+            "EPalWorkSuitability::Deforest": 1,
+            "EPalWorkSuitability::Mining": 1,
+            "EPalWorkSuitability::ProductMedicine": 0,
+            "EPalWorkSuitability::Cool": 0,
+            "EPalWorkSuitability::Transport": 0,
+            "EPalWorkSuitability::MonsterFarm": 0
+        },
+        "HasIcon": false
+    },
+    "Male_Trader01_v18": {
+        "InternalName": "Male_Trader01_v18",
+        "Elements": [],
+        "Attacks": {
+            "EPalWazaID::Human_Punch": 1
+        },
+        "Human": true,
+        "I18n": {
+            "en": "Authorized Pharmacist",
+            "zh-CN": "正规药师",
+            "ja": "Authorized Pharmacist",
+            "fr": "Apothicaire officiel"
+        },
+        "Stats": {
+            "HP": 50,
+            "ATK": 50,
+            "DEF": 50,
+            "MELEE": 100,
+            "CRAFTSPEED": 100,
+            "FOOD": 100
+        },
+        "SortingKey": {
+            "paldeck": ""
+        },
+        "Suitabilities": {
+            "EPalWorkSuitability::EmitFlame": 0,
+            "EPalWorkSuitability::Watering": 0,
+            "EPalWorkSuitability::Seeding": 1,
+            "EPalWorkSuitability::GenerateElectricity": 0,
+            "EPalWorkSuitability::Handcraft": 1,
+            "EPalWorkSuitability::Collection": 0,
+            "EPalWorkSuitability::Deforest": 2,
+            "EPalWorkSuitability::Mining": 1,
+            "EPalWorkSuitability::ProductMedicine": 3,
+            "EPalWorkSuitability::Cool": 0,
+            "EPalWorkSuitability::Transport": 0,
+            "EPalWorkSuitability::MonsterFarm": 0
+        },
+        "HasIcon": false
+    },
+    "Male_Trader01_v19": {
+        "InternalName": "Male_Trader01_v19",
+        "Elements": [],
+        "Attacks": {
+            "EPalWazaID::Human_Punch": 1
+        },
+        "Human": true,
+        "I18n": {
+            "en": "Legendary Pharmacist",
+            "zh-CN": "传说中的药师",
+            "ja": "Legendary Pharmacist",
+            "fr": "Apothicaire légendaire"
+        },
+        "Stats": {
+            "HP": 50,
+            "ATK": 50,
+            "DEF": 50,
+            "MELEE": 100,
+            "CRAFTSPEED": 100,
+            "FOOD": 100
+        },
+        "SortingKey": {
+            "paldeck": ""
+        },
+        "Suitabilities": {
+            "EPalWorkSuitability::EmitFlame": 0,
+            "EPalWorkSuitability::Watering": 0,
+            "EPalWorkSuitability::Seeding": 1,
+            "EPalWorkSuitability::GenerateElectricity": 0,
+            "EPalWorkSuitability::Handcraft": 1,
+            "EPalWorkSuitability::Collection": 0,
+            "EPalWorkSuitability::Deforest": 2,
+            "EPalWorkSuitability::Mining": 1,
+            "EPalWorkSuitability::ProductMedicine": 4,
+            "EPalWorkSuitability::Cool": 0,
+            "EPalWorkSuitability::Transport": 0,
+            "EPalWorkSuitability::MonsterFarm": 0
+        },
+        "HasIcon": false
+    },
+    "Male_Trader01_v20": {
+        "InternalName": "Male_Trader01_v20",
+        "Elements": [],
+        "Attacks": {
+            "EPalWazaID::Human_Punch": 1
+        },
+        "Human": true,
+        "I18n": {
+            "en": "Local Restaurateur",
+            "zh-CN": "小饭馆老板",
+            "ja": "Local Restaurateur",
+            "fr": "Gargotier de la ville"
+        },
+        "Stats": {
+            "HP": 50,
+            "ATK": 50,
+            "DEF": 50,
+            "MELEE": 100,
+            "CRAFTSPEED": 100,
+            "FOOD": 100
+        },
+        "SortingKey": {
+            "paldeck": ""
+        },
+        "Suitabilities": {
+            "EPalWorkSuitability::EmitFlame": 2,
+            "EPalWorkSuitability::Watering": 2,
+            "EPalWorkSuitability::Seeding": 1,
+            "EPalWorkSuitability::GenerateElectricity": 0,
+            "EPalWorkSuitability::Handcraft": 1,
+            "EPalWorkSuitability::Collection": 0,
+            "EPalWorkSuitability::Deforest": 1,
+            "EPalWorkSuitability::Mining": 1,
+            "EPalWorkSuitability::ProductMedicine": 0,
+            "EPalWorkSuitability::Cool": 0,
+            "EPalWorkSuitability::Transport": 0,
+            "EPalWorkSuitability::MonsterFarm": 0
+        },
+        "HasIcon": false
+    },
+    "Male_Trader01_v21": {
+        "InternalName": "Male_Trader01_v21",
+        "Elements": [],
+        "Attacks": {
+            "EPalWazaID::Human_Punch": 1
+        },
+        "Human": true,
+        "I18n": {
+            "en": "Novice Gourmet",
+            "zh-CN": "初出茅庐的美食家",
+            "ja": "Novice Gourmet",
+            "fr": "Gastronome en herbe"
+        },
+        "Stats": {
+            "HP": 50,
+            "ATK": 50,
+            "DEF": 50,
+            "MELEE": 100,
+            "CRAFTSPEED": 100,
+            "FOOD": 100
+        },
+        "SortingKey": {
+            "paldeck": ""
+        },
+        "Suitabilities": {
+            "EPalWorkSuitability::EmitFlame": 3,
+            "EPalWorkSuitability::Watering": 2,
+            "EPalWorkSuitability::Seeding": 1,
+            "EPalWorkSuitability::GenerateElectricity": 0,
+            "EPalWorkSuitability::Handcraft": 1,
+            "EPalWorkSuitability::Collection": 0,
+            "EPalWorkSuitability::Deforest": 1,
+            "EPalWorkSuitability::Mining": 1,
+            "EPalWorkSuitability::ProductMedicine": 0,
+            "EPalWorkSuitability::Cool": 0,
+            "EPalWorkSuitability::Transport": 0,
+            "EPalWorkSuitability::MonsterFarm": 0
+        },
+        "HasIcon": false
+    },
+    "Male_Trader01_v22": {
+        "InternalName": "Male_Trader01_v22",
+        "Elements": [],
+        "Attacks": {
+            "EPalWazaID::Human_Punch": 1
+        },
+        "Human": true,
+        "I18n": {
+            "en": "Legendary Gourmet",
+            "zh-CN": "传说中的美食家",
+            "ja": "Legendary Gourmet",
+            "fr": "Gastronome légendaire"
+        },
+        "Stats": {
+            "HP": 50,
+            "ATK": 50,
+            "DEF": 50,
+            "MELEE": 100,
+            "CRAFTSPEED": 100,
+            "FOOD": 100
+        },
+        "SortingKey": {
+            "paldeck": ""
+        },
+        "Suitabilities": {
+            "EPalWorkSuitability::EmitFlame": 4,
+            "EPalWorkSuitability::Watering": 2,
+            "EPalWorkSuitability::Seeding": 1,
+            "EPalWorkSuitability::GenerateElectricity": 0,
+            "EPalWorkSuitability::Handcraft": 1,
+            "EPalWorkSuitability::Collection": 0,
+            "EPalWorkSuitability::Deforest": 1,
+            "EPalWorkSuitability::Mining": 1,
+            "EPalWorkSuitability::ProductMedicine": 0,
+            "EPalWorkSuitability::Cool": 0,
+            "EPalWorkSuitability::Transport": 0,
+            "EPalWorkSuitability::MonsterFarm": 0
+        },
+        "HasIcon": false
+    },
+    "Male_Trader01_v23": {
+        "InternalName": "Male_Trader01_v23",
+        "Elements": [],
+        "Attacks": {
+            "EPalWazaID::Human_Punch": 1
+        },
+        "Human": true,
+        "I18n": {
+            "en": "Authorized Materials Merchant",
+            "zh-CN": "正规材料商人",
+            "ja": "Authorized Materials Merchant",
+            "fr": "Marchand de matériaux officiel"
+        },
+        "Stats": {
+            "HP": 50,
+            "ATK": 50,
+            "DEF": 50,
+            "MELEE": 100,
+            "CRAFTSPEED": 100,
+            "FOOD": 100
+        },
+        "SortingKey": {
+            "paldeck": ""
+        },
+        "Suitabilities": {
+            "EPalWorkSuitability::EmitFlame": 0,
+            "EPalWorkSuitability::Watering": 0,
+            "EPalWorkSuitability::Seeding": 1,
+            "EPalWorkSuitability::GenerateElectricity": 0,
+            "EPalWorkSuitability::Handcraft": 2,
+            "EPalWorkSuitability::Collection": 0,
+            "EPalWorkSuitability::Deforest": 1,
+            "EPalWorkSuitability::Mining": 1,
+            "EPalWorkSuitability::ProductMedicine": 0,
+            "EPalWorkSuitability::Cool": 0,
+            "EPalWorkSuitability::Transport": 2,
+            "EPalWorkSuitability::MonsterFarm": 0
+        },
+        "HasIcon": false
+    },
+    "Male_Trader01_v24": {
+        "InternalName": "Male_Trader01_v24",
+        "Elements": [],
+        "Attacks": {
+            "EPalWazaID::Human_Punch": 1
+        },
+        "Human": true,
+        "I18n": {
+            "en": "Element Merchant",
+            "zh-CN": "元素商人",
+            "ja": "Element Merchant",
+            "fr": "Marchand d'éléments"
+        },
+        "Stats": {
+            "HP": 50,
+            "ATK": 50,
+            "DEF": 50,
+            "MELEE": 100,
+            "CRAFTSPEED": 100,
+            "FOOD": 100
+        },
+        "SortingKey": {
+            "paldeck": ""
+        },
+        "Suitabilities": {
+            "EPalWorkSuitability::EmitFlame": 0,
+            "EPalWorkSuitability::Watering": 0,
+            "EPalWorkSuitability::Seeding": 1,
+            "EPalWorkSuitability::GenerateElectricity": 0,
+            "EPalWorkSuitability::Handcraft": 2,
+            "EPalWorkSuitability::Collection": 0,
+            "EPalWorkSuitability::Deforest": 1,
+            "EPalWorkSuitability::Mining": 1,
+            "EPalWorkSuitability::ProductMedicine": 0,
+            "EPalWorkSuitability::Cool": 0,
+            "EPalWorkSuitability::Transport": 3,
+            "EPalWorkSuitability::MonsterFarm": 0
+        },
+        "HasIcon": false
+    },
+    "Male_Trader01_v25": {
+        "InternalName": "Male_Trader01_v25",
+        "Elements": [],
+        "Attacks": {
+            "EPalWazaID::Human_Punch": 1
+        },
+        "Human": true,
+        "I18n": {
+            "en": "Legendary Materials Merchant",
+            "zh-CN": "传说中的材料商人",
+            "ja": "Legendary Materials Merchant",
+            "fr": "Marchand de matériaux légendaire"
+        },
+        "Stats": {
+            "HP": 50,
+            "ATK": 50,
+            "DEF": 50,
+            "MELEE": 100,
+            "CRAFTSPEED": 100,
+            "FOOD": 100
+        },
+        "SortingKey": {
+            "paldeck": ""
+        },
+        "Suitabilities": {
+            "EPalWorkSuitability::EmitFlame": 0,
+            "EPalWorkSuitability::Watering": 0,
+            "EPalWorkSuitability::Seeding": 1,
+            "EPalWorkSuitability::GenerateElectricity": 0,
+            "EPalWorkSuitability::Handcraft": 2,
+            "EPalWorkSuitability::Collection": 0,
+            "EPalWorkSuitability::Deforest": 1,
+            "EPalWorkSuitability::Mining": 1,
+            "EPalWorkSuitability::ProductMedicine": 0,
+            "EPalWorkSuitability::Cool": 0,
+            "EPalWorkSuitability::Transport": 4,
+            "EPalWorkSuitability::MonsterFarm": 0
+        },
+        "HasIcon": false
+    },
+    "Male_WorldTreePeople01": {
+        "InternalName": "Male_WorldTreePeople01",
+        "Elements": [],
+        "Attacks": {
+            "EPalWazaID::Human_Punch": 1
+        },
+        "Human": true,
+        "I18n": {
+            "en": "Islander",
+            "zh-CN": "岛民",
+            "ja": "Islander",
+            "fr": "Habitant de l'Île"
+        },
+        "Stats": {
+            "HP": 100,
+            "ATK": 100,
+            "DEF": 100,
+            "MELEE": 100,
+            "CRAFTSPEED": 100,
+            "FOOD": 100
+        },
+        "SortingKey": {
+            "paldeck": ""
+        },
+        "Suitabilities": {
+            "EPalWorkSuitability::EmitFlame": 0,
+            "EPalWorkSuitability::Watering": 0,
+            "EPalWorkSuitability::Seeding": 5,
+            "EPalWorkSuitability::GenerateElectricity": 0,
+            "EPalWorkSuitability::Handcraft": 1,
+            "EPalWorkSuitability::Collection": 3,
+            "EPalWorkSuitability::Deforest": 2,
+            "EPalWorkSuitability::Mining": 0,
+            "EPalWorkSuitability::ProductMedicine": 0,
+            "EPalWorkSuitability::Cool": 0,
+            "EPalWorkSuitability::Transport": 0,
+            "EPalWorkSuitability::MonsterFarm": 0
+        },
+        "HasIcon": false
+    },
+    "NPC_Dungeon_Shop": {
+        "InternalName": "NPC_Dungeon_Shop",
+        "Elements": [],
+        "Attacks": {
+            "EPalWazaID::Human_Punch": 1
+        },
+        "Human": true,
+        "I18n": {
+            "en": "Wandering Merchant",
+            "zh-CN": "流浪商人",
+            "ja": "Wandering Merchant",
+            "fr": "Colporteur"
+        },
+        "Stats": {
+            "HP": 50,
+            "ATK": 50,
+            "DEF": 50,
+            "MELEE": 100,
+            "CRAFTSPEED": 100,
+            "FOOD": 100
+        },
+        "SortingKey": {
+            "paldeck": ""
+        },
+        "Suitabilities": {
+            "EPalWorkSuitability::EmitFlame": 0,
+            "EPalWorkSuitability::Watering": 1,
+            "EPalWorkSuitability::Seeding": 0,
+            "EPalWorkSuitability::GenerateElectricity": 0,
+            "EPalWorkSuitability::Handcraft": 1,
+            "EPalWorkSuitability::Collection": 0,
+            "EPalWorkSuitability::Deforest": 2,
+            "EPalWorkSuitability::Mining": 1,
+            "EPalWorkSuitability::ProductMedicine": 0,
+            "EPalWorkSuitability::Cool": 0,
+            "EPalWorkSuitability::Transport": 0,
+            "EPalWorkSuitability::MonsterFarm": 0
+        },
+        "HasIcon": false
+    },
+    "NinjaElite_Grenade": {
+        "InternalName": "NinjaElite_Grenade",
+        "Elements": [],
+        "Attacks": {
+            "EPalWazaID::Human_Punch": 1
+        },
+        "Human": true,
+        "I18n": {
+            "en": "Moonflower Jonin",
+            "zh-CN": "月花众 上忍",
+            "ja": "Moonflower Jonin",
+            "fr": "Clan des Fleurs Lunaires — Jonin"
+        },
+        "Stats": {
+            "HP": 100,
+            "ATK": 100,
+            "DEF": 100,
+            "MELEE": 100,
+            "CRAFTSPEED": 100,
+            "FOOD": 100
+        },
+        "SortingKey": {
+            "paldeck": ""
+        },
+        "Suitabilities": {
+            "EPalWorkSuitability::EmitFlame": 0,
+            "EPalWorkSuitability::Watering": 0,
+            "EPalWorkSuitability::Seeding": 0,
+            "EPalWorkSuitability::GenerateElectricity": 0,
+            "EPalWorkSuitability::Handcraft": 2,
+            "EPalWorkSuitability::Collection": 0,
+            "EPalWorkSuitability::Deforest": 2,
+            "EPalWorkSuitability::Mining": 1,
+            "EPalWorkSuitability::ProductMedicine": 4,
+            "EPalWorkSuitability::Cool": 0,
+            "EPalWorkSuitability::Transport": 0,
+            "EPalWorkSuitability::MonsterFarm": 0
+        },
+        "HasIcon": false,
+        "Experimental": true
+    },
+    "Ninja_Bowgun_Seabase": {
+        "InternalName": "Ninja_Bowgun_Seabase",
+        "Elements": [],
+        "Attacks": {
+            "EPalWazaID::Human_Punch": 1
+        },
+        "Human": true,
+        "I18n": {
+            "en": "Moonflower Genin",
+            "zh-CN": "月花众 下忍",
+            "ja": "Moonflower Genin",
+            "fr": "Clan des Fleurs Lunaires — Genin"
+        },
+        "Stats": {
+            "HP": 100,
+            "ATK": 100,
+            "DEF": 100,
+            "MELEE": 100,
+            "CRAFTSPEED": 100,
+            "FOOD": 100
+        },
+        "SortingKey": {
+            "paldeck": ""
+        },
+        "Suitabilities": {
+            "EPalWorkSuitability::EmitFlame": 0,
+            "EPalWorkSuitability::Watering": 0,
+            "EPalWorkSuitability::Seeding": 0,
+            "EPalWorkSuitability::GenerateElectricity": 0,
+            "EPalWorkSuitability::Handcraft": 2,
+            "EPalWorkSuitability::Collection": 0,
+            "EPalWorkSuitability::Deforest": 2,
+            "EPalWorkSuitability::Mining": 1,
+            "EPalWorkSuitability::ProductMedicine": 2,
+            "EPalWorkSuitability::Cool": 0,
+            "EPalWorkSuitability::Transport": 0,
+            "EPalWorkSuitability::MonsterFarm": 0
+        },
+        "HasIcon": false,
+        "Experimental": true
+    },
+    "Ninja_Grenade": {
+        "InternalName": "Ninja_Grenade",
+        "Elements": [],
+        "Attacks": {
+            "EPalWazaID::Human_Punch": 1
+        },
+        "Human": true,
+        "I18n": {
+            "en": "Moonflower Genin",
+            "zh-CN": "月花众 下忍",
+            "ja": "Moonflower Genin",
+            "fr": "Clan des Fleurs Lunaires — Genin"
+        },
+        "Stats": {
+            "HP": 100,
+            "ATK": 100,
+            "DEF": 100,
+            "MELEE": 100,
+            "CRAFTSPEED": 100,
+            "FOOD": 100
+        },
+        "SortingKey": {
+            "paldeck": ""
+        },
+        "Suitabilities": {
+            "EPalWorkSuitability::EmitFlame": 0,
+            "EPalWorkSuitability::Watering": 0,
+            "EPalWorkSuitability::Seeding": 0,
+            "EPalWorkSuitability::GenerateElectricity": 0,
+            "EPalWorkSuitability::Handcraft": 2,
+            "EPalWorkSuitability::Collection": 0,
+            "EPalWorkSuitability::Deforest": 2,
+            "EPalWorkSuitability::Mining": 1,
+            "EPalWorkSuitability::ProductMedicine": 2,
+            "EPalWorkSuitability::Cool": 0,
+            "EPalWorkSuitability::Transport": 0,
+            "EPalWorkSuitability::MonsterFarm": 0
+        },
+        "HasIcon": false,
+        "Experimental": true
+    },
+    "Police_Invader_CrossBow": {
+        "InternalName": "Police_Invader_CrossBow",
+        "Elements": [],
+        "Attacks": {
+            "EPalWazaID::Human_Punch": 1
+        },
+        "Human": true,
+        "I18n": {
+            "en": "PIDF Rioter",
+            "zh-CN": "自卫队 暴徒",
+            "ja": "PIDF Rioter",
+            "fr": "Milice Populaire — Émeutier"
+        },
+        "Stats": {
+            "HP": 100,
+            "ATK": 100,
+            "DEF": 100,
+            "MELEE": 100,
+            "CRAFTSPEED": 100,
+            "FOOD": 100
+        },
+        "SortingKey": {
+            "paldeck": ""
+        },
+        "Suitabilities": {
+            "EPalWorkSuitability::EmitFlame": 0,
+            "EPalWorkSuitability::Watering": 0,
+            "EPalWorkSuitability::Seeding": 0,
+            "EPalWorkSuitability::GenerateElectricity": 0,
+            "EPalWorkSuitability::Handcraft": 2,
+            "EPalWorkSuitability::Collection": 1,
+            "EPalWorkSuitability::Deforest": 1,
+            "EPalWorkSuitability::Mining": 1,
+            "EPalWorkSuitability::ProductMedicine": 0,
+            "EPalWorkSuitability::Cool": 0,
+            "EPalWorkSuitability::Transport": 0,
+            "EPalWorkSuitability::MonsterFarm": 0
+        },
+        "HasIcon": false,
+        "Experimental": true
+    },
+    "Police_Invader_FlameThrower": {
+        "InternalName": "Police_Invader_FlameThrower",
+        "Elements": [],
+        "Attacks": {
+            "EPalWazaID::Human_Punch": 1
+        },
+        "Human": true,
+        "I18n": {
+            "en": "PIDF Cleaner",
+            "zh-CN": "自卫队 善后组",
+            "ja": "PIDF Cleaner",
+            "fr": "Milice Populaire — Nettoyeur"
+        },
+        "Stats": {
+            "HP": 100,
+            "ATK": 100,
+            "DEF": 100,
+            "MELEE": 100,
+            "CRAFTSPEED": 100,
+            "FOOD": 100
+        },
+        "SortingKey": {
+            "paldeck": ""
+        },
+        "Suitabilities": {
+            "EPalWorkSuitability::EmitFlame": 3,
+            "EPalWorkSuitability::Watering": 0,
+            "EPalWorkSuitability::Seeding": 0,
+            "EPalWorkSuitability::GenerateElectricity": 0,
+            "EPalWorkSuitability::Handcraft": 1,
+            "EPalWorkSuitability::Collection": 1,
+            "EPalWorkSuitability::Deforest": 1,
+            "EPalWorkSuitability::Mining": 1,
+            "EPalWorkSuitability::ProductMedicine": 0,
+            "EPalWorkSuitability::Cool": 0,
+            "EPalWorkSuitability::Transport": 0,
+            "EPalWorkSuitability::MonsterFarm": 0
+        },
+        "HasIcon": false,
+        "Experimental": true
+    },
+    "Police_Invader_GrenadeLauncher": {
+        "InternalName": "Police_Invader_GrenadeLauncher",
+        "Elements": [],
+        "Attacks": {
+            "EPalWazaID::Human_Punch": 1
+        },
+        "Human": true,
+        "I18n": {
+            "en": "PIDF Veteran",
+            "zh-CN": "自卫队 老手",
+            "ja": "PIDF Veteran",
+            "fr": "Milice Populaire — Vétéran"
+        },
+        "Stats": {
+            "HP": 100,
+            "ATK": 100,
+            "DEF": 100,
+            "MELEE": 100,
+            "CRAFTSPEED": 100,
+            "FOOD": 100
+        },
+        "SortingKey": {
+            "paldeck": ""
+        },
+        "Suitabilities": {
+            "EPalWorkSuitability::EmitFlame": 0,
+            "EPalWorkSuitability::Watering": 0,
+            "EPalWorkSuitability::Seeding": 0,
+            "EPalWorkSuitability::GenerateElectricity": 0,
+            "EPalWorkSuitability::Handcraft": 1,
+            "EPalWorkSuitability::Collection": 1,
+            "EPalWorkSuitability::Deforest": 1,
+            "EPalWorkSuitability::Mining": 3,
+            "EPalWorkSuitability::ProductMedicine": 0,
+            "EPalWorkSuitability::Cool": 0,
+            "EPalWorkSuitability::Transport": 0,
+            "EPalWorkSuitability::MonsterFarm": 0
+        },
+        "HasIcon": false,
+        "Experimental": true
+    },
+    "Police_Invader_Handgun": {
+        "InternalName": "Police_Invader_Handgun",
+        "Elements": [],
+        "Attacks": {
+            "EPalWazaID::Human_Punch": 1
+        },
+        "Human": true,
+        "I18n": {
+            "en": "PIDF Guard",
+            "zh-CN": "自卫队 守卫",
+            "ja": "PIDF Guard",
+            "fr": "Milice Populaire — Garde"
+        },
+        "Stats": {
+            "HP": 100,
+            "ATK": 100,
+            "DEF": 100,
+            "MELEE": 100,
+            "CRAFTSPEED": 100,
+            "FOOD": 100
+        },
+        "SortingKey": {
+            "paldeck": ""
+        },
+        "Suitabilities": {
+            "EPalWorkSuitability::EmitFlame": 0,
+            "EPalWorkSuitability::Watering": 0,
+            "EPalWorkSuitability::Seeding": 0,
+            "EPalWorkSuitability::GenerateElectricity": 0,
+            "EPalWorkSuitability::Handcraft": 1,
+            "EPalWorkSuitability::Collection": 0,
+            "EPalWorkSuitability::Deforest": 1,
+            "EPalWorkSuitability::Mining": 1,
+            "EPalWorkSuitability::ProductMedicine": 0,
+            "EPalWorkSuitability::Cool": 2,
+            "EPalWorkSuitability::Transport": 0,
+            "EPalWorkSuitability::MonsterFarm": 0
+        },
+        "HasIcon": false,
+        "Experimental": true
+    },
+    "Police_Invader_Katana": {
+        "InternalName": "Police_Invader_Katana",
+        "Elements": [],
+        "Attacks": {
+            "EPalWazaID::Human_Punch": 1
+        },
+        "Human": true,
+        "I18n": {
+            "en": "PIDF Blader",
+            "zh-CN": "自卫队 剑士",
+            "ja": "PIDF Blader",
+            "fr": "Milice Populaire — Épéiste"
+        },
+        "Stats": {
+            "HP": 100,
+            "ATK": 100,
+            "DEF": 100,
+            "MELEE": 100,
+            "CRAFTSPEED": 100,
+            "FOOD": 100
+        },
+        "SortingKey": {
+            "paldeck": ""
+        },
+        "Suitabilities": {
+            "EPalWorkSuitability::EmitFlame": 0,
+            "EPalWorkSuitability::Watering": 0,
+            "EPalWorkSuitability::Seeding": 0,
+            "EPalWorkSuitability::GenerateElectricity": 0,
+            "EPalWorkSuitability::Handcraft": 1,
+            "EPalWorkSuitability::Collection": 1,
+            "EPalWorkSuitability::Deforest": 2,
+            "EPalWorkSuitability::Mining": 1,
+            "EPalWorkSuitability::ProductMedicine": 0,
+            "EPalWorkSuitability::Cool": 0,
+            "EPalWorkSuitability::Transport": 0,
+            "EPalWorkSuitability::MonsterFarm": 0
+        },
+        "HasIcon": false,
+        "Experimental": true
+    },
+    "Police_Invader_LaserRifle": {
+        "InternalName": "Police_Invader_LaserRifle",
+        "Elements": [],
+        "Attacks": {
+            "EPalWazaID::Human_Punch": 1
+        },
+        "Human": true,
+        "I18n": {
+            "en": "PIDF Technophile",
+            "zh-CN": "自卫队 高科技分隊",
+            "ja": "PIDF Technophile",
+            "fr": "Milice Populaire — Technophile"
+        },
+        "Stats": {
+            "HP": 100,
+            "ATK": 100,
+            "DEF": 100,
+            "MELEE": 100,
+            "CRAFTSPEED": 100,
+            "FOOD": 100
+        },
+        "SortingKey": {
+            "paldeck": ""
+        },
+        "Suitabilities": {
+            "EPalWorkSuitability::EmitFlame": 0,
+            "EPalWorkSuitability::Watering": 0,
+            "EPalWorkSuitability::Seeding": 0,
+            "EPalWorkSuitability::GenerateElectricity": 0,
+            "EPalWorkSuitability::Handcraft": 1,
+            "EPalWorkSuitability::Collection": 1,
+            "EPalWorkSuitability::Deforest": 1,
+            "EPalWorkSuitability::Mining": 1,
+            "EPalWorkSuitability::ProductMedicine": 0,
+            "EPalWorkSuitability::Cool": 3,
+            "EPalWorkSuitability::Transport": 0,
+            "EPalWorkSuitability::MonsterFarm": 0
+        },
+        "HasIcon": false,
+        "Experimental": true
+    },
+    "Police_Invader_MissileLauncher": {
+        "InternalName": "Police_Invader_MissileLauncher",
+        "Elements": [],
+        "Attacks": {
+            "EPalWazaID::Human_Punch": 1
+        },
+        "Human": true,
+        "I18n": {
+            "en": "PIDF Interceptor",
+            "zh-CN": "自卫队 拦截者",
+            "ja": "PIDF Interceptor",
+            "fr": "Milice Populaire — Intercepteur"
+        },
+        "Stats": {
+            "HP": 100,
+            "ATK": 100,
+            "DEF": 100,
+            "MELEE": 100,
+            "CRAFTSPEED": 100,
+            "FOOD": 100
+        },
+        "SortingKey": {
+            "paldeck": ""
+        },
+        "Suitabilities": {
+            "EPalWorkSuitability::EmitFlame": 0,
+            "EPalWorkSuitability::Watering": 0,
+            "EPalWorkSuitability::Seeding": 0,
+            "EPalWorkSuitability::GenerateElectricity": 0,
+            "EPalWorkSuitability::Handcraft": 1,
+            "EPalWorkSuitability::Collection": 1,
+            "EPalWorkSuitability::Deforest": 1,
+            "EPalWorkSuitability::Mining": 1,
+            "EPalWorkSuitability::ProductMedicine": 0,
+            "EPalWorkSuitability::Cool": 0,
+            "EPalWorkSuitability::Transport": 3,
+            "EPalWorkSuitability::MonsterFarm": 0
+        },
+        "HasIcon": false,
+        "Experimental": true
+    },
+    "Police_Invader_Rifle": {
+        "InternalName": "Police_Invader_Rifle",
+        "Elements": [],
+        "Attacks": {
+            "EPalWazaID::Human_Punch": 1
+        },
+        "Human": true,
+        "I18n": {
+            "en": "PIDF Rifleman",
+            "zh-CN": "自卫队 步枪士兵",
+            "ja": "PIDF Rifleman",
+            "fr": "Milice Populaire — Fusilier"
+        },
+        "Stats": {
+            "HP": 100,
+            "ATK": 100,
+            "DEF": 100,
+            "MELEE": 100,
+            "CRAFTSPEED": 100,
+            "FOOD": 100
+        },
+        "SortingKey": {
+            "paldeck": ""
+        },
+        "Suitabilities": {
+            "EPalWorkSuitability::EmitFlame": 0,
+            "EPalWorkSuitability::Watering": 0,
+            "EPalWorkSuitability::Seeding": 0,
+            "EPalWorkSuitability::GenerateElectricity": 0,
+            "EPalWorkSuitability::Handcraft": 1,
+            "EPalWorkSuitability::Collection": 2,
+            "EPalWorkSuitability::Deforest": 1,
+            "EPalWorkSuitability::Mining": 1,
+            "EPalWorkSuitability::ProductMedicine": 0,
+            "EPalWorkSuitability::Cool": 0,
+            "EPalWorkSuitability::Transport": 0,
+            "EPalWorkSuitability::MonsterFarm": 0
+        },
+        "HasIcon": false,
+        "Experimental": true
+    },
+    "Police_Invader_RocketLauncher": {
+        "InternalName": "Police_Invader_RocketLauncher",
+        "Elements": [],
+        "Attacks": {
+            "EPalWazaID::Human_Punch": 1
+        },
+        "Human": true,
+        "I18n": {
+            "en": "PIDF Rocketeer",
+            "zh-CN": "自卫队 火箭手",
+            "ja": "PIDF Rocketeer",
+            "fr": "Milice Populaire — Spationaute"
+        },
+        "Stats": {
+            "HP": 100,
+            "ATK": 100,
+            "DEF": 100,
+            "MELEE": 100,
+            "CRAFTSPEED": 100,
+            "FOOD": 100
+        },
+        "SortingKey": {
+            "paldeck": ""
+        },
+        "Suitabilities": {
+            "EPalWorkSuitability::EmitFlame": 0,
+            "EPalWorkSuitability::Watering": 0,
+            "EPalWorkSuitability::Seeding": 0,
+            "EPalWorkSuitability::GenerateElectricity": 0,
+            "EPalWorkSuitability::Handcraft": 1,
+            "EPalWorkSuitability::Collection": 1,
+            "EPalWorkSuitability::Deforest": 3,
+            "EPalWorkSuitability::Mining": 1,
+            "EPalWorkSuitability::ProductMedicine": 0,
+            "EPalWorkSuitability::Cool": 0,
+            "EPalWorkSuitability::Transport": 0,
+            "EPalWorkSuitability::MonsterFarm": 0
+        },
+        "HasIcon": false,
+        "Experimental": true
+    },
+    "Police_Invader_Shotgun": {
+        "InternalName": "Police_Invader_Shotgun",
+        "Elements": [],
+        "Attacks": {
+            "EPalWazaID::Human_Punch": 1
+        },
+        "Human": true,
+        "I18n": {
+            "en": "PIDF Elite",
+            "zh-CN": "自卫队 精英",
+            "ja": "PIDF Elite",
+            "fr": "Milice Populaire – Élite"
+        },
+        "Stats": {
+            "HP": 100,
+            "ATK": 100,
+            "DEF": 100,
+            "MELEE": 100,
+            "CRAFTSPEED": 100,
+            "FOOD": 100
+        },
+        "SortingKey": {
+            "paldeck": ""
+        },
+        "Suitabilities": {
+            "EPalWorkSuitability::EmitFlame": 0,
+            "EPalWorkSuitability::Watering": 0,
+            "EPalWorkSuitability::Seeding": 0,
+            "EPalWorkSuitability::GenerateElectricity": 0,
+            "EPalWorkSuitability::Handcraft": 1,
+            "EPalWorkSuitability::Collection": 0,
+            "EPalWorkSuitability::Deforest": 1,
+            "EPalWorkSuitability::Mining": 1,
+            "EPalWorkSuitability::ProductMedicine": 2,
+            "EPalWorkSuitability::Cool": 0,
+            "EPalWorkSuitability::Transport": 0,
+            "EPalWorkSuitability::MonsterFarm": 0
+        },
+        "HasIcon": false,
+        "Experimental": true
+    },
+    "Police_Rifle_Crime_Lv4": {
+        "InternalName": "Police_Rifle_Crime_Lv4",
+        "Elements": [],
+        "Attacks": {
+            "EPalWazaID::Human_Punch": 1
+        },
+        "Human": true,
+        "I18n": {
+            "en": "PIDF Rifleman",
+            "zh-CN": "自卫队 步枪士兵",
+            "ja": "PIDF Rifleman",
+            "fr": "Milice Populaire — Fusilier"
+        },
+        "Stats": {
+            "HP": 100,
+            "ATK": 100,
+            "DEF": 100,
+            "MELEE": 100,
+            "CRAFTSPEED": 100,
+            "FOOD": 100
+        },
+        "SortingKey": {
+            "paldeck": ""
+        },
+        "Suitabilities": {
+            "EPalWorkSuitability::EmitFlame": 0,
+            "EPalWorkSuitability::Watering": 0,
+            "EPalWorkSuitability::Seeding": 0,
+            "EPalWorkSuitability::GenerateElectricity": 0,
+            "EPalWorkSuitability::Handcraft": 1,
+            "EPalWorkSuitability::Collection": 2,
+            "EPalWorkSuitability::Deforest": 1,
+            "EPalWorkSuitability::Mining": 1,
+            "EPalWorkSuitability::ProductMedicine": 0,
+            "EPalWorkSuitability::Cool": 0,
+            "EPalWorkSuitability::Transport": 0,
+            "EPalWorkSuitability::MonsterFarm": 0
+        },
+        "HasIcon": false,
+        "Experimental": true
+    },
+    "Police_Rifle_Crime_Lv5": {
+        "InternalName": "Police_Rifle_Crime_Lv5",
+        "Elements": [],
+        "Attacks": {
+            "EPalWazaID::Human_Punch": 1
+        },
+        "Human": true,
+        "I18n": {
+            "en": "PIDF Rifleman",
+            "zh-CN": "自卫队 步枪士兵",
+            "ja": "PIDF Rifleman",
+            "fr": "Milice Populaire — Fusilier"
+        },
+        "Stats": {
+            "HP": 100,
+            "ATK": 100,
+            "DEF": 100,
+            "MELEE": 100,
+            "CRAFTSPEED": 100,
+            "FOOD": 100
+        },
+        "SortingKey": {
+            "paldeck": ""
+        },
+        "Suitabilities": {
+            "EPalWorkSuitability::EmitFlame": 0,
+            "EPalWorkSuitability::Watering": 0,
+            "EPalWorkSuitability::Seeding": 0,
+            "EPalWorkSuitability::GenerateElectricity": 0,
+            "EPalWorkSuitability::Handcraft": 1,
+            "EPalWorkSuitability::Collection": 2,
+            "EPalWorkSuitability::Deforest": 1,
+            "EPalWorkSuitability::Mining": 1,
+            "EPalWorkSuitability::ProductMedicine": 0,
+            "EPalWorkSuitability::Cool": 0,
+            "EPalWorkSuitability::Transport": 0,
+            "EPalWorkSuitability::MonsterFarm": 0
+        },
+        "HasIcon": false,
+        "Experimental": true
+    },
+    "Police_Shield_Tower": {
+        "InternalName": "Police_Shield_Tower",
+        "Elements": [],
+        "Attacks": {
+            "EPalWazaID::Human_Punch": 1
+        },
+        "Human": true,
+        "I18n": {
+            "en": "PIDF Rifleman",
+            "zh-CN": "自卫队 步枪士兵",
+            "ja": "PIDF Rifleman",
+            "fr": "Milice Populaire — Fusilier"
+        },
+        "Stats": {
+            "HP": 100,
+            "ATK": 100,
+            "DEF": 100,
+            "MELEE": 100,
+            "CRAFTSPEED": 100,
+            "FOOD": 100
+        },
+        "SortingKey": {
+            "paldeck": ""
+        },
+        "Suitabilities": {
+            "EPalWorkSuitability::EmitFlame": 0,
+            "EPalWorkSuitability::Watering": 0,
+            "EPalWorkSuitability::Seeding": 0,
+            "EPalWorkSuitability::GenerateElectricity": 0,
+            "EPalWorkSuitability::Handcraft": 1,
+            "EPalWorkSuitability::Collection": 2,
+            "EPalWorkSuitability::Deforest": 1,
+            "EPalWorkSuitability::Mining": 1,
+            "EPalWorkSuitability::ProductMedicine": 0,
+            "EPalWorkSuitability::Cool": 0,
+            "EPalWorkSuitability::Transport": 0,
+            "EPalWorkSuitability::MonsterFarm": 0
+        },
+        "HasIcon": false,
+        "Experimental": true
+    },
+    "Quest_Male_Ninja01": {
+        "InternalName": "Quest_Male_Ninja01",
+        "Elements": [],
+        "Attacks": {
+            "EPalWazaID::Human_Punch": 1
+        },
+        "Human": true,
+        "I18n": {
+            "en": "Moonflower Genin",
+            "zh-CN": "月花众 下忍",
+            "ja": "Moonflower Genin",
+            "fr": "Clan des Fleurs Lunaires — Genin"
+        },
+        "Stats": {
+            "HP": 100,
+            "ATK": 100,
+            "DEF": 100,
+            "MELEE": 100,
+            "CRAFTSPEED": 100,
+            "FOOD": 100
+        },
+        "SortingKey": {
+            "paldeck": ""
+        },
+        "Suitabilities": {
+            "EPalWorkSuitability::EmitFlame": 0,
+            "EPalWorkSuitability::Watering": 0,
+            "EPalWorkSuitability::Seeding": 0,
+            "EPalWorkSuitability::GenerateElectricity": 0,
+            "EPalWorkSuitability::Handcraft": 2,
+            "EPalWorkSuitability::Collection": 0,
+            "EPalWorkSuitability::Deforest": 2,
+            "EPalWorkSuitability::Mining": 1,
+            "EPalWorkSuitability::ProductMedicine": 2,
+            "EPalWorkSuitability::Cool": 0,
+            "EPalWorkSuitability::Transport": 0,
+            "EPalWorkSuitability::MonsterFarm": 0
+        },
+        "HasIcon": false,
+        "Experimental": true
+    },
+    "Quest_Male_NinjaElite01": {
+        "InternalName": "Quest_Male_NinjaElite01",
+        "Elements": [],
+        "Attacks": {
+            "EPalWazaID::Human_Punch": 1
+        },
+        "Human": true,
+        "I18n": {
+            "en": "Moonflower Jonin",
+            "zh-CN": "月花众 上忍",
+            "ja": "Moonflower Jonin",
+            "fr": "Clan des Fleurs Lunaires — Jonin"
+        },
+        "Stats": {
+            "HP": 100,
+            "ATK": 100,
+            "DEF": 100,
+            "MELEE": 100,
+            "CRAFTSPEED": 100,
+            "FOOD": 100
+        },
+        "SortingKey": {
+            "paldeck": ""
+        },
+        "Suitabilities": {
+            "EPalWorkSuitability::EmitFlame": 0,
+            "EPalWorkSuitability::Watering": 0,
+            "EPalWorkSuitability::Seeding": 0,
+            "EPalWorkSuitability::GenerateElectricity": 0,
+            "EPalWorkSuitability::Handcraft": 2,
+            "EPalWorkSuitability::Collection": 0,
+            "EPalWorkSuitability::Deforest": 2,
+            "EPalWorkSuitability::Mining": 1,
+            "EPalWorkSuitability::ProductMedicine": 4,
+            "EPalWorkSuitability::Cool": 0,
+            "EPalWorkSuitability::Transport": 0,
+            "EPalWorkSuitability::MonsterFarm": 0
+        },
+        "HasIcon": false,
+        "Experimental": true
+    },
+    "Quest_Male_Scientist01_LaserRifle": {
+        "InternalName": "Quest_Male_Scientist01_LaserRifle",
+        "Elements": [],
+        "Attacks": {
+            "EPalWazaID::Human_Punch": 1
+        },
+        "Human": true,
+        "I18n": {
+            "en": "PAL Genetic Research Unit Executioner",
+            "zh-CN": "基因研究部队 执行小队",
+            "ja": "PAL Genetic Research Unit Executioner",
+            "fr": "Unité de Recherche Génétique – Équipe d’exécution"
+        },
+        "Stats": {
+            "HP": 100,
+            "ATK": 100,
+            "DEF": 50,
+            "MELEE": 100,
+            "CRAFTSPEED": 100,
+            "FOOD": 100
+        },
+        "SortingKey": {
+            "paldeck": ""
+        },
+        "Suitabilities": {
+            "EPalWorkSuitability::EmitFlame": 0,
+            "EPalWorkSuitability::Watering": 0,
+            "EPalWorkSuitability::Seeding": 0,
+            "EPalWorkSuitability::GenerateElectricity": 0,
+            "EPalWorkSuitability::Handcraft": 1,
+            "EPalWorkSuitability::Collection": 0,
+            "EPalWorkSuitability::Deforest": 1,
+            "EPalWorkSuitability::Mining": 1,
+            "EPalWorkSuitability::ProductMedicine": 0,
+            "EPalWorkSuitability::Cool": 1,
+            "EPalWorkSuitability::Transport": 0,
+            "EPalWorkSuitability::MonsterFarm": 0
+        },
+        "HasIcon": false,
+        "Experimental": true
+    },
+    "Quest_Scientist_FlameThrower": {
+        "InternalName": "Quest_Scientist_FlameThrower",
+        "Elements": [],
+        "Attacks": {
+            "EPalWazaID::Human_Punch": 1
+        },
+        "Human": true,
+        "I18n": {
+            "en": "PAL Genetic Research Unit Executioner",
+            "zh-CN": "基因研究部队 执行小队",
+            "ja": "PAL Genetic Research Unit Executioner",
+            "fr": "Unité de Recherche Génétique – Équipe d’exécution"
+        },
+        "Stats": {
+            "HP": 100,
+            "ATK": 100,
+            "DEF": 100,
+            "MELEE": 100,
+            "CRAFTSPEED": 100,
+            "FOOD": 100
+        },
+        "SortingKey": {
+            "paldeck": ""
+        },
+        "Suitabilities": {
+            "EPalWorkSuitability::EmitFlame": 0,
+            "EPalWorkSuitability::Watering": 0,
+            "EPalWorkSuitability::Seeding": 0,
+            "EPalWorkSuitability::GenerateElectricity": 0,
+            "EPalWorkSuitability::Handcraft": 1,
+            "EPalWorkSuitability::Collection": 0,
+            "EPalWorkSuitability::Deforest": 1,
+            "EPalWorkSuitability::Mining": 1,
+            "EPalWorkSuitability::ProductMedicine": 0,
+            "EPalWorkSuitability::Cool": 1,
+            "EPalWorkSuitability::Transport": 0,
+            "EPalWorkSuitability::MonsterFarm": 0
+        },
+        "HasIcon": false,
+        "Experimental": true
+    },
+    "Reward_PalCaptureCount_v02": {
+        "InternalName": "Reward_PalCaptureCount_v02",
+        "Elements": [],
+        "Attacks": {
+            "EPalWazaID::Human_Punch": 1
+        },
+        "Human": true,
+        "I18n": {
+            "en": "Guard",
+            "zh-CN": "卫兵",
+            "ja": "Guard",
+            "fr": "Garde"
+        },
+        "Stats": {
+            "HP": 100,
+            "ATK": 50,
+            "DEF": 50,
+            "MELEE": 100,
+            "CRAFTSPEED": 100,
+            "FOOD": 100
+        },
+        "SortingKey": {
+            "paldeck": ""
+        },
+        "Suitabilities": {
+            "EPalWorkSuitability::EmitFlame": 0,
+            "EPalWorkSuitability::Watering": 2,
+            "EPalWorkSuitability::Seeding": 1,
+            "EPalWorkSuitability::GenerateElectricity": 0,
+            "EPalWorkSuitability::Handcraft": 1,
+            "EPalWorkSuitability::Collection": 0,
+            "EPalWorkSuitability::Deforest": 1,
+            "EPalWorkSuitability::Mining": 1,
+            "EPalWorkSuitability::ProductMedicine": 0,
+            "EPalWorkSuitability::Cool": 0,
+            "EPalWorkSuitability::Transport": 0,
+            "EPalWorkSuitability::MonsterFarm": 0
+        },
+        "HasIcon": false,
+        "Experimental": true
+    },
+    "Reward_Paldex_v02": {
+        "InternalName": "Reward_Paldex_v02",
+        "Elements": [],
+        "Attacks": {
+            "EPalWazaID::Human_Punch": 1
+        },
+        "Human": true,
+        "I18n": {
+            "en": "Guard",
+            "zh-CN": "卫兵",
+            "ja": "Guard",
+            "fr": "Garde"
+        },
+        "Stats": {
+            "HP": 100,
+            "ATK": 50,
+            "DEF": 50,
+            "MELEE": 100,
+            "CRAFTSPEED": 100,
+            "FOOD": 100
+        },
+        "SortingKey": {
+            "paldeck": ""
+        },
+        "Suitabilities": {
+            "EPalWorkSuitability::EmitFlame": 0,
+            "EPalWorkSuitability::Watering": 1,
+            "EPalWorkSuitability::Seeding": 0,
+            "EPalWorkSuitability::GenerateElectricity": 0,
+            "EPalWorkSuitability::Handcraft": 1,
+            "EPalWorkSuitability::Collection": 0,
+            "EPalWorkSuitability::Deforest": 1,
+            "EPalWorkSuitability::Mining": 2,
+            "EPalWorkSuitability::ProductMedicine": 1,
+            "EPalWorkSuitability::Cool": 0,
+            "EPalWorkSuitability::Transport": 0,
+            "EPalWorkSuitability::MonsterFarm": 0
+        },
+        "HasIcon": false,
+        "Experimental": true
+    },
+    "Scientist_GrenadeLauncher": {
+        "InternalName": "Scientist_GrenadeLauncher",
+        "Elements": [],
+        "Attacks": {
+            "EPalWazaID::Human_Punch": 1
+        },
+        "Human": true,
+        "I18n": {
+            "en": "PAL Genetic Research Unit Executioner",
+            "zh-CN": "基因研究部队 执行小队",
+            "ja": "PAL Genetic Research Unit Executioner",
+            "fr": "Unité de Recherche Génétique – Équipe d’exécution"
+        },
+        "Stats": {
+            "HP": 100,
+            "ATK": 100,
+            "DEF": 50,
+            "MELEE": 100,
+            "CRAFTSPEED": 100,
+            "FOOD": 100
+        },
+        "SortingKey": {
+            "paldeck": ""
+        },
+        "Suitabilities": {
+            "EPalWorkSuitability::EmitFlame": 0,
+            "EPalWorkSuitability::Watering": 0,
+            "EPalWorkSuitability::Seeding": 0,
+            "EPalWorkSuitability::GenerateElectricity": 0,
+            "EPalWorkSuitability::Handcraft": 2,
+            "EPalWorkSuitability::Collection": 0,
+            "EPalWorkSuitability::Deforest": 1,
+            "EPalWorkSuitability::Mining": 1,
+            "EPalWorkSuitability::ProductMedicine": 0,
+            "EPalWorkSuitability::Cool": 3,
+            "EPalWorkSuitability::Transport": 0,
+            "EPalWorkSuitability::MonsterFarm": 0
+        },
+        "HasIcon": false,
+        "Experimental": true
+    },
+    "Scientist_MissileLauncher": {
+        "InternalName": "Scientist_MissileLauncher",
+        "Elements": [],
+        "Attacks": {
+            "EPalWazaID::Human_Punch": 1
+        },
+        "Human": true,
+        "I18n": {
+            "en": "PAL Genetic Research Unit Executioner",
+            "zh-CN": "基因研究部队 执行小队",
+            "ja": "PAL Genetic Research Unit Executioner",
+            "fr": "Unité de Recherche Génétique – Équipe d’exécution"
+        },
+        "Stats": {
+            "HP": 100,
+            "ATK": 100,
+            "DEF": 50,
+            "MELEE": 100,
+            "CRAFTSPEED": 100,
+            "FOOD": 100
+        },
+        "SortingKey": {
+            "paldeck": ""
+        },
+        "Suitabilities": {
+            "EPalWorkSuitability::EmitFlame": 0,
+            "EPalWorkSuitability::Watering": 0,
+            "EPalWorkSuitability::Seeding": 0,
+            "EPalWorkSuitability::GenerateElectricity": 0,
+            "EPalWorkSuitability::Handcraft": 2,
+            "EPalWorkSuitability::Collection": 0,
+            "EPalWorkSuitability::Deforest": 1,
+            "EPalWorkSuitability::Mining": 1,
+            "EPalWorkSuitability::ProductMedicine": 0,
+            "EPalWorkSuitability::Cool": 3,
+            "EPalWorkSuitability::Transport": 0,
+            "EPalWorkSuitability::MonsterFarm": 0
+        },
+        "HasIcon": false,
+        "Experimental": true
+    },
+    "SecurityDrone_Field": {
+        "InternalName": "SecurityDrone_Field",
+        "Elements": [],
+        "Attacks": {
+            "EPalWazaID::Human_Punch": 1
+        },
+        "Human": true,
+        "I18n": {
+            "en": "Attack Chopper",
+            "zh-CN": "武装直升机",
+            "ja": "Attack Chopper",
+            "fr": "Hélicoptère de Combat"
+        },
+        "Stats": {
+            "HP": 100,
+            "ATK": 50,
+            "DEF": 50,
+            "MELEE": 100,
+            "CRAFTSPEED": 100,
+            "FOOD": 100
+        },
+        "SortingKey": {
+            "paldeck": ""
+        },
+        "Suitabilities": {
+            "EPalWorkSuitability::EmitFlame": 0,
+            "EPalWorkSuitability::Watering": 0,
+            "EPalWorkSuitability::Seeding": 0,
+            "EPalWorkSuitability::GenerateElectricity": 0,
+            "EPalWorkSuitability::Handcraft": 1,
+            "EPalWorkSuitability::Collection": 0,
+            "EPalWorkSuitability::Deforest": 1,
+            "EPalWorkSuitability::Mining": 1,
+            "EPalWorkSuitability::ProductMedicine": 0,
+            "EPalWorkSuitability::Cool": 0,
+            "EPalWorkSuitability::Transport": 0,
+            "EPalWorkSuitability::MonsterFarm": 0
+        },
+        "HasIcon": false,
+        "Experimental": true
+    },
+    "SorajimaTowerGuide": {
+        "InternalName": "SorajimaTowerGuide",
+        "Elements": [],
+        "Attacks": {
+            "EPalWazaID::Human_Punch": 1
+        },
+        "Human": true,
+        "I18n": {
+            "en": "Islander",
+            "zh-CN": "岛民",
+            "ja": "Islander",
+            "fr": "Habitant de l'Île"
+        },
+        "Stats": {
+            "HP": 20,
+            "ATK": 50,
+            "DEF": 10,
+            "MELEE": 100,
+            "CRAFTSPEED": 100,
+            "FOOD": 100
+        },
+        "SortingKey": {
+            "paldeck": ""
+        },
+        "Suitabilities": {
+            "EPalWorkSuitability::EmitFlame": 0,
+            "EPalWorkSuitability::Watering": 3,
+            "EPalWorkSuitability::Seeding": 0,
+            "EPalWorkSuitability::GenerateElectricity": 0,
+            "EPalWorkSuitability::Handcraft": 3,
+            "EPalWorkSuitability::Collection": 2,
+            "EPalWorkSuitability::Deforest": 0,
+            "EPalWorkSuitability::Mining": 1,
+            "EPalWorkSuitability::ProductMedicine": 0,
+            "EPalWorkSuitability::Cool": 0,
+            "EPalWorkSuitability::Transport": 0,
+            "EPalWorkSuitability::MonsterFarm": 0
+        },
+        "HasIcon": false
+    },
+    "Viking_GrenadeLauncher": {
+        "InternalName": "Viking_GrenadeLauncher",
+        "Elements": [],
+        "Attacks": {
+            "EPalWazaID::Human_Punch": 1
+        },
+        "Human": true,
+        "I18n": {
+            "en": "Feybreak Warrior",
+            "zh-CN": "天坠之民",
+            "ja": "Feybreak Warrior",
+            "fr": "Guerrier du Paradis Déchu"
+        },
+        "Stats": {
+            "HP": 100,
+            "ATK": 100,
+            "DEF": 100,
+            "MELEE": 100,
+            "CRAFTSPEED": 100,
+            "FOOD": 100
+        },
+        "SortingKey": {
+            "paldeck": ""
+        },
+        "Suitabilities": {
+            "EPalWorkSuitability::EmitFlame": 0,
+            "EPalWorkSuitability::Watering": 0,
+            "EPalWorkSuitability::Seeding": 0,
+            "EPalWorkSuitability::GenerateElectricity": 0,
+            "EPalWorkSuitability::Handcraft": 2,
+            "EPalWorkSuitability::Collection": 0,
+            "EPalWorkSuitability::Deforest": 2,
+            "EPalWorkSuitability::Mining": 2,
+            "EPalWorkSuitability::ProductMedicine": 0,
+            "EPalWorkSuitability::Cool": 0,
+            "EPalWorkSuitability::Transport": 2,
+            "EPalWorkSuitability::MonsterFarm": 0
+        },
+        "HasIcon": false,
+        "Experimental": true
+    },
+    "Viking_Melee": {
+        "InternalName": "Viking_Melee",
+        "Elements": [],
+        "Attacks": {
+            "EPalWazaID::Human_Punch": 1
+        },
+        "Human": true,
+        "I18n": {
+            "en": "Feybreak Warrior",
+            "zh-CN": "天坠之民",
+            "ja": "Feybreak Warrior",
+            "fr": "Guerrier du Paradis Déchu"
+        },
+        "Stats": {
+            "HP": 100,
+            "ATK": 100,
+            "DEF": 100,
+            "MELEE": 100,
+            "CRAFTSPEED": 100,
+            "FOOD": 100
+        },
+        "SortingKey": {
+            "paldeck": ""
+        },
+        "Suitabilities": {
+            "EPalWorkSuitability::EmitFlame": 0,
+            "EPalWorkSuitability::Watering": 0,
+            "EPalWorkSuitability::Seeding": 0,
+            "EPalWorkSuitability::GenerateElectricity": 0,
+            "EPalWorkSuitability::Handcraft": 2,
+            "EPalWorkSuitability::Collection": 0,
+            "EPalWorkSuitability::Deforest": 2,
+            "EPalWorkSuitability::Mining": 2,
+            "EPalWorkSuitability::ProductMedicine": 0,
+            "EPalWorkSuitability::Cool": 0,
+            "EPalWorkSuitability::Transport": 2,
+            "EPalWorkSuitability::MonsterFarm": 0
+        },
+        "HasIcon": false,
+        "Experimental": true
+    },
+    "Viking_RocketLauncher": {
+        "InternalName": "Viking_RocketLauncher",
+        "Elements": [],
+        "Attacks": {
+            "EPalWazaID::Human_Punch": 1
+        },
+        "Human": true,
+        "I18n": {
+            "en": "Feybreak Berserker",
+            "zh-CN": "天坠之民 精英",
+            "ja": "Feybreak Berserker",
+            "fr": "Berserker du Paradis Déchu"
+        },
+        "Stats": {
+            "HP": 100,
+            "ATK": 100,
+            "DEF": 100,
+            "MELEE": 100,
+            "CRAFTSPEED": 100,
+            "FOOD": 100
+        },
+        "SortingKey": {
+            "paldeck": ""
+        },
+        "Suitabilities": {
+            "EPalWorkSuitability::EmitFlame": 0,
+            "EPalWorkSuitability::Watering": 0,
+            "EPalWorkSuitability::Seeding": 0,
+            "EPalWorkSuitability::GenerateElectricity": 0,
+            "EPalWorkSuitability::Handcraft": 2,
+            "EPalWorkSuitability::Collection": 0,
+            "EPalWorkSuitability::Deforest": 3,
+            "EPalWorkSuitability::Mining": 3,
+            "EPalWorkSuitability::ProductMedicine": 0,
+            "EPalWorkSuitability::Cool": 0,
+            "EPalWorkSuitability::Transport": 3,
+            "EPalWorkSuitability::MonsterFarm": 0
+        },
+        "HasIcon": false,
+        "Experimental": true
+    },
+    "WildlifeSanctuaryDrone": {
+        "InternalName": "WildlifeSanctuaryDrone",
+        "Elements": [],
+        "Attacks": {
+            "EPalWazaID::Human_Punch": 1
+        },
+        "Human": true,
+        "I18n": {
+            "en": "Patrol Drone",
+            "zh-CN": "防卫无人机",
+            "ja": "Patrol Drone",
+            "fr": "Drone de Défense"
+        },
+        "Stats": {
+            "HP": 100,
+            "ATK": 50,
+            "DEF": 50,
+            "MELEE": 100,
+            "CRAFTSPEED": 100,
+            "FOOD": 100
+        },
+        "SortingKey": {
+            "paldeck": ""
+        },
+        "Suitabilities": {
+            "EPalWorkSuitability::EmitFlame": 0,
+            "EPalWorkSuitability::Watering": 0,
+            "EPalWorkSuitability::Seeding": 0,
+            "EPalWorkSuitability::GenerateElectricity": 0,
+            "EPalWorkSuitability::Handcraft": 1,
+            "EPalWorkSuitability::Collection": 0,
+            "EPalWorkSuitability::Deforest": 1,
+            "EPalWorkSuitability::Mining": 1,
+            "EPalWorkSuitability::ProductMedicine": 0,
+            "EPalWorkSuitability::Cool": 0,
+            "EPalWorkSuitability::Transport": 0,
+            "EPalWorkSuitability::MonsterFarm": 0
+        },
+        "HasIcon": false,
+        "Experimental": true
+    },
+    "WildlifeSanctuary_guide": {
+        "InternalName": "WildlifeSanctuary_guide",
+        "Elements": [],
+        "Attacks": {
+            "EPalWazaID::Human_Punch": 1
+        },
+        "Human": true,
+        "I18n": {
+            "en": "Newbie Pal Tamer",
+            "zh-CN": "初出茅庐的帕鲁驯养师",
+            "ja": "Newbie Pal Tamer",
+            "fr": "Paldresseur Novice"
+        },
+        "Stats": {
+            "HP": 100,
+            "ATK": 100,
+            "DEF": 100,
+            "MELEE": 100,
+            "CRAFTSPEED": 100,
+            "FOOD": 100
+        },
+        "SortingKey": {
+            "paldeck": ""
+        },
+        "Suitabilities": {
+            "EPalWorkSuitability::EmitFlame": 0,
+            "EPalWorkSuitability::Watering": 0,
+            "EPalWorkSuitability::Seeding": 1,
+            "EPalWorkSuitability::GenerateElectricity": 0,
+            "EPalWorkSuitability::Handcraft": 1,
+            "EPalWorkSuitability::Collection": 0,
+            "EPalWorkSuitability::Deforest": 1,
+            "EPalWorkSuitability::Mining": 1,
+            "EPalWorkSuitability::ProductMedicine": 0,
+            "EPalWorkSuitability::Cool": 0,
+            "EPalWorkSuitability::Transport": 0,
+            "EPalWorkSuitability::MonsterFarm": 0
+        },
+        "HasIcon": false
     }
 }
