@@ -3,8 +3,15 @@ setlocal
 cd /d "%~dp0"
 
 if not exist ".venv\Scripts\python.exe" (
-  echo The local Pal Editor environment is missing.
-  echo Recreate .venv and install this project before launching.
+  echo This file is only for developers running the source code.
+  echo.
+  echo For normal Windows use, download and run:
+  echo Palworld-Pal-Editor-1.0.exe
+  echo.
+  echo Opening the official Community Edition release page...
+  start "" "https://github.com/Guineabear/Palworld-Pal-Editor/releases/latest"
+  echo.
+  echo If you are a developer, create .venv and install the project first.
   pause
   exit /b 1
 )
