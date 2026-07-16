@@ -20,7 +20,7 @@ A community-maintained Windows save editor updated and tested for **Palworld 1.0
 - Supports the revised Palworld 1.0 guild-role and permission save layout.
 - Edits Pal level, experience, rank, souls, IVs, work suitability, passives, active skills, and more.
 - Supports up to six active passive skills. Palworld applies slots five and six but only displays the first four in its Pal details screen.
-- Supports level 85, friendship level 10, soul enhancement level 20, and the expanded work-suitability range.
+- Supports level 85, friendship level 10, soul enhancement level 20, and work suitability up to level 10.
 - Includes refreshed 1.0 data: 704 Pal IDs, 411 human NPC IDs, 384 active skills, 420 passive skills, and the 1.0 experience curve.
 - Edits player technology points, ancient technology points, unlocked recipes, and fast-travel points.
 - Makes timestamped backups before writing changes.

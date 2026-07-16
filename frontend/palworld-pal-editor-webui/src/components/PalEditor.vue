@@ -31,7 +31,7 @@ function filterInvalid(list) {
 }
 
 const isMaxSuit = key => {
-  return palStore.SELECTED_PAL_DATA.Suitabilities[key] >= 5;
+  return palStore.SELECTED_PAL_DATA.Suitabilities[key] >= palStore.MAX_SUITABILITY_LEVEL;
 };
 
 const isMinSuit = key => {

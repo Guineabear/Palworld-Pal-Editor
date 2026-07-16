@@ -20,6 +20,7 @@ from palworld_pal_editor.utils.util import type_guard
 class PalEntity:
     MAX_LEVEL = 85
     MAX_INVALID_LEVEL = 100
+    MAX_WORK_SUITABILITY_LEVEL = 10
 
     def __init__(self, pal_obj: dict) -> None:
         self._pal_obj: dict = pal_obj
@@ -967,6 +968,7 @@ class PalEntity:
     @LOGGER.change_logger("AddedWorkSuitabilities")
     @type_guard
     def set_WorkSuitability(self, suit: PalSuitability | str, rank: int) -> None:
+        rank = clamp(0, self.MAX_WORK_SUITABILITY_LEVEL, rank)
         if self.AddedWorkSuitabilities is None:
             self._pal_param["GotWorkSuitabilityAddRankList"] = (
                 PalObjects.GotWorkSuitabilityAddRankList()
