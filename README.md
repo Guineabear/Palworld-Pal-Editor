@@ -19,6 +19,7 @@ A community-maintained Windows save editor updated and tested for **Palworld 1.0
 - Reads the newer Oodle-compressed `PlM` saves and writes game-compatible `PlZ` saves.
 - Supports Palworld 1.0 recovery-party timestamps stored as signed 64-bit map values.
 - Supports the revised Palworld 1.0 guild-role and permission save layout.
+- Supports populated invasion declaration start-point sets without corrupting surrounding world data.
 - Edits Pal level, experience, rank, souls, IVs, work suitability, passives, active skills, and more.
 - Supports up to six active passive skills. Palworld applies slots five and six but only displays the first four in its Pal details screen.
 - Supports level 80, friendship level 10, soul enhancement level 20, and work suitability up to level 10.

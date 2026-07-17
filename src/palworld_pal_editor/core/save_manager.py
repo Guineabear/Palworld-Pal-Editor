@@ -51,9 +51,17 @@ def skip_decode(reader: FArchiveReader, type_name: str, size: int, path: str):
             "id": reader.optional_guid(),
             "value": reader.read(size),
         }
+    elif type_name == "SetProperty":
+        value = {
+            "skip_type": type_name,
+            "set_type": reader.fstring(),
+            "id": reader.optional_guid(),
+            "value": reader.read(size),
+        }
     else:
         raise Exception(
-            f"Expected ArrayProperty or MapProperty or StructProperty, got {type_name} in {path}"
+            "Expected ArrayProperty, MapProperty, StructProperty, or "
+            f"SetProperty, got {type_name} in {path}"
         )
     return value
 
@@ -90,9 +98,17 @@ def skip_encode(writer: FArchiveWriter, property_type: str, properties: dict) ->
         writer.optional_guid(properties.get("id", None))
         writer.write(properties["value"])
         return len(properties["value"])
+    elif property_type == "SetProperty":
+        del properties["custom_type"]
+        del properties["skip_type"]
+        writer.fstring(properties["set_type"])
+        writer.optional_guid(properties.get("id", None))
+        writer.write(properties["value"])
+        return len(properties["value"])
     else:
         raise Exception(
-            f"Expected ArrayProperty or MapProperty or StructProperty, got {property_type}"
+            "Expected ArrayProperty, MapProperty, StructProperty, or "
+            f"SetProperty, got {property_type}"
         )
 
 
