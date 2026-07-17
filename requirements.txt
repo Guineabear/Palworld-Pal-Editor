@@ -1,5 +1,5 @@
 setuptools==80.9.0
-git+https://github.com/Guineabear/palworld-save-tools.git@dc57b567f06aafac41a50929eb818f8b9845ab99#egg=palworld-save-tools
+git+https://github.com/Guineabear/palworld-save-tools.git@c53bc6c1c1c529f2d33cb44a7b6c36c967930c3f#egg=palworld-save-tools
 pyooz==0.0.8
 wheel==0.46.1
 Flask==3.1.2
