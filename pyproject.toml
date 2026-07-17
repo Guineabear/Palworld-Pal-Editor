@@ -12,7 +12,7 @@ keywords = ["palworld", "editor", "pal"]
 license = {file = "LICENSE"}
 requires-python = ">=3.11"
 readme = "README.md"
-version = "0.15.6+palworld.1.0"
+version = "0.15.5a+palworld.1.0"
 dependencies = [
     "setuptools==80.9.0",
     "palworld-save-tools @ git+https://github.com/Guineabear/palworld-save-tools.git@c53bc6c1c1c529f2d33cb44a7b6c36c967930c3f",
