@@ -9,6 +9,7 @@ on:
 jobs:
   release-build:
     strategy:
+      fail-fast: false
       matrix:
         # os: [ubuntu-latest, macos-latest, windows-latest]
         os: [macos-latest, windows-latest]
@@ -171,6 +172,7 @@ jobs:
       if: startsWith(github.ref, 'refs/tags/') || github.event_name == 'workflow_dispatch'
       with:
         files: dist/*
+        tag_name: ${{ env.VERSION_TAG }}
         prerelease: ${{ contains(env.VERSION_TAG, 'beta') || contains(env.VERSION_TAG, 'alpha') || contains(env.VERSION_TAG, 'rc') }}
         body: |
           ## Changes
