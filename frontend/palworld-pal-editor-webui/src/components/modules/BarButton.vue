@@ -15,18 +15,19 @@ defineProps(['content', 'name', 'value'])
 button {
     margin-bottom: 1rem;
     height: 3rem;
-    background-color: #3365da;
-    color: whitesmoke;
-    border: none;
+    background-color: var(--color-accent-strong);
+    color: var(--color-ink);
+    border: 1px solid transparent;
     outline: none;
-    border-radius: 0.5rem;
-    font-size: 1.2rem;
-    transition: all 0.3s ease-in-out;
+    border-radius: var(--radius-input);
+    font-size: var(--text-md);
+    font-weight: 650;
+    transition: filter var(--dur-short) var(--ease-out), transform var(--dur-short) var(--ease-out);
 }
 
 button:hover {
-    background-color: #1b49b4;
-    transition: all 0.3s ease-in-out;
+    filter: brightness(1.08);
+    transform: translateY(-1px);
     cursor: pointer;
 }
 

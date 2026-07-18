@@ -362,6 +362,10 @@ export const usePalEditorStore = defineStore("paleditor", () => {
     const TECH_LV_DICT = ref({});
     const PASSIVE_SKILLS = ref({});
     const PASSIVE_SKILLS_LIST = ref([]);
+    const PASSIVE_PRESETS = ref([]);
+    const PASSIVE_PRESETS_LOADING = ref(false);
+    const ACTIVE_PRESETS = ref([]);
+    const ACTIVE_PRESETS_LOADING = ref(false);
     const ACTIVE_SKILLS = ref({});
     const ACTIVE_SKILLS_LIST = ref([]);
     const PAL_STATIC_DATA = ref({});
@@ -1266,6 +1270,160 @@ export const usePalEditorStore = defineStore("paleditor", () => {
             alert(`- updatePal - Error occured: ${response.msg}`);
         }
         if (!no_set_loading_flag) LOADING_FLAG.value = false;
+        return response.status === 0;
+    }
+
+    async function loadPassivePresets() {
+        PASSIVE_PRESETS_LOADING.value = true;
+        const response = await GET("/api/presets/passives");
+        PASSIVE_PRESETS_LOADING.value = false;
+        if (response?.status === 0) {
+            PASSIVE_PRESETS.value = response.data?.presets || [];
+            return true;
+        }
+        return false;
+    }
+
+    async function createPassivePreset(name) {
+        const response = await POST("/api/presets/passives", {
+            name,
+            skills: [...(SELECTED_PAL_DATA.value?.PassiveSkillList || [])],
+        });
+        if (response?.status === 0) {
+            await loadPassivePresets();
+            return response.data;
+        }
+        throw new Error(response?.msg || "Could not save this preset.");
+    }
+
+    async function renamePassivePreset(presetId, name) {
+        const response = await PATCH(`/api/presets/passives/${presetId}`, { name });
+        if (response?.status === 0) {
+            await loadPassivePresets();
+            return true;
+        }
+        throw new Error(response?.msg || "Could not rename this preset.");
+    }
+
+    async function deletePassivePreset(presetId) {
+        const response = await DELETE(`/api/presets/passives/${presetId}`);
+        if (response?.status === 0) {
+            await loadPassivePresets();
+            return true;
+        }
+        throw new Error(response?.msg || "Could not delete this preset.");
+    }
+
+    async function applyPassivePreset(preset) {
+        if (!preset || !SELECTED_PAL_DATA.value) return false;
+        return await updatePal({
+            target: { name: "set_PassiveSkillList", value: [...preset.skills] },
+        });
+    }
+
+    function exportPassivePresets() {
+        const exportData = {
+            schema_version: 1,
+            exported_at: new Date().toISOString(),
+            presets: PASSIVE_PRESETS.value,
+        };
+        const blob = new Blob([JSON.stringify(exportData, null, 2)], { type: "application/json" });
+        const url = URL.createObjectURL(blob);
+        const anchor = document.createElement("a");
+        anchor.href = url;
+        anchor.download = "paldeck-passive-presets.json";
+        anchor.click();
+        URL.revokeObjectURL(url);
+    }
+
+    async function importPassivePresets(document, replace = false) {
+        const response = await POST("/api/presets/passives/import", { document, replace });
+        if (response?.status === 0) {
+            await loadPassivePresets();
+            return true;
+        }
+        throw new Error(response?.msg || "Could not import this preset file.");
+    }
+
+    async function loadActivePresets() {
+        ACTIVE_PRESETS_LOADING.value = true;
+        const response = await GET("/api/presets/actives");
+        ACTIVE_PRESETS_LOADING.value = false;
+        if (response?.status === 0) {
+            ACTIVE_PRESETS.value = response.data?.presets || [];
+            return true;
+        }
+        return false;
+    }
+
+    async function createActivePreset(name) {
+        const equipped = [...(SELECTED_PAL_DATA.value?.EquipWaza || [])];
+        const learned = [...new Set([
+            ...(SELECTED_PAL_DATA.value?.MasteredWaza || []),
+            ...equipped,
+        ])];
+        const response = await POST("/api/presets/actives", {
+            name,
+            equipped,
+            learned,
+        });
+        if (response?.status === 0) {
+            await loadActivePresets();
+            return response.data;
+        }
+        throw new Error(response?.msg || "Could not save this active preset.");
+    }
+
+    async function renameActivePreset(presetId, name) {
+        const response = await PATCH(`/api/presets/actives/${presetId}`, { name });
+        if (response?.status === 0) {
+            await loadActivePresets();
+            return true;
+        }
+        throw new Error(response?.msg || "Could not rename this active preset.");
+    }
+
+    async function deleteActivePreset(presetId) {
+        const response = await DELETE(`/api/presets/actives/${presetId}`);
+        if (response?.status === 0) {
+            await loadActivePresets();
+            return true;
+        }
+        throw new Error(response?.msg || "Could not delete this active preset.");
+    }
+
+    async function applyActivePreset(preset) {
+        if (!preset || !SELECTED_PAL_DATA.value) return false;
+        return await updatePal({
+            target: {
+                name: "set_ActiveSkillLoadout",
+                value: { equipped: [...preset.equipped], learned: [...preset.learned] },
+            },
+        });
+    }
+
+    function exportActivePresets() {
+        const exportData = {
+            schema_version: 1,
+            exported_at: new Date().toISOString(),
+            presets: ACTIVE_PRESETS.value,
+        };
+        const blob = new Blob([JSON.stringify(exportData, null, 2)], { type: "application/json" });
+        const url = URL.createObjectURL(blob);
+        const anchor = document.createElement("a");
+        anchor.href = url;
+        anchor.download = "paldeck-active-skill-presets.json";
+        anchor.click();
+        URL.revokeObjectURL(url);
+    }
+
+    async function importActivePresets(document, replace = false) {
+        const response = await POST("/api/presets/actives/import", { document, replace });
+        if (response?.status === 0) {
+            await loadActivePresets();
+            return true;
+        }
+        throw new Error(response?.msg || "Could not import this active preset file.");
     }
 
     function GET_PAL_OWNER_API_ID() {
@@ -1573,8 +1731,12 @@ export const usePalEditorStore = defineStore("paleditor", () => {
         PAL_STATIC_DATA_LIST,
         PASSIVE_SKILLS,
         PASSIVE_SKILLS_LIST,
+        PASSIVE_PRESETS,
+        PASSIVE_PRESETS_LOADING,
         ACTIVE_SKILLS,
         ACTIVE_SKILLS_LIST,
+        ACTIVE_PRESETS,
+        ACTIVE_PRESETS_LOADING,
         TECH_LV_DICT,
 
         getTranslatedText,
@@ -1593,6 +1755,20 @@ export const usePalEditorStore = defineStore("paleditor", () => {
         selectPlayer,
         selectPal,
         updatePal,
+        loadPassivePresets,
+        createPassivePreset,
+        renamePassivePreset,
+        deletePassivePreset,
+        applyPassivePreset,
+        exportPassivePresets,
+        importPassivePresets,
+        loadActivePresets,
+        createActivePreset,
+        renameActivePreset,
+        deleteActivePreset,
+        applyActivePreset,
+        exportActivePresets,
+        importActivePresets,
         updatePlayer,
         writeSave,
         fetch_config,

@@ -30,88 +30,38 @@ watch(() => palStore.LOADING_FLAG, (newValue) => {
   }
 });
 
-const donate = async () => {
-  if (await palStore.showDonate()) {
-    alert(palStore.getTranslatedText("TopBar_Btn_Invalid_Options_ADs"));
-    palStore.SHOW_DONATE_FLAG = true;
-  }
-}
-
-const show_cheats = async () => {
-  await donate();
+const show_cheats = () => {
   palStore.HIDE_INVALID_OPTIONS = !palStore.HIDE_INVALID_OPTIONS;
 }
 
 const save = async () => {
-  if (await palStore.writeSave()) {
-    await donate();
-  }
+  await palStore.writeSave();
 }
 </script>
 
 <template>
   <div class="loading-bar" v-if="showLoading" :style="{ width: loadingWidth + '%' }"></div>
-  <div id="topbar">
-    <div class="options" v-if="palStore.SAVE_LOADED_FLAG">
-      <p>💾</p>
-      <input class="savePath" type="text" v-model="palStore.PAL_WRITE_BACK_PATH"
-        :placeholder="palStore.PAL_GAME_SAVE_PATH" :disabled="palStore.LOADING_FLAG">
-      <button class="op save" @click="save" :disabled="palStore.LOADING_FLAG">
-        💾 {{ palStore.getTranslatedText("TopBar_Btn_Save") }}
-      </button>
-      <button class="op" @click="palStore.loadSave" :disabled="palStore.LOADING_FLAG">
-        🔄 {{ palStore.getTranslatedText("TopBar_Btn_Reload") }}
-      </button>
-      <button class="op" @click="palStore.reset" :disabled="palStore.LOADING_FLAG">
-        🏠 {{ palStore.getTranslatedText("TopBar_Btn_Main_Page") }}
-      </button>
-
-      <div class="tooltip-container">
-        <button class="op" @click="palStore.updatePal" name="heal_all_pals" :disabled="palStore.LOADING_FLAG">
-          💉 {{ palStore.getTranslatedText("TopBar_Btn_HealAllPals") }}
-        </button>
-        <span class="tooltip-text">{{ palStore.getTranslatedText('TopBar_Btn_HealAllPals_Tooltips') }}</span>
-      </div>
-
-      <div class="tooltip-container">
-        <button :class="['op', { 'toggled': palStore.SHOW_OOB_PAL_FLAG }]"
-          @click="palStore.SHOW_OOB_PAL_FLAG = !palStore.SHOW_OOB_PAL_FLAG" :disabled="palStore.LOADING_FLAG"
-          :title="palStore.getTranslatedText('TopBar_Pal_OOB_Tooltips')">
-          🧊 {{ palStore.getTranslatedText("TopBar_Btn_Pal_OOB") }}
-        </button>
-        <span class="tooltip-text">{{ palStore.getTranslatedText('TopBar_Pal_OOB_Tooltips') }}</span>
-      </div>
-
-      <!-- <div class="tooltip-container">
-        <button :class="['op', { 'toggled': palStore.SHOW_UNREF_PAL_FLAG }]"
-          @click="palStore.SHOW_UNREF_PAL_FLAG = !palStore.SHOW_UNREF_PAL_FLAG" :disabled="palStore.LOADING_FLAG"
-          :title="palStore.getTranslatedText('TopBar_Pal_Ghost_Tooltips')">
-          👀 {{ palStore.getTranslatedText("TopBar_Btn_Pal_Ghost") }}
-        </button>
-        <span class="tooltip-text">{{ palStore.getTranslatedText('TopBar_Pal_Ghost_Tooltips') }}</span>
-      </div> -->
-
-      <div class="tooltip-container">
-        <button :class="['op', { 'toggled': palStore.HIDE_INVALID_OPTIONS }]" @click="show_cheats"
-          :disabled="palStore.LOADING_FLAG" :title="palStore.getTranslatedText('TopBar_Invalid_Options_Tooltips')">
-          ⚠️ {{ palStore.getTranslatedText("TopBar_Btn_Invalid_Options") }}
-        </button>
-        <span class="tooltip-text">{{ palStore.getTranslatedText('TopBar_Invalid_Options_Tooltips') }}</span>
-      </div>
-
-      <button class="op blue" @click="palStore.SHOW_DONATE_FLAG = !palStore.SHOW_DONATE_FLAG" :disabled="palStore.LOADING_FLAG">
-        ❤️ {{ palStore.getTranslatedText("TopBar_Btn_Donation") }}
-      </button>
-
+  <header id="topbar" class="app-command-bar">
+    <a class="app-brand" href="https://github.com/Guineabear/Palworld-Pal-Editor" target="_blank"
+      rel="noopener noreferrer" aria-label="Palworld Pal Editor on GitHub">
+      <img src="@/assets/logo.ico" alt="" width="34" height="34">
+      <span><strong>Paldeck</strong><small>Pal Editor</small></span>
+    </a>
+    <div class="save-context" v-if="palStore.SAVE_LOADED_FLAG">
+      <strong>Loaded save</strong>
+      <span>{{ palStore.PAL_WRITE_BACK_PATH || palStore.PAL_GAME_SAVE_PATH }}</span>
     </div>
-    <div class="options">
-      <p>🌐</p>
-      <select id="languageSelect" v-model="palStore.I18n" @change="palStore.updateI18n"
-        :disabled="palStore.LOADING_FLAG">
+    <nav class="primary-actions" v-if="palStore.SAVE_LOADED_FLAG" aria-label="Save actions">
+      <button class="op save" @click="save" :disabled="palStore.LOADING_FLAG">{{ palStore.getTranslatedText("TopBar_Btn_Save") }}</button>
+      <button class="op" @click="palStore.loadSave" :disabled="palStore.LOADING_FLAG">{{ palStore.getTranslatedText("TopBar_Btn_Reload") }}</button>
+      <button class="op quiet" @click="palStore.reset" :disabled="palStore.LOADING_FLAG">{{ palStore.getTranslatedText("TopBar_Btn_Main_Page") }}</button>
+    </nav>
+    <div class="language-control">
+      <select id="languageSelect" v-model="palStore.I18n" @change="palStore.updateI18n" aria-label="Language" :disabled="palStore.LOADING_FLAG">
         <option :value="key" v-for="translated, key in palStore.I18nList">{{ translated }}</option>
       </select>
     </div>
-  </div>
+  </header>
 </template>
 
 <style scoped>
@@ -119,11 +69,36 @@ div#topbar {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100vw;
+  width: 100%;
+  height: var(--topbar-height);
+  min-width: 0;
   z-index: 1000;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
+  gap: var(--space-2xs);
+  padding: var(--space-2xs) var(--space-sm);
+  background: var(--color-paper-glass);
+  border-bottom: var(--rule);
+  box-shadow: var(--shadow-topbar);
+  backdrop-filter: blur(12px);
+}
+
+div.brand {
+  display: flex;
+  flex: 0 0 auto;
+  align-items: center;
+  gap: var(--space-2xs);
+  color: var(--color-ink);
+  white-space: nowrap;
+}
+
+div.brand img {
+  border-radius: var(--radius-input);
+}
+
+div.brand strong {
+  font-weight: 700;
 }
 
 div.loading-bar {
@@ -138,56 +113,74 @@ div.loading-bar {
 div.options {
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: .5rem;
-  padding: 0.3rem;
+  justify-content: flex-start;
+  gap: var(--space-3xs);
+  min-width: 0;
+  padding: 0;
+}
+
+div.options:nth-last-child(2) {
+  flex: 1 1 auto;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scrollbar-width: thin;
+}
+
+div.options:last-child {
+  flex: 0 0 auto;
+  margin-left: auto;
 }
 
 select#languageSelect {
   display: flex;
   align-items: center;
-  background-color: #272727;
-  height: 1.8rem;
-  margin: .2rem;
-  padding: .2rem .4rem;
-  border-radius: .5rem;
-  color: rgb(208, 212, 226);
-  box-shadow: 2px 2px 10px rgb(38, 38, 38);
+  background-color: var(--color-paper-2);
+  height: 2.25rem;
+  margin: 0;
+  padding: .25rem .55rem;
+  border: var(--rule);
+  border-radius: var(--radius-input);
+  color: var(--color-ink);
 }
 
 input.savePath {
   display: flex;
   align-items: center;
-  background-color: #34353a;
-  height: 1.8rem;
-  max-width: 30vw;
-  margin: .2rem;
-  padding: .2rem .4rem;
-  border-radius: .5rem;
-  color: rgb(208, 212, 226);
-  box-shadow: 2px 2px 10px rgb(38, 38, 38);
-  border: none;
+  background-color: var(--color-paper-2);
+  height: 2.25rem;
+  width: clamp(10rem, 19vw, 22rem);
+  min-width: 8rem;
+  margin: 0;
+  padding: .25rem .6rem;
+  border-radius: var(--radius-input);
+  color: var(--color-ink);
+  border: var(--rule);
   outline: none;
 }
 
 input.savePath:focus {
-  background-color: #b4b7be;
-  color: rgb(0, 0, 0);
+  background-color: var(--color-paper-3);
+  border-color: var(--color-accent);
+  color: var(--color-ink);
 }
 
 button.op {
-  height: 2rem;
-  background-color: #414141;
-  color: whitesmoke;
-  border: none;
+  height: 2.25rem;
+  flex: 0 0 auto;
+  padding: 0 var(--space-xs);
+  background-color: var(--color-paper-3);
+  color: var(--color-ink);
+  border: var(--rule);
   outline: none;
-  border-radius: 0.5rem;
-  transition: all 0.15s ease-in-out;
+  border-radius: var(--radius-input);
+  white-space: nowrap;
+  transition: background-color var(--dur-short) var(--ease-out), border-color var(--dur-short) var(--ease-out), transform var(--dur-short) var(--ease-out);
 }
 
 button.op:hover {
-  background-color: #2c2c2c;
-  transition: all 0.15s ease-in-out;
+  background-color: var(--color-accent-muted);
+  border-color: var(--color-accent);
+  transform: translateY(-1px);
   cursor: pointer;
 }
 
@@ -199,18 +192,17 @@ button.op:disabled {
 }
 
 button.op.blue {
-  height: 2rem;
-  background-color: rgb(55, 139, 243);
-  color: whitesmoke;
-  border: none;
+  height: 2.25rem;
+  background-color: var(--color-accent-strong);
+  color: var(--color-ink);
+  border: 1px solid transparent;
   outline: none;
-  border-radius: 0.5rem;
-  transition: all 0.15s ease-in-out;
+  border-radius: var(--radius-input);
+  transition: background-color var(--dur-short) var(--ease-out), transform var(--dur-short) var(--ease-out);
 }
 
 button.op.blue:hover {
   background-color: rgb(11, 84, 173);
-  transition: all 0.15s ease-in-out;
   cursor: pointer;
 }
 
@@ -222,7 +214,7 @@ button.op.blue:disabled {
 }
 
 button.op.save {
-  background-color: #bd1c3c;
+  background-color: var(--color-danger);
 }
 
 button.op.save:hover {
@@ -237,7 +229,8 @@ button.op.save:disabled {
 }
 
 button.op.toggled {
-  background-color: #1cbd64;
+  background-color: var(--color-success);
+  color: var(--color-accent-ink);
 }
 
 button.op.toggled:hover {
@@ -254,16 +247,18 @@ button.op.toggled:disabled {
 .tooltip-container {
   position: relative;
   display: inline-block;
+  flex: 0 0 auto;
 }
 
 .tooltip-text {
   visibility: hidden;
   width: 200px;
-  background-color: rgba(0, 0, 0, 0.85);
-  color: white;
+  background-color: var(--color-paper);
+  color: var(--color-ink);
   text-align: center;
-  border-radius: 6px;
-  padding: 1rem;
+  border: var(--rule);
+  border-radius: var(--radius-card);
+  padding: var(--space-xs);
 
   /* Position the tooltip */
   position: absolute;
@@ -275,5 +270,156 @@ button.op.toggled:disabled {
 
 .tooltip-container:hover .tooltip-text {
   visibility: visible;
+}
+
+.tooltip-container:focus-within .tooltip-text {
+  visibility: visible;
+}
+
+@media (max-width: 1080px) {
+  div.brand strong {
+    display: none;
+  }
+}
+
+@media (max-width: 720px) {
+  div#topbar {
+    padding-inline: var(--space-2xs);
+  }
+
+  div.brand {
+    display: none;
+  }
+
+  input.savePath {
+    width: 10rem;
+  }
+}
+
+header#topbar.app-command-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  display: grid;
+  grid-template-columns: auto minmax(10rem, 1fr) auto auto;
+  align-items: center;
+  gap: var(--space-xs);
+  height: var(--topbar-height);
+  width: 100%;
+  min-width: 0;
+  padding: var(--space-2xs) var(--space-sm);
+  overflow: visible;
+  border-bottom: var(--rule);
+  background: var(--color-paper-glass);
+  box-shadow: var(--shadow-topbar);
+  backdrop-filter: blur(12px);
+}
+
+.app-brand {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2xs);
+  color: var(--color-ink);
+  text-decoration: none;
+}
+
+.app-brand img { border-radius: var(--radius-input); }
+.app-brand span { display: flex; flex-direction: column; line-height: 1.05; }
+.app-brand strong { font-size: var(--text-md); font-weight: 750; }
+.app-brand small { color: var(--color-ink-2); font-size: .68rem; letter-spacing: .08em; text-transform: uppercase; }
+
+.save-context {
+  display: block;
+  min-width: 0;
+}
+
+.save-context strong,
+.save-context span { display: block; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.save-context strong { color: var(--color-ink); font-size: var(--text-xs); }
+.save-context span { color: var(--color-ink-2); font-family: var(--font-mono); font-size: .68rem; }
+
+header#topbar.app-command-bar input.savePath {
+  width: 100%;
+  min-width: 0;
+  max-width: none;
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+}
+
+.primary-actions { display: flex; align-items: center; gap: var(--space-3xs); }
+
+header#topbar.app-command-bar button.op {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 2.35rem;
+  padding-inline: var(--space-xs);
+  font-size: var(--text-sm);
+}
+
+header#topbar.app-command-bar button.op.save { background: var(--color-accent); color: var(--color-accent-ink); font-weight: 750; }
+header#topbar.app-command-bar button.op.quiet { background: transparent; }
+
+.utility-menu { position: relative; }
+
+.utility-menu summary {
+  min-width: 4.5rem;
+  padding: .45rem var(--space-xs);
+  border: var(--rule);
+  border-radius: var(--radius-input);
+  background: var(--color-paper-3);
+  color: var(--color-ink);
+  cursor: pointer;
+  list-style: none;
+  text-align: center;
+}
+
+.utility-menu summary::-webkit-details-marker { display: none; }
+.utility-menu[open] summary { border-color: var(--color-accent); }
+
+.utility-popover {
+  position: absolute;
+  top: calc(100% + var(--space-2xs));
+  right: 0;
+  z-index: 1200;
+  display: grid;
+  gap: var(--space-3xs);
+  width: 15rem;
+  padding: var(--space-2xs);
+  border: var(--rule);
+  border-radius: var(--radius-card);
+  background: var(--color-paper-2);
+  box-shadow: var(--shadow-panel);
+}
+
+.utility-popover button.op { width: 100%; justify-content: flex-start; }
+.utility-navigation { display: none !important; }
+.language-control { min-width: 0; justify-self: end; grid-column: 4; }
+.language-control select { min-width: 6.5rem; }
+
+@media (max-width: 1050px) {
+  header#topbar.app-command-bar { grid-template-columns: auto minmax(8rem, 1fr) auto auto; }
+  .language-control { grid-column: 4; }
+  .primary-actions .quiet, .save-context-label, .app-brand small { display: none; }
+  .save-context { grid-template-columns: minmax(0, 1fr); }
+}
+
+@media (max-width: 700px) {
+  header#topbar.app-command-bar { grid-template-columns: auto minmax(0, 1fr) auto auto; gap: var(--space-3xs); }
+  .language-control { grid-column: 3; }
+  .save-context, header#topbar.app-command-bar .primary-actions .op:not(.save), .app-brand span { display: none; }
+  .primary-actions { justify-self: end; }
+  .language-control { grid-column: 4; }
+  .utility-navigation { display: flex !important; }
+}
+
+@media (max-width: 420px) {
+  header#topbar.app-command-bar { grid-template-columns: auto auto 1fr; }
+  .app-brand { display: none; }
+  .language-control { grid-column: 3; }
+  .language-control select { min-width: 5rem; }
+  header#topbar.app-command-bar button.op { padding-inline: var(--space-2xs); font-size: .72rem; }
+  .utility-menu summary { min-width: 4rem; padding-inline: var(--space-2xs); font-size: .75rem; }
 }
 </style>

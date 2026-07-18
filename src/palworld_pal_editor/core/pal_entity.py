@@ -832,6 +832,17 @@ class PalEntity:
         except Exception as e:
             LOGGER.warning(f"{e}")
 
+    @LOGGER.change_logger("PassiveSkillList")
+    def set_PassiveSkillList(self, skills: list[str]) -> bool:
+        if not isinstance(skills, list) or len(skills) > 6 or len(skills) != len(set(skills)):
+            return False
+        if any(not DataProvider.has_passive_skill(skill) for skill in skills):
+            return False
+        self._pal_param["PassiveSkillList"] = PalObjects.ArrayProperty(
+            "NameProperty", {"values": list(skills)}
+        )
+        return True
+
     @property
     def EquipWaza(self) -> Optional[list[str]]:
         return PalObjects.get_ArrayProperty(self._pal_param.get("EquipWaza"))
@@ -937,6 +948,29 @@ class PalEntity:
             return waza
         except Exception as e:
             LOGGER.warning(f"{e}")
+
+    @LOGGER.change_logger("EquipWaza")
+    @LOGGER.change_logger("MasteredWaza")
+    def set_ActiveSkillLoadout(self, loadout: dict) -> bool:
+        if not isinstance(loadout, dict):
+            return False
+        equipped = loadout.get("equipped", [])
+        learned = loadout.get("learned", [])
+        if not isinstance(equipped, list) or not isinstance(learned, list):
+            return False
+        if len(equipped) > 3 or len(equipped) != len(set(equipped)) or len(learned) != len(set(learned)):
+            return False
+        if any(skill not in learned for skill in equipped):
+            return False
+        if any(not DataProvider.has_attack(skill) for skill in [*equipped, *learned]):
+            return False
+        self._pal_param["MasteredWaza"] = PalObjects.ArrayProperty(
+            "EnumProperty", {"values": list(learned)}
+        )
+        self._pal_param["EquipWaza"] = PalObjects.ArrayProperty(
+            "EnumProperty", {"values": list(equipped)}
+        )
+        return True
 
     @property
     def AddedWorkSuitabilities(self) -> Optional[dict[PalSuitability, int]]:

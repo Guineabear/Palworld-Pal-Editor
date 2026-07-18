@@ -8,9 +8,9 @@ const PW = ref("")
 </script>
 <template>
     <div id="authDiv">
-        <img alt="Vue logo" class="logo" src="@/assets/logo.ico" width="125" height="125" />
-        <br>
-        <p>{{ palStore.getTranslatedText("AuthView_PW_Prompt_1") }}</p>
+        <span class="auth-kicker">Protected workspace</span>
+        <img alt="Paldeck" class="logo" src="@/assets/logo.ico" width="96" height="96" />
+        <h1>Unlock Paldeck</h1>
         <p>{{ palStore.getTranslatedText("AuthView_PW_Prompt_2") }}</p>
         
         <input type="password" v-model="PW"
@@ -18,6 +18,7 @@ const PW = ref("")
         <button @click="palStore.login" :disabled="palStore.LOADING_FLAG" :value="PW">
             {{ palStore.getTranslatedText("AuthView_BTN_Unlock") }}
         </button>
+        <a href="https://github.com/Guineabear/Palworld-Pal-Editor" target="_blank" rel="noopener noreferrer">Paldeck on GitHub</a>
     </div>
 </template>
 
@@ -25,48 +26,82 @@ const PW = ref("")
 div#authDiv {
     display: flex;
     flex-direction: column;
-    padding: 20px; 
+    width: min(30rem, calc(100% - 2rem));
+    margin: calc(var(--topbar-height) + 12vh) auto var(--space-lg);
+    padding: var(--space-lg);
+    border: var(--rule);
+    border-radius: var(--radius-panel);
+    background: var(--color-paper-2);
+    box-shadow: var(--shadow-panel);
+}
+
+.auth-kicker {
+    color: var(--color-accent);
+    font-size: var(--text-xs);
+    font-weight: 750;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+}
+
+.logo { margin: var(--space-md) 0; border-radius: 1.35rem; box-shadow: var(--shadow-control); }
+
+h1 {
+    margin: 0 0 var(--space-2xs);
+    color: var(--color-ink);
+    font-size: 2.25rem;
+    font-weight: 780;
+    letter-spacing: -.045em;
+}
+
+a {
+    align-self: center;
+    margin-top: var(--space-md);
+    color: var(--color-accent);
+    font-size: var(--text-sm);
+    text-underline-offset: .2em;
 }
 
 p {
     word-wrap: break-word;
-    font-size: 1.2rem;
-    margin: 0 1rem;
+    font-size: var(--text-md);
+    margin: 0 0 var(--space-xs);
 }
 
 input {
     height: 3rem;
-    background-color: #34353a;
-    color: whitesmoke;
-    border: none;
+    background-color: var(--color-paper);
+    color: var(--color-ink);
+    border: var(--rule);
     outline: none;
-    border-radius: 0.5rem;
-    font-size: 1.2rem;
+    border-radius: var(--radius-input);
+    font-size: var(--text-md);
     padding-left: 0.7rem;
     padding-right: 0.7rem;
-    margin: 1rem 1rem;
+    margin: var(--space-sm) 0;
 }
 
 input:focus {
-    background-color: #b4b7be;
-    color: rgb(0, 0, 0);
+    background-color: var(--color-paper-3);
+    border-color: var(--color-accent);
+    color: var(--color-ink);
 }
 
 button {
     height: 3rem;
-    background-color: #3365da;
-    color: whitesmoke;
-    border: none;
+    background-color: var(--color-accent-strong);
+    color: var(--color-ink);
+    border: 1px solid transparent;
     outline: none;
-    border-radius: 0.5rem;
-    font-size: 1.2rem;
-    transition: all 0.3s ease-in-out;
-    margin: 0 1rem;
+    border-radius: var(--radius-input);
+    font-size: var(--text-md);
+    font-weight: 650;
+    transition: filter var(--dur-short) var(--ease-out), transform var(--dur-short) var(--ease-out);
+    margin: 0;
 }
 
 button:hover {
-    background-color: #1b49b4;
-    transition: all 0.3s ease-in-out;
+    filter: brightness(1.08);
+    transform: translateY(-1px);
     cursor: pointer;
 }
 

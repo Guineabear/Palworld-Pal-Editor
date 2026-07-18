@@ -94,9 +94,11 @@ function get_filtered_pal_list() {
 <template>
     <div class="flex">
         <div class="title">
-            <p>
-                {{ palStore.getTranslatedText("PalList_Text") }}
-            </p>
+            <div class="rail-title">
+                <span>Paldeck</span>
+                <strong>{{ palStore.getTranslatedText("PalList_Text") }}</strong>
+            </div>
+            <span class="rail-count">{{ get_filtered_pal_list().length }}</span>
             <input class="palFilter" type="text" v-model="palStore.PAL_LIST_SEARCH_KEYWORD" placeholder="Search Pal"
                 :disabled="palStore.LOADING_FLAG">
             <button class="add_pal" v-if="!palStore.BASE_PAL_BTN_CLK_FLAG"
@@ -124,62 +126,74 @@ function get_filtered_pal_list() {
 div.flex {
     display: flex;
     flex-direction: column;
-    flex-shrink: 0;
-    width: 15rem;
-    height: var(--sub-height);
-    padding-right: 0.3rem;
-    /* scrollbar */
+    width: 100%;
+    min-width: 0;
+    height: 100%;
+    padding: var(--space-xs);
+    border: var(--rule);
+    border-radius: var(--radius-panel);
+    background: var(--color-paper-2);
+    box-shadow: var(--shadow-panel);
 }
 
 div.title {
     display: flex;
     flex-direction: row;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     align-items: center;
-    gap: .5rem;
-    /* justify-content: space-between; */
+    gap: var(--space-2xs);
+    min-height: 2.25rem;
+    color: var(--color-ink);
+    font-weight: 600;
 }
 
 div.overflow-list {
     display: flex;
     flex-direction: column;
-    overflow-y: scroll;
-    gap: .2rem 0rem;
+    min-height: 0;
+    overflow-y: auto;
+    gap: var(--space-3xs);
+    padding-right: var(--space-3xs);
 }
 
 .overflow-container {
     display: flex;
-    overflow-x: auto;
+    overflow: hidden;
     white-space: nowrap;
-    max-height: 3.5rem;
+    max-height: 3.25rem;
     flex-shrink: 0;
-    padding-bottom: 0.1rem;
-    /* scrollbar */
+    border-radius: var(--radius-input);
     width: 100%;
 }
 
 input.palFilter {
+    order: 3;
+    flex: 1 1 calc(100% - 2.5rem);
     display: flex;
     align-items: center;
-    background-color: #34353a;
-    width: 7rem;
-    height: 1rem;
-    margin: .2rem;
-    padding: .2rem .6rem;
-    border-radius: 1rem;
-    color: rgb(208, 212, 226);
-    box-shadow: 2px 2px 10px rgb(38, 38, 38);
-    border: none;
+    background-color: var(--color-paper);
+    width: auto;
+    min-width: 0;
+    height: 2rem;
+    margin: 0;
+    padding: .25rem .65rem;
+    border-radius: var(--radius-pill);
+    color: var(--color-ink);
+    border: var(--rule);
     outline: none;
 }
 
 input.palFilter:focus {
-    background-color: #b4b7be;
-    color: rgb(0, 0, 0);
+    background-color: var(--color-paper-3);
+    border-color: var(--color-accent);
+    color: var(--color-ink);
 }
 
 img.palIcon {
-    width: 2rem;
+    width: 2.1rem;
+    height: 2.1rem;
+    object-fit: cover;
+    margin-right: var(--space-2xs);
     border-radius: 50%;
 }
 
@@ -194,22 +208,23 @@ button.pal {
     white-space: nowrap;
     min-width: 100%;
     max-height: 3rem;
-    padding: 0rem;
-    padding-left: .3rem;
+    padding: .35rem .55rem;
     min-height: 3rem;
-    background-color: #323232;
-    color: whitesmoke;
-    border: none;
+    background-color: var(--color-paper-3);
+    color: var(--color-ink);
+    border: 1px solid var(--color-rule);
     outline: none;
-    border-radius: 0.5rem;
-    font-size: 1rem;
+    border-radius: var(--radius-input);
+    font-size: var(--text-sm);
     text-align: left;
-    transition: all 0.15s ease-in-out;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    transition: background-color var(--dur-short) var(--ease-out), border-color var(--dur-short) var(--ease-out);
 }
 
 button.pal:hover {
-    background-color: #686868;
-    transition: all 0.15s ease-in-out;
+    background-color: var(--color-accent-muted);
+    border-color: var(--color-accent);
 }
 
 button.pal:disabled {
@@ -295,18 +310,19 @@ button.out_of_container {
 }
 
 button.add_pal {
-    background-color: #3db15e;
-    /* padding: 0; */
-    color: whitesmoke;
-    border: none;
+    order: 4;
+    flex: 0 0 2rem;
+    height: 2rem;
+    background-color: var(--color-success);
+    color: var(--color-accent-ink);
+    border: 1px solid transparent;
     outline: none;
-    border-radius: 0.2rem;
+    border-radius: var(--radius-input);
     font-size: 1rem;
 }
 
 button.add_pal:hover {
-    background-color: #4b8d5e;
-    box-shadow: 2px 2px 10px rgb(38, 38, 38);
+    filter: brightness(1.08);
     cursor: pointer;
 }
 
@@ -315,5 +331,32 @@ button.add_pal:disabled {
     box-shadow: 0 0 0;
     filter: grayscale(100%);
     cursor: not-allowed;
+}
+
+.rail-title { display: flex; flex: 1 1 auto; min-width: 0; flex-direction: column; line-height: 1.1; }
+.rail-title span { color: var(--color-accent); font-size: .65rem; font-weight: 750; letter-spacing: .12em; text-transform: uppercase; }
+.rail-title strong { color: var(--color-ink); font-size: var(--text-xs); font-weight: 750; white-space: nowrap; }
+.rail-count { display: grid; min-width: 1.65rem; height: 1.65rem; place-items: center; border: var(--rule); border-radius: var(--radius-pill); color: var(--color-ink-2); font-size: var(--text-xs); }
+
+@media (max-width: 900px) {
+    div.flex {
+        height: auto;
+        max-height: 16rem;
+    }
+}
+
+div.flex {
+    padding: var(--space-2xs);
+    border: 0;
+    border-radius: var(--radius-input);
+    background: transparent;
+    box-shadow: none;
+}
+
+button.pal:disabled[selected="true"] {
+    background: var(--color-accent-soft);
+    border-color: var(--color-accent);
+    filter: none;
+    opacity: 1;
 }
 </style>

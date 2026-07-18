@@ -77,7 +77,8 @@ const abort = () => {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(22, 27, 34, 0.8);
+    padding: var(--space-sm);
+    background: var(--color-overlay);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -85,30 +86,26 @@ const abort = () => {
 }
 
 .popup {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-
-    border: none;
+    position: relative;
+    width: min(70rem, 92vw);
+    height: min(44rem, 82vh);
+    min-width: 0;
+    border: var(--rule);
     outline: none;
-    width: 75vw;
-    height: 75vh;
-
-    border-radius: 0.5rem;
-    padding: 2rem 4rem;
-    background-color: #515151;
+    border-radius: var(--radius-panel);
+    padding: var(--space-lg);
+    background-color: var(--color-paper-2);
     z-index: 10;
-    box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: var(--shadow-panel);
 
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: var(--space-md);
 }
 
 .popup .currentPath {
     display: flex;
-    gap: 10px;
+    gap: var(--space-2xs);
     align-items: center;
 }
 
@@ -117,6 +114,10 @@ const abort = () => {
     list-style-type: none;
     padding: 0;
     flex: 1;
+    min-height: 0;
+    border: var(--rule);
+    border-radius: var(--radius-card);
+    background: var(--color-paper);
 }
 
 .popup li[isdir=true] {
@@ -126,30 +127,39 @@ const abort = () => {
 .popup li {
     margin: .2rem .2rem;
     padding: .3rem .3rem;
-    border-radius: 0.5rem;
-    color: whitesmoke;
+    border-radius: var(--radius-input);
+    color: var(--color-ink);
 }
 
 .popup li:hover[isdir=true] {
-    background-color: #4b8d5e;
+    background-color: var(--color-accent-muted);
 }
 
 .close-btn {
     position: absolute;
     top: 10px;
     right: 10px;
-    background: rgba(209, 209, 209, 0.206);
-    border-radius: 25%;
+    background: var(--color-paper-3);
+    border-radius: var(--radius-input);
     width: 30px;
     height: 30px;
-    border: none;
-    color: #c9d1d9;
+    border: var(--rule);
+    color: var(--color-ink-2);
     font-size: 1.5rem;
     cursor: pointer;
 }
 
 .close-btn:hover {
-    background: rgba(62, 62, 62, 0.686);
-    color: #f85149;
+    background: var(--color-paper);
+    border-color: var(--color-danger);
+    color: var(--color-danger);
+}
+
+@media (max-width: 600px) {
+    .popup {
+        width: 100%;
+        height: 88vh;
+        padding: var(--space-sm);
+    }
 }
 </style>

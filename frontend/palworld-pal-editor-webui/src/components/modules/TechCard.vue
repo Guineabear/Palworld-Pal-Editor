@@ -1,9 +1,9 @@
 <template>
-    <div :class="['tech', { bossTech: item.BossTechnology }, { locked: isLocked }]" :style="bgStyle"
+    <button type="button" :class="['tech', { bossTech: item.BossTechnology }, { locked: isLocked }]" :style="bgStyle"
         @click="toggleLock">
         <div class="techHeader">{{ item.I18n.Type ?? "⚠️ INVALID" }}</div>
         <div class="techFooter">{{ item.I18n.Name ?? item.internalName }}</div>
-    </div>
+    </button>
 </template>
 
 <script setup>
@@ -41,18 +41,34 @@ const isLocked = computed(() => {
 
 <style scoped>
 .tech {
-    min-width: 8rem;
-    max-width: 8rem;
-    min-height: 10rem;
-    max-width: 10rem;
+    width: 100%;
+    min-width: 0;
+    height: 10.5rem;
     background-position: center;
     background-size: 90px 90px;
     background-repeat: no-repeat;
     position: relative;
-    box-shadow: 3px 3px 3px rgb(0, 0, 0);
-    background-color: #1455a4;
-    margin: 8px;
+    box-shadow: var(--shadow-control);
+    background-color: var(--color-tech-card);
+    border: 1px solid var(--color-tech-border);
+    border-radius: var(--radius-card);
+    margin: 0;
     cursor: pointer;
+    overflow: hidden;
+    padding: 0;
+    color: var(--color-ink);
+    font-family: var(--font-body);
+    text-align: left;
+    transition: transform var(--dur-short) var(--ease-out), border-color var(--dur-short) var(--ease-out), filter var(--dur-short) var(--ease-out);
+}
+
+.tech:hover {
+    transform: translateY(-2px);
+    border-color: var(--color-focus);
+}
+
+.tech:active {
+    transform: translateY(0);
 }
 
 .tech.bossTech {
@@ -61,7 +77,7 @@ const isLocked = computed(() => {
 }
 
 .tech.locked {
-    filter: grayscale(100%);
+    filter: grayscale(100%) brightness(.68);
 }
 
 .techHeader {
@@ -69,10 +85,11 @@ const isLocked = computed(() => {
     top: 0;
     width: 100%;
     text-align: center;
-    background-color: rgba(0, 0, 0, 0.6);
-    color: #fff;
-    font-size: small;
-    padding: 2px 0;
+    background-color: var(--color-tech-overlay);
+    color: var(--color-ink);
+    font-size: var(--text-xs);
+    font-weight: 600;
+    padding: var(--space-3xs);
 }
 
 .techFooter {
@@ -80,10 +97,14 @@ const isLocked = computed(() => {
     bottom: 0;
     width: 100%;
     text-align: center;
-    background-color: rgba(0, 0, 0, 0.2);
+    min-height: 2.4rem;
+    display: grid;
+    place-items: center;
+    background-color: var(--color-tech-overlay);
     text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
-    font-size: small;
-    color: #fff;
-    padding: 2px 0;
+    font-size: var(--text-xs);
+    line-height: 1.2;
+    color: var(--color-ink);
+    padding: var(--space-3xs);
 }
 </style>

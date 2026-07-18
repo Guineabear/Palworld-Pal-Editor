@@ -1,0 +1,10 @@
+[
+  {
+    "date": "2026-07-18",
+    "scope": "app",
+    "macrostructure": "Workbench",
+    "theme": "Palworld cyan workbench",
+    "enrichment": "none",
+    "brief": "Paldeck v0.16.0 beta workbench with direct navigation, player overview, and reusable passive and active skill presets"
+  }
+]

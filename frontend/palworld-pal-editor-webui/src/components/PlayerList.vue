@@ -15,9 +15,11 @@ onMounted(async () => {
 <template>
   <div class="flex">
     <div class="title">
-      <p>
-        {{ palStore.getTranslatedText("PlayerList_Text") }}
-      </p>
+      <div class="rail-title">
+        <span>Owners</span>
+        <strong>{{ palStore.getTranslatedText("PlayerList_Text") }}</strong>
+      </div>
+      <span class="rail-count">{{ palStore.PLAYER_MAP.size }}</span>
       <div class="tooltip-container">
         <button class="playerSettings"
           v-if="palStore.SELECTED_PLAYER_ID != null && !palStore.PLAYER_MAP.get(palStore.SELECTED_PLAYER_ID).HasViewingCage"
@@ -48,11 +50,14 @@ onMounted(async () => {
 div.flex {
   display: flex;
   flex-direction: column;
-  flex-shrink: 0;
-  height: var(--sub-height);
-  width: 10rem;
-  padding-right: 0.3rem;
-  /* scrollbar */
+  width: 100%;
+  min-width: 0;
+  height: 100%;
+  padding: var(--space-xs);
+  border: var(--rule);
+  border-radius: var(--radius-panel);
+  background: var(--color-paper-2);
+  box-shadow: var(--shadow-panel);
 }
 
 div.title {
@@ -60,68 +65,83 @@ div.title {
   flex-direction: row;
   flex-wrap: nowrap;
   align-items: center;
-  gap: .5rem;
+  justify-content: space-between;
+  gap: var(--space-2xs);
+  min-height: 2.25rem;
+  color: var(--color-ink);
+  font-weight: 600;
 }
+
+.rail-title { display: flex; flex: 1 1 auto; min-width: 0; flex-direction: column; line-height: 1.1; }
+.rail-title span { color: var(--color-accent); font-size: .65rem; font-weight: 750; letter-spacing: .12em; text-transform: uppercase; }
+.rail-title strong { color: var(--color-ink); font-size: var(--text-xs); font-weight: 750; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.rail-count { display: grid; min-width: 1.65rem; height: 1.65rem; place-items: center; border: var(--rule); border-radius: var(--radius-pill); color: var(--color-ink-2); font-size: var(--text-xs); }
 
 div.overflow-list {
   display: flex;
   flex-direction: column;
-  overflow-y: scroll;
-  gap: .2rem 0rem;
+  min-height: 0;
+  overflow-y: auto;
+  gap: var(--space-3xs);
+  padding-right: var(--space-3xs);
 }
 
 div.overflow-container {
   align-items: center;
   display: flex;
-  overflow-x: auto;
+  overflow: hidden;
   white-space: nowrap;
-  max-height: 3.5rem;
+  max-height: 3.25rem;
   flex-shrink: 0;
-  padding-bottom: 0.1rem;
-  /* scrollbar */
+  border-radius: var(--radius-input);
 }
 
 button.player {
   min-width: 100%;
   max-height: 5rem;
-  padding: .5rem 1rem;
-  background-color: #ce9716;
-  color: whitesmoke;
-  border: none;
+  padding: .55rem .7rem;
+  background-color: var(--color-warning-soft);
+  color: var(--color-ink);
+  border: 1px solid transparent;
   outline: none;
-  border-radius: 0.5rem;
-  font-size: 1.2rem;
-  transition: all 0.15s ease-in-out;
+  border-radius: var(--radius-input);
+  font-size: var(--text-sm);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: background-color var(--dur-short) var(--ease-out), border-color var(--dur-short) var(--ease-out);
   cursor: pointer;
 }
 
 button.playerSettings {
-  background-color: rgb(54, 54, 54);
+  background-color: var(--color-paper-3);
+  width: 1.8rem;
+  height: 1.8rem;
   padding: 0;
-  color: whitesmoke;
-  border: none;
+  color: var(--color-ink);
+  border: var(--rule);
   outline: none;
-  border-radius: 0.2rem;
+  border-radius: var(--radius-input);
   font-size: 1rem;
 }
 
 button.playerSettings:hover {
-  background-color: rgb(123, 123, 123);
-  box-shadow: 2px 2px 10px rgb(38, 38, 38);
+  background-color: var(--color-paper-3);
+  border-color: var(--color-accent);
   cursor: pointer;
 }
 
 button.player:hover {
-  background-color: #9b7210;
-  transition: all 0.15s ease-in-out;
+  background-color: var(--color-warning-strong);
 }
 
 button.player.real {
-  background-color: #3365da;
+  background-color: var(--color-paper-3);
+  border-color: var(--color-rule);
 }
 
 button.player.real:hover {
-  background-color: #1b49b4;
+  background-color: var(--color-accent-muted);
+  border-color: var(--color-accent);
 }
 
 button.player.real:disabled {
@@ -146,20 +166,19 @@ button.playerSettings:disabled {
 }
 
 button.player[selected="true"] {
-  box-shadow: 0 0 0;
-  filter: grayscale(60%);
-  border-color: #1cff4d;
-  border-style: solid;
-  border-width: 0.15rem;
+  filter: none;
+  border-color: var(--color-accent);
+  box-shadow: inset 3px 0 0 var(--color-accent);
 }
 
 .tooltip-text {
   visibility: hidden;
   width: 200px;
-  background-color: rgba(0, 0, 0, 0.85);
-  color: white;
+  background-color: var(--color-paper);
+  color: var(--color-ink);
   text-align: center;
-  border-radius: 6px;
+  border: var(--rule);
+  border-radius: var(--radius-card);
   padding: 1rem;
 
   position: absolute;
@@ -170,5 +189,35 @@ button.player[selected="true"] {
 
 .tooltip-container:hover .tooltip-text {
   visibility: visible;
+}
+
+.tooltip-container:focus-within .tooltip-text {
+  visibility: visible;
+}
+
+@media (max-width: 900px) {
+  div.flex {
+    height: auto;
+    max-height: 12rem;
+  }
+
+  .tooltip-text {
+    display: none;
+  }
+}
+
+div.flex {
+  padding: var(--space-2xs);
+  border: 0;
+  border-radius: var(--radius-input);
+  background: transparent;
+  box-shadow: none;
+}
+
+button.player.real:disabled[selected="true"] {
+  background: var(--color-accent-soft);
+  border-color: var(--color-accent);
+  filter: none;
+  opacity: 1;
 }
 </style>

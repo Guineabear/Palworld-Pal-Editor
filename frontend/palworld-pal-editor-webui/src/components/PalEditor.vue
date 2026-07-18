@@ -1,5 +1,7 @@
 <script setup>
 import { usePalEditorStore } from '@/stores/paleditor'
+import PassivePresetBar from '@/components/PassivePresetBar.vue'
+import ActivePresetBar from '@/components/ActivePresetBar.vue'
 const palStore = usePalEditorStore()
 
 function formatString(input) {
@@ -63,18 +65,24 @@ const suitabilityIconSrc = key => {
 
 <template>
   <div :class="['PalEditor', { 'unref': palStore.SELECTED_PAL_DATA.Is_Unref_Pal }]">
+    <header class="pal-workspace-header">
+      <div class="selected-pal-heading">
+        <img :src="`/image/pals/${palStore.SELECTED_PAL_DATA.IconAccessKey}`" alt="">
+        <div>
+          <span class="workspace-kicker">Pal profile</span>
+          <h1>{{ palStore.SELECTED_PAL_DATA.NickName || palStore.SELECTED_PAL_DATA.I18nName }}</h1>
+          <p>{{ palStore.displayPalElement(palStore.SELECTED_PAL_DATA.DataAccessKeyOG) }} {{ palStore.PAL_STATIC_DATA[palStore.SELECTED_PAL_DATA.DataAccessKeyOG]?.I18n || palStore.SELECTED_PAL_DATA.DataAccessKeyOG }} · Lv {{ palStore.SELECTED_PAL_DATA.Level }}</p>
+        </div>
+      </div>
+      <div class="pal-actions">
+        <button @click="palStore.dumpPalData" :disabled="palStore.LOADING_FLAG">Export</button>
+        <button @click="palStore.dupePal" :disabled="palStore.LOADING_FLAG" v-if="!palStore.BASE_PAL_BTN_CLK_FLAG">Duplicate</button>
+        <button class="danger" @click="palStore.delPal" :disabled="palStore.LOADING_FLAG">Delete</button>
+      </div>
+    </header>
+    <div class="pal-editor-layout">
+      <div class="pal-editor-main">
     <div class="EditorItem item flex-v basicInfo">
-      <button id="dump_btn" @click="palStore.dumpPalData" :disabled="palStore.LOADING_FLAG">
-        {{ palStore.getTranslatedText("Editor_Btn_Export_Data") }}
-      </button>
-      <button id="dupe_btn" @click="palStore.dupePal" :disabled="palStore.LOADING_FLAG"
-        v-if="!palStore.BASE_PAL_BTN_CLK_FLAG">
-        {{ palStore.getTranslatedText("Editor_Btn_Dupe_Pal") }}
-      </button>
-      <button id="del_btn" @click="palStore.delPal" :disabled="palStore.LOADING_FLAG">
-        🗑️ {{ palStore.getTranslatedText("Editor_Btn_Delete_Pal") }}
-      </button>
-
       <img :class="['palIcon']" :src="`/image/pals/${palStore.SELECTED_PAL_DATA.IconAccessKey}`" alt="">
       <p v-if="palStore.SELECTED_PAL_DATA.Is_Unref_Pal">
         {{ palStore.getTranslatedText("Editor_Note_Ghost_Pal") }}
@@ -217,7 +225,7 @@ const suitabilityIconSrc = key => {
         </div>
       </div>
     </div>
-    <div class="EditorItem flex-v item left">
+    <div class="EditorItem flex-v item left growth-panel">
       <p class="cat">
         {{ palStore.getTranslatedText("Editor_IV") }}
       </p>
@@ -314,7 +322,7 @@ const suitabilityIconSrc = key => {
           @touchend="palStore.updatePal">
       </div>
     </div>
-    <div class="EditorItem flex-v item left skillPanel"
+    <div class="EditorItem flex-v item left skillPanel work-panel"
       v-if="palStore.PAL_STATIC_DATA[palStore.SELECTED_PAL_DATA.DataAccessKey]?.Suitabilities">
       <p class="cat">
         {{ palStore.getTranslatedText("Editor_Suitabilities") }}
@@ -335,13 +343,14 @@ const suitabilityIconSrc = key => {
         </div>
       </div>
     </div>
-    <div class="EditorItem item flex-v left skillPanel">
+    <div class="EditorItem item flex-v left skillPanel skills-panel">
       <p class="cat">
         {{ palStore.getTranslatedText("Editor_Passive_Skills") }}
       </p>
       <p v-if="palStore.SELECTED_PAL_DATA.PassiveSkillList.length > 4" class="passive-warning">
         {{ palStore.getTranslatedText("Editor_Passive_Skills_Hidden_Warning") }}
       </p>
+      <PassivePresetBar />
       <div class="flex-h">
         <div class="editField skillList">
           <div v-for="skill in palStore.SELECTED_PAL_DATA.PassiveSkillList">
@@ -373,6 +382,7 @@ const suitabilityIconSrc = key => {
         </div>
       </div>
       <hr>
+      <ActivePresetBar />
       <p class="cat">
         {{ palStore.getTranslatedText("Editor_Equipped_Skills") }}
       </p>
@@ -470,18 +480,35 @@ const suitabilityIconSrc = key => {
         </div>
       </div>
     </div>
+      </div>
+      <aside class="pal-summary" aria-label="Live Pal preview">
+        <span>Live preview</span>
+        <strong>{{ palStore.SELECTED_PAL_DATA.I18nName || palStore.SELECTED_PAL_DATA.DataAccessKeyOG }} · Lv {{ palStore.SELECTED_PAL_DATA.Level }}</strong>
+        <dl>
+          <div><dt>Attack</dt><dd>{{ palStore.SELECTED_PAL_DATA.ComputedAttack }}</dd></div>
+          <div><dt>Defense</dt><dd>{{ palStore.SELECTED_PAL_DATA.ComputedDefense }}</dd></div>
+          <div><dt>Health</dt><dd>{{ palStore.SELECTED_PAL_DATA.ComputedMaxHP / 1000 }}</dd></div>
+          <div><dt>Work speed</dt><dd>{{ palStore.SELECTED_PAL_DATA.ComputedCraftSpeed }}</dd></div>
+          <div><dt>Passives</dt><dd>{{ palStore.SELECTED_PAL_DATA.PassiveSkillList.length }} / 6</dd></div>
+        </dl>
+        <p>Save changes from the top bar when the Pal looks right.</p>
+      </aside>
+    </div>
   </div>
 </template>
 
 <style scoped>
 .PalEditor {
   display: flex;
-  height: var(--sub-height);
+  width: 100%;
+  min-width: 0;
+  height: 100%;
   overflow-y: auto;
   flex-wrap: wrap;
   align-items: flex-start;
   align-content: flex-start;
-  gap: .5rem;
+  gap: var(--space-xs);
+  padding-right: var(--space-3xs);
 }
 
 .PalEditor.unref {
@@ -491,9 +518,13 @@ const suitabilityIconSrc = key => {
 .EditorItem {
   display: flex;
   flex-shrink: 0;
-  background: #484848;
-  padding: 1.5rem;
-  border-radius: 1rem;
+  min-width: 0;
+  max-width: 100%;
+  background: var(--color-paper-2);
+  padding: var(--space-md);
+  border: var(--rule);
+  border-radius: var(--radius-panel);
+  box-shadow: var(--shadow-panel);
 }
 
 /* .EditorItem .Basic-Info {} */
@@ -504,8 +535,8 @@ const suitabilityIconSrc = key => {
 
 div.basicInfo {
   position: relative;
-  max-width: calc(var(--editor-panel-width) - 380px);
-  min-width: 600px;
+  max-width: 100%;
+  min-width: min(100%, 36rem);
 }
 
 div.palInfo {
@@ -514,7 +545,9 @@ div.palInfo {
 }
 
 div.skillPanel {
-  max-width: var(--editor-panel-width);
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
   flex-wrap: wrap;
 }
 
@@ -536,13 +569,16 @@ button {
 }
 
 p.cat {
-  margin-top: -.8rem;
-  margin-left: -.5rem;
+  margin: 0 0 var(--space-2xs);
+  color: var(--color-ink);
+  font-size: var(--text-sm);
+  font-weight: 700;
+  letter-spacing: .02em;
 }
 
 p.passive-warning {
   margin: 0 0 .4rem 0;
-  color: #ffd166;
+  color: var(--color-warning);
   font-size: .85rem;
 }
 
@@ -573,13 +609,13 @@ div.left {
 p.const {
   display: flex;
   align-items: center;
-  background-color: #272727;
+  background-color: var(--color-paper);
   height: 1.8rem;
   margin: .2rem;
   padding: .2rem .4rem;
-  border-radius: .5rem;
-  color: rgb(208, 212, 226);
-  box-shadow: 2px 2px 10px rgb(38, 38, 38);
+  border: var(--rule);
+  border-radius: var(--radius-input);
+  color: var(--color-ink-2);
 }
 
 p.out_of_container {
@@ -589,7 +625,8 @@ p.out_of_container {
 img.palIcon {
   max-width: 15vh;
   border-radius: 50%;
-  box-shadow: 2px 2px 10px rgb(38, 38, 38);
+  border: var(--rule);
+  box-shadow: var(--shadow-control);
   margin-bottom: 1rem;
 }
 
@@ -620,18 +657,18 @@ button.edit {
   height: 2rem;
   padding: 0rem;
   margin: 0rem;
-  background-color: #848484;
-  color: whitesmoke;
-  border: none;
+  background-color: var(--color-paper-3);
+  color: var(--color-ink);
+  border: var(--rule);
   outline: none;
-  border-radius: 0.5rem;
-  transition: all 0.15s ease-in-out;
+  border-radius: var(--radius-input);
+  transition: background-color var(--dur-short) var(--ease-out), border-color var(--dur-short) var(--ease-out), transform var(--dur-short) var(--ease-out);
 }
 
 button.edit:hover {
-  background-color: #9c9c9c;
-  box-shadow: 2px 2px 10px rgb(38, 38, 38);
-  transition: all 0.15s ease-in-out;
+  background-color: var(--color-accent-muted);
+  border-color: var(--color-accent);
+  transform: translateY(-1px);
 }
 
 button.edit:disabled {
@@ -643,7 +680,7 @@ button.edit:disabled {
 
 button.text {
   width: 100%;
-  background-color: #2c77c2;
+  background-color: var(--color-accent-strong);
   padding: 1rem .5rem;
   margin: .2rem;
 }
@@ -661,7 +698,7 @@ button.text:disabled {
 
 button.edit_text {
   width: 5rem;
-  background-color: #2c77c2;
+  background-color: var(--color-accent-strong);
   padding: 1rem .5rem;
   margin: .2rem;
 }
@@ -708,7 +745,7 @@ button#dump_btn {
   border: none;
   outline: none;
   border-radius: 0.5rem;
-  transition: all 0.15s ease-in-out;
+  transition: background-color var(--dur-short) var(--ease-out), border-color var(--dur-short) var(--ease-out);
 }
 
 button#dump_btn:hover {
@@ -735,12 +772,12 @@ button#del_btn {
   height: 2rem;
   padding: 1rem;
   margin: 0rem;
-  background-color: #bd1c3c;
+  background-color: var(--color-danger);
   color: whitesmoke;
   border: none;
   outline: none;
   border-radius: 0.5rem;
-  transition: all 0.15s ease-in-out;
+  transition: background-color var(--dur-short) var(--ease-out), border-color var(--dur-short) var(--ease-out);
 }
 
 button#del_btn:hover {
@@ -771,7 +808,7 @@ button#dupe_btn {
   border: none;
   outline: none;
   border-radius: 0.5rem;
-  transition: all 0.15s ease-in-out;
+  transition: background-color var(--dur-short) var(--ease-out), border-color var(--dur-short) var(--ease-out);
 }
 
 button#dupe_btn:hover {
@@ -788,21 +825,21 @@ button#dupe_btn:disabled {
 
 input.edit {
   height: 2rem;
-  background-color: #6a6a6c;
-  color: whitesmoke;
-  border: none;
+  min-width: 0;
+  background-color: var(--color-paper);
+  color: var(--color-ink);
+  border: var(--rule);
   outline: none;
-  border-radius: 0.5rem;
-  font-size: 1.2rem;
+  border-radius: var(--radius-input);
+  font-size: var(--text-md);
   padding-left: 0.7rem;
   padding-right: 0.7rem;
 }
 
 input.edit:focus {
-  background-color: #b8b8b8;
-  color: black;
-  /* border: 2px solid #6a6a6c; */
-  box-shadow: 2px 2px 10px rgb(38, 38, 38);
+  background-color: var(--color-paper-3);
+  color: var(--color-ink);
+  border-color: var(--color-accent);
 }
 
 input.edit::placeholder {
@@ -845,13 +882,341 @@ div.spaceBetween {
 select.selector {
   display: flex;
   align-items: center;
-  background-color: #272727;
+  max-width: 100%;
+  min-width: 0;
+  background-color: var(--color-paper);
   height: 1.8rem;
   margin: .2rem;
   padding: .2rem .4rem;
-  border-radius: .5rem;
-  color: rgb(208, 212, 226);
-  box-shadow: 2px 2px 10px rgb(38, 38, 38);
-  /* max-width: 50%; */
+  border: var(--rule);
+  border-radius: var(--radius-input);
+  color: var(--color-ink);
+}
+
+@media (max-width: 900px) {
+  .PalEditor {
+    height: auto;
+    max-height: none;
+  }
+
+  .EditorItem,
+  div.basicInfo,
+  div.skillPanel {
+    width: 100%;
+    min-width: 0;
+  }
+}
+
+.pal-workspace-header {
+  display: flex;
+  width: 100%;
+  min-width: 0;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-md);
+  padding: var(--space-sm) var(--space-md);
+  border: var(--rule);
+  border-radius: var(--radius-panel);
+  background:
+    radial-gradient(circle at 12% 50%, var(--color-accent-bloom), transparent 18rem),
+    linear-gradient(110deg, var(--color-accent-canvas), var(--color-paper-2) 65%);
+  box-shadow: var(--shadow-panel);
+}
+
+.selected-pal-heading {
+  display: flex;
+  min-width: 0;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.selected-pal-heading > div { display: block; min-width: 0; }
+
+.selected-pal-heading img {
+  width: 5rem;
+  height: 5rem;
+  flex: 0 0 5rem;
+  object-fit: cover;
+  border: 1px solid var(--color-accent-border);
+  border-radius: 1.35rem;
+  background: var(--color-paper);
+  box-shadow: var(--shadow-control);
+}
+
+.workspace-kicker {
+  color: var(--color-accent);
+  font-size: var(--text-xs);
+  font-weight: 750;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+
+.selected-pal-heading h1 {
+  margin: var(--space-3xs) 0;
+  color: var(--color-ink);
+  font-size: clamp(1.65rem, 3vw, 2.6rem);
+  font-weight: 780;
+  letter-spacing: -.045em;
+  line-height: 1;
+  overflow-wrap: anywhere;
+}
+
+.selected-pal-heading p { color: var(--color-ink-2); font-size: var(--text-sm); }
+
+.editor-tabs {
+  display: flex;
+  gap: var(--space-3xs);
+  padding: var(--space-3xs);
+  border: var(--rule);
+  border-radius: var(--radius-pill);
+  background: var(--color-paper);
+}
+
+.editor-tabs button {
+  padding: .45rem .8rem;
+  border: 0;
+  border-radius: var(--radius-pill);
+  background: transparent;
+  color: var(--color-ink-2);
+}
+
+.editor-tabs button:hover { color: var(--color-ink); background: var(--color-paper-3); }
+.editor-tabs button.active { color: var(--color-accent-ink); background: var(--color-accent); font-weight: 750; }
+
+.basicInfo,
+.growth-panel,
+.work-panel,
+.skills-panel {
+  width: 100%;
+}
+
+.basicInfo > img.palIcon { display: none; }
+.basicInfo > #dump_btn,
+.basicInfo > #dupe_btn,
+.basicInfo > #del_btn { display: none; }
+
+.pal-actions-menu { position: relative; flex: 0 0 auto; }
+
+.pal-actions-menu summary {
+  padding: .45rem .75rem;
+  border: var(--rule);
+  border-radius: var(--radius-input);
+  background: var(--color-paper-3);
+  color: var(--color-ink);
+  cursor: pointer;
+  list-style: none;
+}
+
+.pal-actions-menu summary::-webkit-details-marker { display: none; }
+.pal-actions-menu[open] summary { border-color: var(--color-accent); }
+
+.pal-actions-menu > div {
+  position: absolute;
+  top: calc(100% + var(--space-2xs));
+  right: 0;
+  z-index: 50;
+  display: grid;
+  width: 12rem;
+  gap: var(--space-3xs);
+  padding: var(--space-2xs);
+  border: var(--rule);
+  border-radius: var(--radius-card);
+  background: var(--color-paper-2);
+  box-shadow: var(--shadow-panel);
+}
+
+.pal-actions-menu button {
+  padding: .55rem .7rem;
+  border: var(--rule);
+  border-radius: var(--radius-input);
+  background: var(--color-paper-3);
+  color: var(--color-ink);
+  text-align: left;
+}
+
+.pal-actions-menu button:hover { border-color: var(--color-accent); }
+.pal-actions-menu button.danger { color: var(--color-danger-bright); }
+
+.growth-panel .editField,
+.work-panel .editField,
+.skills-panel .editField { width: 100%; }
+
+@media (max-width: 760px) {
+  .pal-workspace-header { align-items: stretch; flex-direction: column; }
+  .editor-tabs { width: 100%; overflow-x: auto; border-radius: var(--radius-card); }
+  .editor-tabs button { flex: 1 0 auto; }
+  .pal-actions-menu { align-self: flex-end; }
+}
+
+@media (max-width: 420px) {
+  .selected-pal-heading img { width: 3.75rem; height: 3.75rem; flex-basis: 3.75rem; }
+  .pal-workspace-header { padding: var(--space-xs); }
+
+  .basicInfo > .item,
+  .basicInfo .editField,
+  .basicInfo .palInfo,
+  .basicInfo .flex-h {
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+    flex-wrap: wrap;
+  }
+
+  .basicInfo p.const {
+    width: auto;
+    max-width: 100%;
+    height: auto;
+    min-height: 1.8rem;
+    overflow-wrap: anywhere;
+  }
+
+  .basicInfo select.selector {
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+  }
+
+  .basicInfo input.edit {
+    flex: 1 1 10rem;
+    min-width: 0;
+    max-width: 100%;
+  }
+
+  .skillPanel,
+  .skillPanel .skillList,
+  .skillPanel .flex-h,
+  .skillPanel .editField,
+  .skillPanel p.cat {
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+  }
+
+  .skillPanel .flex-h,
+  .skillPanel .editField {
+    flex-wrap: nowrap;
+  }
+
+  .skillPanel select {
+    min-width: 0;
+    max-width: 100%;
+    flex: 1 1 auto;
+  }
+
+  .skillPanel button.edit {
+    flex: 0 0 2rem;
+  }
+}
+
+/* Approved single-canvas Workbench layout. */
+.PalEditor {
+  display: block;
+  height: auto;
+  overflow: visible;
+  padding: 0;
+}
+
+.pal-workspace-header {
+  position: sticky;
+  top: calc(var(--topbar-height) + var(--space-sm));
+  z-index: 20;
+  margin-bottom: var(--space-sm);
+  border-radius: var(--radius-card);
+}
+
+.pal-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3xs);
+}
+
+.pal-actions button {
+  min-height: 2.35rem;
+  border: var(--rule);
+  border-radius: var(--radius-input);
+  padding: 0 var(--space-xs);
+  background: var(--color-paper-3);
+  color: var(--color-ink);
+  white-space: nowrap;
+}
+
+.pal-actions button:hover { border-color: var(--color-accent); }
+.pal-actions button.danger { color: var(--color-danger); }
+
+.pal-editor-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(14rem, 17rem);
+  gap: var(--space-sm);
+  align-items: start;
+}
+
+.pal-editor-main {
+  display: grid;
+  min-width: 0;
+  gap: var(--space-sm);
+}
+
+.pal-editor-main > .EditorItem {
+  width: 100%;
+  margin: 0;
+  border-radius: var(--radius-card);
+  box-shadow: none;
+}
+
+.pal-summary {
+  position: sticky;
+  top: calc(var(--topbar-height) + 8.5rem);
+  min-width: 0;
+  padding: var(--space-sm);
+  border: var(--rule);
+  border-radius: var(--radius-card);
+  background: var(--color-paper-2);
+  box-shadow: var(--shadow-panel);
+}
+
+.pal-summary > span {
+  color: var(--color-accent);
+  font-size: var(--text-xs);
+  font-weight: 750;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.pal-summary > strong {
+  display: block;
+  margin-top: var(--space-3xs);
+  color: var(--color-ink);
+  font-size: var(--text-lg);
+  overflow-wrap: anywhere;
+}
+
+.pal-summary dl { margin: var(--space-sm) 0 0; }
+.pal-summary dl div {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-sm);
+  padding: var(--space-xs) 0;
+  border-bottom: 1px solid var(--color-rule-soft);
+}
+.pal-summary dt { color: var(--color-ink-2); }
+.pal-summary dd { margin: 0; color: var(--color-ink); font-family: var(--font-mono); font-weight: 750; }
+.pal-summary p {
+  margin: var(--space-sm) 0 0;
+  padding: var(--space-xs);
+  border-radius: var(--radius-input);
+  background: var(--color-success-soft);
+  color: var(--color-success);
+  font-size: var(--text-xs);
+  line-height: 1.5;
+}
+
+@media (max-width: 1100px) {
+  .pal-editor-layout { grid-template-columns: minmax(0, 1fr); }
+  .pal-summary { position: static; order: -1; }
+}
+
+@media (max-width: 760px) {
+  .pal-workspace-header { position: static; }
+  .pal-actions { flex-wrap: wrap; }
 }
 </style>

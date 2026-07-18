@@ -1,6 +1,6 @@
 <template>
     <div v-show="palStore.SHOW_DONATE_FLAG" class="modal-overlay" @click.self="close">
-        <div class="modal-content">
+        <div class="modal-content" role="dialog" aria-modal="true">
             <button class="close-btn" @click="close">×</button>
             <div v-if="loading" class="modal-loading">Loading...</div>
             <div v-else-if="error" class="modal-error">{{ error }}</div>
@@ -78,8 +78,8 @@ watch(markdownHtml, async () => {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(22, 27, 34, 0.8);
-    /* GitHub dark background with transparency */
+    padding: var(--space-sm);
+    background: var(--color-overlay);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -87,31 +87,28 @@ watch(markdownHtml, async () => {
 }
 
 .modal-content {
-    background: #12151a;
-    /* GitHub dark theme background */
-    color: #c9d1d9;
-    /* GitHub light gray text */
+    background: var(--color-paper-2);
+    color: var(--color-ink-2);
     position: relative;
-    padding: 20px;
-    border-radius: 8px;
-    max-width: 80%;
-    max-height: 80%;
+    padding: var(--space-lg);
+    border-radius: var(--radius-panel);
+    width: min(54rem, 100%);
+    max-height: 84vh;
     overflow-y: auto;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-    border: 1px solid #30363d;
-    /* Subtle border for contrast */
+    box-shadow: var(--shadow-panel);
+    border: var(--rule);
 }
 
 ::v-deep(.markdown-content a) {
     all: unset;
-    color: #42b883; /* Vue.js green */
+    color: var(--color-accent);
     font-weight: bold;
     cursor: pointer;
 }
 
 ::v-deep(.markdown-content a:hover) {
     text-decoration: underline;
-    color: #36a572;
+    color: var(--color-focus);
 }
 
 .modal-loading,
@@ -119,7 +116,7 @@ watch(markdownHtml, async () => {
     text-align: center;
     margin-top: 20px;
     font-family: inherit;
-    color: #f85149;
+    color: var(--color-danger);
 }
 
 .close-btn {
@@ -128,12 +125,12 @@ watch(markdownHtml, async () => {
     right: 10px;
     background: none;
     border: none;
-    color: #c9d1d9;
+    color: var(--color-ink-2);
     font-size: 1.5rem;
     cursor: pointer;
 }
 
 .close-btn:hover {
-    color: #f85149;
+    color: var(--color-danger);
 }
 </style>

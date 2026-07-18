@@ -1,0 +1,79 @@
+/* Hallmark · genre: modern-minimal · macrostructure: Workbench · design-system: design.md · designed-as-app
+ * pre-emit critique: P5 H5 E4 S5 R5 V4
+ */
+:root {
+  --color-paper: oklch(18% 0.018 238);
+  --color-paper-2: oklch(22% 0.02 238);
+  --color-paper-3: oklch(27% 0.022 238);
+  --color-ink: oklch(96% 0.012 220);
+  --color-ink-2: oklch(76% 0.018 224);
+  --color-rule: oklch(42% 0.025 235);
+  --color-rule-soft: oklch(31% 0.022 235);
+  --color-accent: oklch(76% 0.14 204);
+  --color-accent-strong: oklch(66% 0.17 222);
+  --color-accent-soft: oklch(27% 0.065 222);
+  --color-accent-ink: oklch(17% 0.025 232);
+  --color-success: oklch(74% 0.15 154);
+  --color-success-soft: oklch(25% 0.055 154);
+  --color-warning: oklch(82% 0.15 83);
+  --color-danger: oklch(66% 0.2 23);
+  --color-danger-soft: oklch(25% 0.06 23);
+  --color-focus: oklch(84% 0.14 198);
+  --color-overlay: oklch(8% 0.02 240 / 0.82);
+  --color-paper-glass: oklch(18% 0.018 238 / 0.96);
+  --color-paper-translucent: oklch(20% 0.02 238 / 0.8);
+  --color-paper-wash: oklch(24% 0.025 235 / 0.3);
+  --color-accent-muted: oklch(31% 0.055 232);
+  --color-accent-border: oklch(76% 0.14 204 / 0.45);
+  --color-accent-bloom: oklch(70% 0.16 215 / 0.15);
+  --color-accent-canvas: oklch(28% 0.055 230);
+  --color-rule-translucent: oklch(42% 0.025 235 / 0.55);
+  --color-warning-soft: oklch(57% 0.13 77);
+  --color-warning-strong: oklch(64% 0.14 77);
+  --color-tech-card: oklch(48% 0.14 245);
+  --color-tech-border: oklch(67% 0.12 239 / 0.45);
+  --color-tech-overlay: oklch(15% 0.02 240 / 0.86);
+  --color-danger-bright: oklch(82% 0.12 24);
+  --color-preset-chip-border: oklch(70% 0.12 210 / 0.35);
+  --color-preset-chip: oklch(70% 0.12 210 / 0.1);
+  --color-preset-error: oklch(52% 0.18 24 / 0.14);
+
+  --font-display: 'Segoe UI', 'Segoe UI Emoji', Tahoma, Arial, sans-serif;
+  --font-body: 'Segoe UI', 'Segoe UI Emoji', Tahoma, Arial, sans-serif;
+  --font-mono: 'Cascadia Mono', 'Consolas', monospace;
+
+  --space-3xs: 0.25rem;
+  --space-2xs: 0.5rem;
+  --space-xs: 0.75rem;
+  --space-sm: 1rem;
+  --space-md: 1.5rem;
+  --space-lg: 2rem;
+  --space-xl: 3rem;
+
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-md: 1rem;
+  --text-lg: 1.25rem;
+  --text-xl: 1.5rem;
+
+  --radius-input: 0.5rem;
+  --radius-card: 0.75rem;
+  --radius-panel: 1rem;
+  --radius-pill: 999px;
+  --rule: 1px solid var(--color-rule);
+  --shadow-panel: 0 16px 40px oklch(8% 0.02 240 / 0.32);
+  --shadow-control: 0 4px 14px oklch(8% 0.02 240 / 0.2);
+  --shadow-topbar: 0 8px 24px oklch(8% 0.02 240 / 0.28);
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --dur-short: 140ms;
+  --dur-medium: 220ms;
+
+  --topbar-height: 4.25rem;
+  --sidebar-player: clamp(9rem, 11vw, 11.5rem);
+  --sidebar-pal: clamp(14rem, 18vw, 18rem);
+  --sidebar-entity: clamp(16rem, 20vw, 19rem);
+  --editor-top-offset: var(--topbar-height);
+  --sub-height: calc(100dvh - var(--topbar-height) - var(--space-sm));
+  --editor-panel-width: 100%;
+}

@@ -21,19 +21,19 @@ button {
     height: 2rem;
     padding: 0;
     margin: 0;
-    background-color: #73aa83;
-    color: whitesmoke;
-    border: none;
+    background-color: var(--color-paper-3);
+    color: var(--color-ink);
+    border: var(--rule);
     outline: none;
-    border-radius: 0.5rem;
-    transition: all 0.15s ease-in-out;
+    border-radius: var(--radius-input);
+    transition: background-color var(--dur-short) var(--ease-out), border-color var(--dur-short) var(--ease-out), transform var(--dur-short) var(--ease-out);
     cursor: pointer;
 }
 
 button:hover {
-    background-color: #4b8d5e;
-    box-shadow: 0px 0px 10px rgb(38, 38, 38);
-    transition: all 0.15s ease-in-out;
+    background-color: var(--color-accent-muted);
+    border-color: var(--color-accent);
+    transform: translateY(-1px);
 }
 
 button:disabled {

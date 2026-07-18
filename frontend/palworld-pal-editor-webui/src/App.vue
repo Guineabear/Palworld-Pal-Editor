@@ -3,13 +3,10 @@ import EntryView from './views/EntryView.vue';
 import { usePalEditorStore } from '@/stores/paleditor'
 import EditorView from './views/EditorView.vue';
 import TopBar from './components/TopBar.vue'
-import MarkdownModal from "@/components/MarkdownModal.vue";
 import AuthView from './views/AuthView.vue';
 
-import { watch, ref, onMounted } from 'vue';
+import { onMounted } from 'vue';
 const palStore = usePalEditorStore()
-
-const loadingWidth = ref(0); // Start with 0% width
 
 onMounted(async () => {
   await palStore.fetch_config()
@@ -19,24 +16,6 @@ onMounted(async () => {
   await palStore.auth()
 })
 
-// Simulate loading progress
-const interval = setInterval(() => {
-  // Only proceed if loading is true and width is less than 90% to leave room for "completion"
-  if (palStore.LOADING_FLAG && loadingWidth.value < 90) {
-    loadingWidth.value += Math.random() * 10; // Increase width by a random value
-  }
-}, 500); // Adjust timing as needed
-
-watch(palStore.LOADING_FLAG, (newValue) => {
-  if (!newValue) {
-    loadingWidth.value = 100; // Complete the progress
-    setTimeout(() => {
-      loading.value = false; // Hide the loading bar
-      clearInterval(interval); // Stop the interval
-    }, 500); // Short delay to show completion
-  }
-});
-
 </script>
 
 <template>
@@ -45,15 +24,12 @@ watch(palStore.LOADING_FLAG, (newValue) => {
   <div v-else>
     <EntryView v-if="!palStore.SAVE_LOADED_FLAG"></EntryView>
     <EditorView v-else></EditorView>
-    <MarkdownModal url="/docs/keep_this_project_alive.md">
-    </MarkdownModal>
   </div>
 </template>
 
 <style>
 body {
-  display: flex;
-  align-items: center;
+  display: block;
 }
 
 div.loading-bar {
@@ -138,12 +114,11 @@ button#SAVE_BTN {
   outline: none;
   border-radius: 0.5rem;
   /* font-size: 1.2rem; */
-  transition: all 0.15s ease-in-out;
+  transition: background-color var(--dur-short) var(--ease-in-out), color var(--dur-short) var(--ease-in-out);
 }
 
 button#SAVE_BTN:hover {
   background-color: #830e25;
-  transition: all 0.15s ease-in-out;
   cursor: pointer;
 }
 

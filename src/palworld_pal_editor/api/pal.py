@@ -44,6 +44,9 @@ def patch_paldata():
                         None,
                         f"Too many skills, or skill {value} already exists! Or we can't find it in database.",
                     )
+            case "set_PassiveSkillList":
+                if not pal_entity.set_PassiveSkillList(value):
+                    return reply(1, None, "Preset contains too many, duplicate, or unknown passive skills.")
             case "add_MasteredWaza":
                 if not pal_entity.add_MasteredWaza(value):
                     return reply(
@@ -58,6 +61,9 @@ def patch_paldata():
                         None,
                         f"Too many skills, or skill {value} already exists! Or we can't find it in database.",
                     )
+            case "set_ActiveSkillLoadout":
+                if not pal_entity.set_ActiveSkillLoadout(value):
+                    return reply(1, None, "Preset contains invalid, duplicate, or inconsistent active skills.")
             case "in_owner_palbox":
                 if PlayerUId == "PAL_BASE_WORKER_BTN":
                     return reply(1, None, f"Moving pal to basecamp is unsupported.")
