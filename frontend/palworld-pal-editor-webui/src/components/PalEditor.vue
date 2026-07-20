@@ -321,6 +321,19 @@ const suitabilityIconSrc = key => {
           v-model="palStore.SELECTED_PAL_DATA.Rank" :disabled="palStore.LOADING_FLAG" @mouseup="palStore.updatePal"
           @touchend="palStore.updatePal">
       </div>
+      <hr>
+      <p class="cat">{{ palStore.getTranslatedText("Editor_Awakening") }}</p>
+      <div class="editField awakening-control">
+        <p class="const">
+          {{ palStore.SELECTED_PAL_DATA.IsAwakening
+            ? palStore.getTranslatedText("Editor_Awakened")
+            : palStore.getTranslatedText("Editor_Not_Awakened") }}
+        </p>
+        <button class="edit edit_text" :class="{ awakened: palStore.SELECTED_PAL_DATA.IsAwakening }"
+          @click="palStore.SELECTED_PAL_DATA.toggleAwakening" :disabled="palStore.LOADING_FLAG">
+          {{ palStore.SELECTED_PAL_DATA.IsAwakening ? "On" : "Off" }}
+        </button>
+      </div>
     </div>
     <div class="EditorItem flex-v item left skillPanel work-panel"
       v-if="palStore.PAL_STATIC_DATA[palStore.SELECTED_PAL_DATA.DataAccessKey]?.Suitabilities">
@@ -383,6 +396,10 @@ const suitabilityIconSrc = key => {
       </div>
       <hr>
       <ActivePresetBar />
+      <div class="skill-guidance" role="note">
+        <strong>{{ palStore.getTranslatedText("Editor_Active_Save_Guide") }}</strong>
+        <span>{{ palStore.getTranslatedText("Editor_Exclusive_Skill_Warning") }}</span>
+      </div>
       <p class="cat">
         {{ palStore.getTranslatedText("Editor_Equipped_Skills") }}
       </p>
@@ -498,6 +515,10 @@ const suitabilityIconSrc = key => {
 </template>
 
 <style scoped>
+/* Hallmark · component: Pal editing controls · genre: modern-minimal · theme: design.md
+ * states: default · hover · focus · active · disabled · loading · error · success
+ * pre-emit critique: P5 H5 E5 S5 R5 V4
+ */
 .PalEditor {
   display: flex;
   width: 100%;
@@ -580,6 +601,27 @@ p.passive-warning {
   margin: 0 0 .4rem 0;
   color: var(--color-warning);
   font-size: .85rem;
+}
+
+.skill-guidance {
+  display: grid;
+  gap: var(--space-3xs);
+  width: 100%;
+  margin: var(--space-2xs) 0;
+  padding: var(--space-2xs) var(--space-xs);
+  border: var(--rule);
+  border-left: 3px solid var(--color-warning);
+  border-radius: var(--radius-input);
+  background: var(--color-paper-3);
+  color: var(--color-ink-2);
+  font-size: var(--text-xs);
+}
+
+.skill-guidance strong { color: var(--color-ink); }
+.awakening-control { flex-wrap: wrap; }
+button.edit_text.awakened {
+  border-color: var(--color-success);
+  background: var(--color-success-soft);
 }
 
 div {
@@ -1095,6 +1137,20 @@ select.selector {
   .skillPanel .flex-h,
   .skillPanel .editField {
     flex-wrap: nowrap;
+  }
+
+  .skillPanel .editField.skillList {
+    flex-wrap: wrap;
+  }
+
+  .skillPanel .editField.skillList > div {
+    max-width: 100%;
+  }
+
+  .skillPanel .tooltip-text {
+    left: 0;
+    right: auto;
+    max-width: min(12.5rem, calc(100vw - var(--space-md)));
   }
 
   .skillPanel select {

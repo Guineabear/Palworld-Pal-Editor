@@ -90,6 +90,7 @@ export const usePalEditorStore = defineStore("paleditor", () => {
             this.IsHuman = obj.IsHuman;
             this.IsBOSS = obj.IsBOSS;
             this.IsRarePal = obj.IsRarePal;
+            this.IsAwakening = obj.IsAwakening;
             this.IsTower = obj.IsTower;
             this.IsRAID = obj.IsRAID;
             this.IsPREDATOR = obj.IsPREDATOR;
@@ -145,6 +146,11 @@ export const usePalEditorStore = defineStore("paleditor", () => {
         swapRare() {
             this.IsRarePal = !this.IsRarePal;
             updatePal({ target: { name: "IsRarePal", value: this.IsRarePal } });
+        }
+
+        toggleAwakening() {
+            this.IsAwakening = !this.IsAwakening;
+            updatePal({ target: { name: "IsAwakening", value: this.IsAwakening } });
         }
 
         levelDown() {
@@ -1254,6 +1260,7 @@ export const usePalEditorStore = defineStore("paleditor", () => {
             value: value,
             PlayerUId: GET_PAL_OWNER_API_ID(),
             PalGuid: SELECTED_PAL_ID.value,
+            unsafe: !HIDE_INVALID_OPTIONS.value,
         });
         if (response === false) return;
 

@@ -89,6 +89,13 @@ export default {
 
     TopBar_Btn_Save: "SAVE CHANGES",
     TopBar_Btn_Reload: "Reload Save",
+    TopBar_Advanced: "Advanced editing",
+    TopBar_Advanced_Warning: "Allows experimental Pals, passives, stats, and cross-species moves. Palworld may reject unsupported combinations.",
+    Editor_Awakening: "AWAKENING",
+    Editor_Awakened: "Awakened",
+    Editor_Not_Awakened: "Not awakened",
+    Editor_Active_Save_Guide: "After editing, use Save Changes in the top bar before closing the editor.",
+    Editor_Exclusive_Skill_Warning: "Palworld may remove exclusive moves placed on a different species when the save loads.",
     TopBar_Btn_Main_Page: "Return to Main Page",
     TopBar_Btn_HealAllPals: "Heal All Pals",
     TopBar_Btn_Pal_OOB: "Show Out of Box Pal",

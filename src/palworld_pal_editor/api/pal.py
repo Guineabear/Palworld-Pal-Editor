@@ -19,11 +19,17 @@ def patch_paldata():
     PlayerUId = request.json.get("PlayerUId")
     key = request.json.get("key")
     value = request.json.get("value")
-    if PlayerUId == "PAL_BASE_WORKER_BTN":
-        pal_entity = SaveManager().get_working_pal(PalGuid)
-    else:
-        pal_entity = SaveManager().get_player(PlayerUId).get_pal(PalGuid)
+    unsafe = request.json.get("unsafe") is True
+    pal_entity = None
     try:
+        if PlayerUId == "PAL_BASE_WORKER_BTN":
+            pal_entity = SaveManager().get_working_pal(PalGuid)
+        else:
+            player = SaveManager().get_player(PlayerUId)
+            pal_entity = player.get_pal(PalGuid) if player else None
+        if pal_entity is None:
+            return reply(1, None, "Pal could not be found in the loaded save.")
+        pal_entity.allow_unsafe_edits = unsafe
         match key:
             case "HasWorkerSick":
                 pal_entity.heal_pal()
@@ -82,6 +88,10 @@ def patch_paldata():
         stack_trace = traceback.format_exc()
         LOGGER.error(f"Error in patch_paldata {stack_trace}")
         return reply(1, None, f"Error in patch_paldata {stack_trace}")
+    finally:
+        # Never allow one request's Advanced setting to leak into another.
+        if pal_entity is not None:
+            pal_entity.allow_unsafe_edits = False
     return reply(0)
 
 
@@ -114,7 +124,7 @@ def paldata():
     )
 
 
-# Just some dumb shit
+# Serialize the editor-facing Pal model.
 def _pal_data(pal: PalEntity):
     return {
         "InstanceId": str(pal.InstanceId) if pal.InstanceId else None,
@@ -142,6 +152,7 @@ def _pal_data(pal: PalEntity):
         "IsHuman": pal.IsHuman,
         "IsBOSS": pal.IsBOSS or False,
         "IsRarePal": pal.IsRarePal or False,
+        "IsAwakening": pal.IsAwakening or False,
         "IsTower": pal.IsTower or False,
         "IsRAID": pal.IsRAID or False,
         "IsPREDATOR": pal.IsPREDATOR or False,

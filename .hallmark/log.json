@@ -1,5 +1,13 @@
 [
   {
+    "date": "2026-07-20",
+    "scope": "component",
+    "macrostructure": "Workbench",
+    "theme": "Palworld cyan workbench",
+    "enrichment": "none",
+    "brief": "Awakening, Advanced editing, passive descriptions, and active-skill guidance for the stable release"
+  },
+  {
     "date": "2026-07-18",
     "scope": "app",
     "macrostructure": "Workbench",

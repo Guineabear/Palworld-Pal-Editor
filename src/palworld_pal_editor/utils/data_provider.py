@@ -246,6 +246,32 @@ class DataProvider:
         return (i18n.get("Name", key), i18n.get("Description", ""))
 
     @staticmethod
+    def get_passive_description(key: str) -> tuple[str, str]:
+        """Return an honest description and its source for a passive skill."""
+        i18n = DataProvider.get_passive_i18n(key)
+        if i18n and i18n[1].strip():
+            return i18n[1].strip(), "game"
+
+        labels = {
+            "b_Attack": "Attack",
+            "b_Defense": "Defense",
+            "b_CraftSpeed": "Work speed",
+            "b_MoveSpeed": "Movement speed",
+        }
+        buff = PAL_PASSIVES.get(key, {}).get("Buff", {})
+        effects = []
+        for field, label in labels.items():
+            value = buff.get(field, 0)
+            if value:
+                effects.append(f"{label} {value * 100:+g}%")
+        if effects:
+            return "; ".join(effects), "computed"
+        return (
+            f"No effect description is available in the extracted Palworld data. Internal ID: {key}.",
+            "unavailable",
+        )
+
+    @staticmethod
     def has_passive_skill(key: str) -> bool:
         return key in PAL_PASSIVES
 

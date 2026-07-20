@@ -53,7 +53,12 @@ const save = async () => {
     </div>
     <nav class="primary-actions" v-if="palStore.SAVE_LOADED_FLAG" aria-label="Save actions">
       <button class="op save" @click="save" :disabled="palStore.LOADING_FLAG">{{ palStore.getTranslatedText("TopBar_Btn_Save") }}</button>
-      <button class="op" @click="palStore.loadSave" :disabled="palStore.LOADING_FLAG">{{ palStore.getTranslatedText("TopBar_Btn_Reload") }}</button>
+      <button class="op reload" @click="palStore.loadSave" :disabled="palStore.LOADING_FLAG">{{ palStore.getTranslatedText("TopBar_Btn_Reload") }}</button>
+      <button class="op advanced" :class="{ enabled: !palStore.HIDE_INVALID_OPTIONS }" @click="show_cheats"
+        :aria-pressed="!palStore.HIDE_INVALID_OPTIONS" :disabled="palStore.LOADING_FLAG"
+        :title="palStore.getTranslatedText('TopBar_Advanced_Warning')">
+        {{ palStore.getTranslatedText("TopBar_Advanced") }}
+      </button>
       <button class="op quiet" @click="palStore.reset" :disabled="palStore.LOADING_FLAG">{{ palStore.getTranslatedText("TopBar_Btn_Main_Page") }}</button>
     </nav>
     <div class="language-control">
@@ -65,6 +70,10 @@ const save = async () => {
 </template>
 
 <style scoped>
+/* Hallmark · component: command bar · genre: modern-minimal · theme: design.md
+ * states: default · hover · focus · active · disabled · loading · error · success
+ * pre-emit critique: P5 H5 E5 S5 R5 V4
+ */
 div#topbar {
   position: fixed;
   top: 0;
@@ -360,6 +369,12 @@ header#topbar.app-command-bar button.op {
 
 header#topbar.app-command-bar button.op.save { background: var(--color-accent); color: var(--color-accent-ink); font-weight: 750; }
 header#topbar.app-command-bar button.op.quiet { background: transparent; }
+header#topbar.app-command-bar button.op.advanced.enabled {
+  border-color: var(--color-warning);
+  background: var(--color-warning-soft);
+  color: var(--color-ink);
+}
+header#topbar.app-command-bar button.op.advanced { white-space: nowrap; }
 
 .utility-menu { position: relative; }
 
@@ -408,7 +423,8 @@ header#topbar.app-command-bar button.op.quiet { background: transparent; }
 @media (max-width: 700px) {
   header#topbar.app-command-bar { grid-template-columns: auto minmax(0, 1fr) auto auto; gap: var(--space-3xs); }
   .language-control { grid-column: 3; }
-  .save-context, header#topbar.app-command-bar .primary-actions .op:not(.save), .app-brand span { display: none; }
+  .save-context, header#topbar.app-command-bar .primary-actions .reload,
+  header#topbar.app-command-bar .primary-actions .quiet, .app-brand span { display: none; }
   .primary-actions { justify-self: end; }
   .language-control { grid-column: 4; }
   .utility-navigation { display: flex !important; }

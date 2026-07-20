@@ -91,6 +91,13 @@ export default {
 
     TopBar_Btn_Save: "ENREGISTRER LES MODIFICATIONS",
     TopBar_Btn_Reload: "Recharger la sauvegarde",
+    TopBar_Advanced: "Modification avancée",
+    TopBar_Advanced_Warning: "Autorise les Pals, passifs, statistiques et capacités inter-espèces expérimentaux. Palworld peut refuser certaines combinaisons.",
+    Editor_Awakening: "ÉVEIL",
+    Editor_Awakened: "Éveillé",
+    Editor_Not_Awakened: "Non éveillé",
+    Editor_Active_Save_Guide: "Après modification, utilisez Enregistrer les changements dans la barre supérieure avant de fermer l’éditeur.",
+    Editor_Exclusive_Skill_Warning: "Palworld peut supprimer les capacités exclusives placées sur une autre espèce lors du chargement.",
     TopBar_Btn_Main_Page: "Retour à la page principale",
     TopBar_Btn_HealAllPals: "Guérir tous les Pals",
     TopBar_Btn_Pal_OOB: "Afficher Pal hors boîte",

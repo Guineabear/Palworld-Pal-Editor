@@ -81,11 +81,19 @@ def get_passive_skills():
     passive_dict = {}
     passive_arr = []
     for passive in passives_raw:
+        name, _ = DataProvider.get_passive_i18n(passive["InternalName"]) or (
+            passive["InternalName"],
+            "",
+        )
+        description, description_source = DataProvider.get_passive_description(
+            passive["InternalName"]
+        )
         data = {
             "InternalName": passive["InternalName"],
-            "I18n": DataProvider.get_passive_i18n(passive["InternalName"])
-            or (passive["InternalName"], passive["InternalName"]),
+            "I18n": (name, description),
             "Rating": passive["Rating"],
+            "DescriptionSource": description_source,
+            "Buff": passive.get("Buff", {}),
         }
         passive_dict[passive["InternalName"]] = data
         passive_arr.append(data)

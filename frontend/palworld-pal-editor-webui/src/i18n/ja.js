@@ -90,6 +90,13 @@ export default {
 
     TopBar_Btn_Save: "変更を保存",
     TopBar_Btn_Reload: "セーブをリロード",
+    TopBar_Advanced: "高度な編集",
+    TopBar_Advanced_Warning: "実験的なパル、パッシブ、能力値、他種族の技を許可します。未対応の組み合わせはゲームで解除される場合があります。",
+    Editor_Awakening: "覚醒",
+    Editor_Awakened: "覚醒済み",
+    Editor_Not_Awakened: "未覚醒",
+    Editor_Active_Save_Guide: "編集後、エディターを閉じる前に上部の「変更を保存」を押してください。",
+    Editor_Exclusive_Skill_Warning: "別種族に設定した専用技は、ロード時にPalworldによって削除される場合があります。",
     TopBar_Btn_Main_Page: "メインページに戻る",
     TopBar_Btn_HealAllPals: "すべてのパルを回復する",
     TopBar_Btn_Pal_OOB: "ボックス外パルを表示",

@@ -4,15 +4,18 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "palworld-pal-editor"
-description = "Yet Another Palworld Pal Editor."
+description = "Paldeck: a community-maintained Palworld 1.0 save editor."
 authors = [
     { name = "_connlost", email = "4348524953.h@gmail.com" },
+]
+maintainers = [
+    { name = "Guineabear" },
 ]
 keywords = ["palworld", "editor", "pal"]
 license = {file = "LICENSE"}
 requires-python = ">=3.11"
 readme = "README.md"
-version = "0.16.0b1"
+version = "0.16.0"
 dependencies = [
     "setuptools==80.9.0",
     "palworld-save-tools @ git+https://github.com/Guineabear/palworld-save-tools.git@dc57b567f06aafac41a50929eb818f8b9845ab99",

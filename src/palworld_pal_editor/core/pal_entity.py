@@ -59,6 +59,8 @@ class PalEntity:
         self.owner_player_entity = None
         self.is_unreferenced_pal = False
         self.is_new_pal = False
+        # Enabled only for the duration of an Advanced editing API request.
+        self.allow_unsafe_edits = False
 
     def __str__(self) -> str:
         return "{} - {} - {}".format(self.DisplayName, self.OwnerName, self.InstanceId)
@@ -201,8 +203,10 @@ class PalEntity:
         new_specie = self.RawSpecieKey
         if new_specie != og_specie:
             self.SkinName = None
-            # Unset invalid movesets
-            self.remove_unique_attacks()
+            # Safe mode removes species-exclusive attacks. Advanced editing
+            # preserves deliberately constructed move sets.
+            if not self.allow_unsafe_edits:
+                self.remove_unique_attacks()
             # Unset invalid work suitabilities
             if self.AddedWorkSuitabilities:
                 new_suits = DataProvider.get_pal_suitabilities(self.DataAccessKey)
@@ -382,6 +386,20 @@ class PalEntity:
             self._pal_param["IsFavoritePal"] = PalObjects.BoolProperty(value)
         else:
             PalObjects.set_BaseType(self._pal_param["IsFavoritePal"], value)
+
+    @property
+    def IsAwakening(self) -> Optional[bool]:
+        """Return the Palworld 1.0 Awakening Crystal state."""
+        return PalObjects.get_BaseType(self._pal_param.get("bIsAwakening"))
+
+    @IsAwakening.setter
+    @LOGGER.change_logger("IsAwakening")
+    @type_guard
+    def IsAwakening(self, value: bool) -> None:
+        if self.IsAwakening is None:
+            self._pal_param["bIsAwakening"] = PalObjects.BoolProperty(value)
+        else:
+            PalObjects.set_BaseType(self._pal_param["bIsAwakening"], value)
 
     @property
     def IsInvalid(self) -> bool:

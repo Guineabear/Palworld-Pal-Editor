@@ -91,6 +91,13 @@ export default {
 
     TopBar_Btn_Save: "保存更改",
     TopBar_Btn_Reload: "重新载入存档",
+    TopBar_Advanced: "高级编辑",
+    TopBar_Advanced_Warning: "允许实验性帕鲁、被动技能、属性和跨物种技能。游戏可能会移除不支持的组合。",
+    Editor_Awakening: "觉醒",
+    Editor_Awakened: "已觉醒",
+    Editor_Not_Awakened: "未觉醒",
+    Editor_Active_Save_Guide: "编辑后，请在关闭编辑器前点击顶部的保存更改。",
+    Editor_Exclusive_Skill_Warning: "Palworld在加载存档时可能会移除其他物种的专属技能。",
     TopBar_Btn_Main_Page: "返回主页",
     TopBar_Btn_HealAllPals: "治愈所有帕鲁",
     TopBar_Btn_Pal_OOB: "显示不在身边的帕鲁",

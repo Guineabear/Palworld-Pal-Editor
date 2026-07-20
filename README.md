@@ -21,10 +21,20 @@ A community-maintained Windows save editor updated and tested for **Palworld 1.0
 - Supports the revised Palworld 1.0 guild-role and permission save layout.
 - Edits Pal level, experience, rank, souls, IVs, work suitability, passives, active skills, and more.
 - Supports up to six active passive skills. Palworld applies slots five and six but only displays the first four in its Pal details screen.
+- Supports the Palworld 1.0 Awakening Crystal state.
+- Includes reusable passive and active skill presets stored outside the program folder, so replacing the app does not erase them.
 - Supports level 80, friendship level 10, soul enhancement level 20, and work suitability up to level 10.
 - Includes refreshed 1.0 data: 704 Pal IDs, 433 human NPC IDs, 384 active skills, 420 passive skills, and the 1.0 experience curve.
 - Edits player technology points, ancient technology points, unlocked recipes, and fast-travel points.
 - Makes timestamped backups before writing changes.
+
+## Safe and advanced editing
+
+Normal mode hides experimental content and cleans up incompatible species-exclusive moves when a Pal species changes. **Advanced editing** is always visible in the top bar and exposes experimental Pals, human NPCs, secret passives, unusual stats, and cross-species moves.
+
+Advanced combinations are written exactly as requested, but Palworld may sanitize unsupported data when it loads. For active skills: add or equip the move, choose **Save Changes** in the top bar, close the editor, and only then start Palworld.
+
+Passive descriptions come from the extracted game data where available. When the source has no text, Paldeck shows a calculation from known stat fields or clearly says that no reliable description is available.
 
 ## Quick start
 
@@ -58,6 +68,7 @@ This fork has been checked with:
 - Steam-format saves are supported. Xbox/Game Pass save conversion is not included.
 - Direct editing of `GlobalPalStorage.sav` is not exposed in the interface.
 - Combat-only, drone, reward, and quest NPCs plus unreleased Pals are marked **Experimental** and hidden unless cheat options are shown.
+- Cross-species exclusive moves can be written in Advanced editing, but the game may remove them during load.
 - This is an unofficial community tool. Back up your world before every editing session.
 
 Found a problem? [Open an issue](https://github.com/Guineabear/Palworld-Pal-Editor/issues) and include the editor version, whether the save is local or dedicated, and the error message. Do not upload private save files publicly.
@@ -85,3 +96,5 @@ This fork exists because of the original work by **_connlost / KrisCris**. Their
 - Community testing and data updates made the Palworld 1.0 release possible.
 
 Licensed under [GPL-3.0](LICENSE). This project is not affiliated with Pocketpair.
+
+Maintenance documentation: [Contributing](CONTRIBUTING.md) · [Architecture](docs/ARCHITECTURE.md) · [v0.16.0 notes](docs/releases/v0.16.0.md)
