@@ -100,4 +100,4 @@ This fork exists because of the original work by **_connlost / KrisCris**. Their
 
 Licensed under [GPL-3.0](LICENSE). This project is not affiliated with Pocketpair.
 
-Maintenance documentation: [Contributing](CONTRIBUTING.md) · [Architecture](docs/ARCHITECTURE.md) · [v0.17.0 notes](docs/releases/v0.17.0.md)
+Maintenance documentation: [Contributing](CONTRIBUTING.md) · [Architecture](docs/ARCHITECTURE.md) · [v0.17.1 notes](docs/releases/v0.17.1.md)

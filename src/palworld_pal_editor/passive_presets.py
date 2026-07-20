@@ -8,7 +8,6 @@ from uuid import uuid4
 
 
 SCHEMA_VERSION = 1
-MAX_SKILLS = 6
 
 
 def _user_data_dir() -> Path:
@@ -49,8 +48,6 @@ def _clean_preset(raw: dict, existing_id: str | None = None) -> dict:
     if not isinstance(skills, list):
         raise ValueError("Preset skills must be a list.")
     skills = [str(skill).strip() for skill in skills if str(skill).strip()]
-    if len(skills) > MAX_SKILLS:
-        raise ValueError(f"A preset can contain at most {MAX_SKILLS} passive skills.")
     if len(skills) != len(set(skills)):
         raise ValueError("A preset cannot contain duplicate passive skills.")
 

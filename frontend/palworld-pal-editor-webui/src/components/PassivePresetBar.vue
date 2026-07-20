@@ -38,6 +38,10 @@ async function saveCurrent() {
 async function applySelected() {
   clearFeedback()
   if (!selectedPreset.value) return
+  if (selectedPreset.value.skills.length > 6 && palStore.HIDE_INVALID_OPTIONS) {
+    error.value = 'Enable Advanced Editing to apply a preset with more than 6 passive skills.'
+    return
+  }
   const applied = await palStore.applyPassivePreset(selectedPreset.value)
   if (applied) status.value = `Applied “${selectedPreset.value.name}” to this Pal.`
   else error.value = 'The preset could not be applied to this Pal.'
@@ -120,6 +124,7 @@ onMounted(() => palStore.loadPassivePresets())
     <div v-if="selectedPreset" class="preset-preview" aria-live="polite">
       <span v-for="skill in selectedPreset.skills" :key="skill">{{ skillLabel(skill) }}</span>
       <em v-if="!selectedPreset.skills.length">No passive skills</em>
+      <em v-else-if="selectedPreset.skills.length > 6">Advanced preset · enable Advanced Editing before applying</em>
     </div>
 
     <form class="preset-save-row" @submit.prevent="saveCurrent">
@@ -146,7 +151,7 @@ onMounted(() => palStore.loadPassivePresets())
           <div>
             <input v-if="editingId === preset.id" v-model.trim="editingName" maxlength="60" aria-label="Preset name">
             <strong v-else>{{ preset.name }}</strong>
-            <span>{{ preset.skills.length }} / 6 skills</span>
+            <span>{{ preset.skills.length }} skills{{ preset.skills.length > 6 ? ' · Advanced' : '' }}</span>
           </div>
           <div class="row-actions">
             <button v-if="editingId === preset.id" type="button" @click="finishRename(preset)">Save</button>

@@ -852,7 +852,11 @@ class PalEntity:
 
     @LOGGER.change_logger("PassiveSkillList")
     def set_PassiveSkillList(self, skills: list[str]) -> bool:
-        if not isinstance(skills, list) or len(skills) > 6 or len(skills) != len(set(skills)):
+        if (
+            not isinstance(skills, list)
+            or (len(skills) > 6 and not self.allow_unsafe_edits)
+            or len(skills) != len(set(skills))
+        ):
             return False
         if any(not DataProvider.has_passive_skill(skill) for skill in skills):
             return False

@@ -52,7 +52,11 @@ def patch_paldata():
                     )
             case "set_PassiveSkillList":
                 if not pal_entity.set_PassiveSkillList(value):
-                    return reply(1, None, "Preset contains too many, duplicate, or unknown passive skills.")
+                    return reply(
+                        1,
+                        None,
+                        "Preset contains duplicate or unknown passive skills, or requires Advanced Editing because it has more than 6 skills.",
+                    )
             case "add_MasteredWaza":
                 if not pal_entity.add_MasteredWaza(value):
                     return reply(
