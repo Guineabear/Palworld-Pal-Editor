@@ -26,10 +26,10 @@ def main():
         except requests.exceptions.ConnectionError:
             time.sleep(0.5)
 
-    LOGGER.info("If GUI doesn't work for you, check out this post: https://github.com/KrisCris/Palworld-Pal-Editor/issues/4")
+    LOGGER.info("If the desktop window does not open, use Web mode or report it on the Paldeck GitHub project.")
 
     try:
-        webview.create_window(f"Palworld Pal Editor, developed by _connlost with ❤️. VERSION: {version_info()}", url=f"http://127.0.0.1:{Config.port}/", width=1600, height=1000, min_size=(960, 600))
+        webview.create_window(f"Paldeck · Pal Editor · {version_info()}", url=f"http://127.0.0.1:{Config.port}/", width=1600, height=1000, min_size=(960, 600))
         webview.start()
     except KeyboardInterrupt:
         pass

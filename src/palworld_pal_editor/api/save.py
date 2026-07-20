@@ -134,6 +134,34 @@ def get_active_skills():
     return reply(0, {"dict": atk_dict, "arr": atk_arr})
 
 
+@save_blueprint.route("/item_data", methods=["GET"])
+@jwt_required()
+def get_item_data():
+    items = []
+    for internal_name, item in DataProvider.get_sorted_items():
+        name, description = DataProvider.get_item_i18n(internal_name)
+        group = (
+            item["Group"] if item["Group"] not in ("", "None") else "Miscellaneous"
+        )
+        items.append(
+            {
+                "InternalName": internal_name,
+                "Name": name,
+                "Description": description,
+                "Group": group,
+                "Type": item["Type"],
+                "SubType": item["SubType"],
+                "Rarity": item["Rarity"],
+                "MaxStack": item["MaxStack"],
+                "Weight": item["Weight"],
+                "Dynamic": item["Dynamic"],
+                "Disabled": item["Disabled"],
+                "CanCreate": not item["Dynamic"] and not item["Disabled"],
+            }
+        )
+    return reply(0, items)
+
+
 @save_blueprint.route("/i18n", methods=["PATCH"])
 # @jwt_required()
 def update_i18n():

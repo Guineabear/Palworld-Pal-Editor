@@ -26,6 +26,8 @@ A community-maintained Windows save editor updated and tested for **Palworld 1.0
 - Supports level 80, friendship level 10, soul enhancement level 20, and work suitability up to level 10.
 - Includes refreshed 1.0 data: 704 Pal IDs, 433 human NPC IDs, 384 active skills, 420 passive skills, and the 1.0 experience curve.
 - Edits player technology points, ancient technology points, unlocked recipes, and fast-travel points.
+- Includes a searchable Palworld 1.0 item catalogue and player inventory editor for adding, removing, and changing ordinary bag stacks.
+- Shows bag, drop, key-item, weapon, armor, and food containers. Equipment with linked durability or rarity records is clearly marked and protected from unsafe direct edits.
 - Makes timestamped backups before writing changes.
 
 ## Safe and advanced editing
@@ -69,6 +71,7 @@ This fork has been checked with:
 - Direct editing of `GlobalPalStorage.sav` is not exposed in the interface.
 - Combat-only, drone, reward, and quest NPCs plus unreleased Pals are marked **Experimental** and hidden unless cheat options are shown.
 - Cross-species exclusive moves can be written in Advanced editing, but the game may remove them during load.
+- New ordinary items are created in the player's main bag. Creating linked weapons, armor, accessories, and eggs is intentionally unavailable until their companion dynamic records can be generated safely.
 - This is an unofficial community tool. Back up your world before every editing session.
 
 Found a problem? [Open an issue](https://github.com/Guineabear/Palworld-Pal-Editor/issues) and include the editor version, whether the save is local or dedicated, and the error message. Do not upload private save files publicly.
@@ -97,4 +100,4 @@ This fork exists because of the original work by **_connlost / KrisCris**. Their
 
 Licensed under [GPL-3.0](LICENSE). This project is not affiliated with Pocketpair.
 
-Maintenance documentation: [Contributing](CONTRIBUTING.md) · [Architecture](docs/ARCHITECTURE.md) · [v0.16.0 notes](docs/releases/v0.16.0.md)
+Maintenance documentation: [Contributing](CONTRIBUTING.md) · [Architecture](docs/ARCHITECTURE.md) · [v0.17.0 notes](docs/releases/v0.17.0.md)

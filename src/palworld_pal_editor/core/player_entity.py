@@ -285,6 +285,24 @@ class PlayerEntity:
         )
 
     @property
+    def InventoryContainerIds(self) -> dict[str, UUID]:
+        inventory = self._player_save_data.get("InventoryInfo", {}).get("value", {})
+        names = {
+            "common": "CommonContainerId",
+            "drop": "DropSlotContainerId",
+            "key_items": "EssentialContainerId",
+            "weapons": "WeaponLoadOutContainerId",
+            "armor": "PlayerEquipArmorContainerId",
+            "food": "FoodEquipContainerId",
+        }
+        result = {}
+        for label, property_name in names.items():
+            value = PalObjects.get_PalContainerId(inventory.get(property_name))
+            if value is not None:
+                result[label] = value
+        return result
+
+    @property
     def OtomoOrder(self) -> Optional[str]:
         # what is this thing??
         return PalObjects.get_EnumProperty(self._player_save_data.get("OtomoOrder"))

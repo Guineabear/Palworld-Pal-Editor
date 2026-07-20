@@ -14,6 +14,7 @@ from palworld_save_tools.paltypes import PALWORLD_CUSTOM_PROPERTIES, PALWORLD_TY
 from palworld_pal_editor.core.basecamp_data import BaseCampData
 
 from palworld_pal_editor.core.container_data import ContainerData
+from palworld_pal_editor.core.item_container_data import ItemContainerData
 
 from palworld_pal_editor.core.pal_objects import PalObjects, UUID2HexStr, toUUID
 from palworld_pal_editor.core.player_entity import PlayerEntity
@@ -142,6 +143,7 @@ class SaveManager:
     container_data: Optional[ContainerData]
     group_data: Optional[GroupData]
     camp_data: Optional[BaseCampData]
+    item_container_data: Optional[ItemContainerData]
 
     def __new__(cls, *args, **kwargs):
         if cls._instance is None:
@@ -153,6 +155,7 @@ class SaveManager:
             self.initialized = True
                 
     def open(self, file_path: str) -> Optional[GvasFile]:
+        self.item_container_data = None
         self._file_path = Path(file_path).resolve()
 
         level_sav_path = self._file_path / "Level.sav"
@@ -229,6 +232,9 @@ class SaveManager:
             LOGGER.warning("_compression_times is None, aborting")
             return False
 
+        if self.item_container_data is not None:
+            self.item_container_data.flush()
+
         output_path = Path(file_path).resolve() 
 
         if not output_path.exists():
@@ -275,6 +281,13 @@ class SaveManager:
             file.write(sav_data)
         LOGGER.info(f"Saved to {file_path}")
         return True
+
+    def get_item_container_data(self) -> ItemContainerData:
+        if self.gvas_file is None:
+            raise RuntimeError("Load a save before opening inventory")
+        if self.item_container_data is None:
+            self.item_container_data = ItemContainerData(self.gvas_file)
+        return self.item_container_data
     
     def load_player_sav(self, player_uid: str | UUID) -> GvasFile:
         player_path: Path = self._file_path / "Players" / f"{UUID2HexStr(player_uid)}.sav"

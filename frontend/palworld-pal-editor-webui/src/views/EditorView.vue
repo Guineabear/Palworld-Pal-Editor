@@ -3,6 +3,7 @@ import PalList from '@/components/PalList.vue'
 import PlayerList from '@/components/PlayerList.vue'
 import PalEditor from '@/components/PalEditor.vue'
 import PlayerEditor from '@/components/PlayerEditor.vue'
+import InventoryEditor from '@/components/InventoryEditor.vue'
 import { usePalEditorStore } from '@/stores/paleditor'
 import { ref, watch } from 'vue'
 
@@ -12,6 +13,11 @@ const workspace = ref('pals')
 const showPlayer = section => {
   workspace.value = section
   palStore.SHOW_PLAYER_EDIT_FLAG = true
+}
+
+const showInventory = async () => {
+  showPlayer('inventory')
+  await Promise.all([palStore.loadItemCatalog(), palStore.fetchInventory()])
 }
 
 const showPals = () => {
@@ -41,6 +47,9 @@ watch(() => palStore.SHOW_PLAYER_EDIT_FLAG, value => {
         <button aria-label="Technology" :class="{ active: workspace === 'technology' }" @click="showPlayer('technology')">
           <span>T</span>Technology
         </button>
+        <button aria-label="Inventory" :class="{ active: workspace === 'inventory' }" @click="showInventory">
+          <span>I</span>Inventory
+        </button>
       </nav>
 
       <section class="selector owners-selector">
@@ -56,6 +65,7 @@ watch(() => palStore.SHOW_PLAYER_EDIT_FLAG, value => {
     <main class="editor-canvas">
       <PlayerEditor v-if="workspace === 'player' && palStore.SELECTED_PLAYER_DATA" section="profile" />
       <PlayerEditor v-else-if="workspace === 'technology' && palStore.SELECTED_PLAYER_DATA" section="technology" />
+      <InventoryEditor v-else-if="workspace === 'inventory' && palStore.SELECTED_PLAYER_DATA" />
       <PalEditor v-else-if="palStore.SELECTED_PAL_ID && palStore.SELECTED_PAL_DATA" />
       <section v-else class="empty-editor">
         <strong>Select a Pal to begin</strong>
@@ -161,7 +171,7 @@ watch(() => palStore.SHOW_PLAYER_EDIT_FLAG, value => {
     border-right: 0;
     border-bottom: var(--rule);
   }
-  .workspace-nav { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .workspace-nav { grid-template-columns: repeat(4, minmax(0, 1fr)); }
   .workspace-nav button { justify-content: center; }
   .owners-selector, .pals-selector { max-height: 13rem; }
   .sidebar-github { display: none; }

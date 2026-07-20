@@ -2,6 +2,7 @@ import traceback
 from flask import Blueprint, jsonify, request
 from flask_jwt_extended import jwt_required
 from palworld_pal_editor.core.player_entity import PlayerEntity
+from palworld_pal_editor.core.item_container_data import InventoryError
 from palworld_pal_editor.utils.util import reply
 
 from palworld_pal_editor.core import SaveManager
@@ -22,7 +23,6 @@ def get_player_pals():
             return reply(1, None, f"Player {id} Not Found")
         pals = player_entity.get_sorted_pals()
 
-    # I hate this piece of shit
     return reply(
         0,
         [
@@ -114,6 +114,93 @@ def player_to_dict(player: PlayerEntity):
         "TechnologyPoint": player.TechnologyPoint or 0,
         "bossTechnologyPoint": player.bossTechnologyPoint or 0,
     }
+
+
+def _inventory_payload(player: PlayerEntity):
+    containers = SaveManager().get_item_container_data()
+    labels = {
+        "common": "Bag",
+        "drop": "Drop slots",
+        "key_items": "Key items",
+        "weapons": "Weapons",
+        "armor": "Armor",
+        "food": "Food",
+    }
+    return [
+        {"Key": key, "Label": labels[key], **containers.describe(container_id)}
+        for key, container_id in player.InventoryContainerIds.items()
+    ]
+
+
+@player_blueprint.route("/inventory", methods=["POST"])
+@jwt_required()
+def get_inventory():
+    player_uid = request.json.get("PlayerUId")
+    player = SaveManager().get_player(player_uid)
+    if not player:
+        return reply(1, None, f"Player {player_uid} not found")
+    try:
+        return reply(0, _inventory_payload(player))
+    except Exception:
+        stack_trace = traceback.format_exc()
+        LOGGER.error(f"Error loading inventory: {stack_trace}")
+        return reply(1, None, "This save's inventory format could not be read safely")
+
+
+@player_blueprint.route("/inventory", methods=["PATCH"])
+@jwt_required()
+def patch_inventory():
+    payload = request.json or {}
+    player_uid = payload.get("PlayerUId")
+    player = SaveManager().get_player(player_uid)
+    if not player:
+        return reply(1, None, f"Player {player_uid} not found")
+
+    container_key = payload.get("Container", "common")
+    container_id = player.InventoryContainerIds.get(container_key)
+    if container_id is None:
+        return reply(1, None, f"Inventory section {container_key} was not found")
+
+    action = payload.get("Action")
+    item_data = SaveManager().get_item_container_data()
+    try:
+        if action == "add":
+            if container_key != "common":
+                raise InventoryError("New items can only be created in the player's main bag")
+            static_id = payload.get("StaticId", "")
+            catalogue_item = DataProvider.get_item(static_id)
+            if not catalogue_item:
+                raise InventoryError(f"Unknown item {static_id}")
+            if catalogue_item.get("Disabled"):
+                raise InventoryError("Disabled or unreleased items cannot be created")
+            if catalogue_item.get("Dynamic"):
+                raise InventoryError(
+                    "This equipment needs a linked dynamic record and cannot be created safely yet"
+                )
+            item_data.add(
+                container_id,
+                static_id,
+                int(payload.get("Count", 1)),
+                int(catalogue_item.get("MaxStack", 1)),
+            )
+        elif action == "set_count":
+            static_id = payload.get("StaticId", "")
+            catalogue_item = DataProvider.get_item(static_id)
+            if not catalogue_item:
+                raise InventoryError(f"Unknown item {static_id}")
+            item_data.set_count(
+                container_id,
+                int(payload["SlotIndex"]),
+                int(payload["Count"]),
+                int(catalogue_item.get("MaxStack", 1)),
+            )
+        elif action == "remove":
+            item_data.remove(container_id, int(payload["SlotIndex"]))
+        else:
+            raise InventoryError("Unknown inventory action")
+        return reply(0, _inventory_payload(player))
+    except (InventoryError, KeyError, TypeError, ValueError) as error:
+        return reply(1, None, str(error))
 
 
 @player_blueprint.route("/player_data", methods=["PATCH"])

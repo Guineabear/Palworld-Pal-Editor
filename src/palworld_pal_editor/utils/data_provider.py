@@ -36,6 +36,14 @@ PAL_PASSIVES: dict[str, dict] = load_json("pal_passives.json")
 PAL_EXP_TABLE: list[int] = load_json("pal_exp_table.json")
 PAL_FRIENDSHIP: dict[str, dict] = load_json("pal_friendship.json")
 TECH_DATA: dict[str, dict] = load_json("tech_data.json")
+ITEM_DATA: Optional[dict[str, dict]] = None
+
+
+def get_item_data() -> dict[str, dict]:
+    global ITEM_DATA
+    if ITEM_DATA is None:
+        ITEM_DATA = load_json("item_data.json")
+    return ITEM_DATA
 
 # PAL_ICONS: dict[str] = load_icons("pals")
 
@@ -82,6 +90,30 @@ class DataProvider:
 
     def get_i18n_map() -> dict[str, str]:
         return I18N_LIST
+
+    @staticmethod
+    def get_item(key: str) -> Optional[dict]:
+        return get_item_data().get(key)
+
+    @staticmethod
+    def get_item_i18n(key: str) -> tuple[str, str]:
+        item = get_item_data().get(key, {})
+        i18n = item.get("I18n", {})
+        localized = i18n.get(Config.i18n) or i18n.get("en") or {}
+        return localized.get("Name", key), localized.get("Description", "")
+
+    @staticmethod
+    def get_sorted_items() -> list[tuple[str, dict]]:
+        return sorted(
+            get_item_data().items(),
+            key=lambda pair: (
+                pair[1].get("Disabled", False),
+                pair[1].get("Dynamic", False),
+                pair[1].get("Group", ""),
+                pair[1].get("SortId", 0),
+                DataProvider.get_item_i18n(pair[0])[0].casefold(),
+            ),
+        )
 
     # @staticmethod
     # def get_pal_icon(key: str) -> Optional[Any]:

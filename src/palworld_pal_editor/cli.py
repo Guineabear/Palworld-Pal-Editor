@@ -9,7 +9,7 @@ from palworld_pal_editor.config import *
 # InteractThread: Credit to MagicBear. I was just too lazy to write it, lol.
 class InteractThread(threading.Thread):
     _instance = None
-    banner_message = ColorConsoleFormatter.get_colored_msg(f"\n!Interactive Mode Enabled!\nThank you for using Palworld Pal Editor, made by _connlost with ❤.\nType pal_help() for Pal Editor help message\nType help(object) for help about object.")
+    banner_message = ColorConsoleFormatter.get_colored_msg(f"\nPaldeck interactive mode enabled.\nType pal_help() for editor help.\nType help(object) for details about an object.")
 
     def __init__(self):
         super().__init__(daemon=True)
@@ -29,7 +29,7 @@ class InteractThread(threading.Thread):
         return line
 
     def run(self):
-        LOGGER.info(f"Palworld Pal Editor, made by _connlost with ❤.")
+        LOGGER.info("Paldeck interactive console started.")
         import code
         try:
             code.interact(banner=InteractThread.banner_message, readfunc=self.interact_readfunc, local=globals())
@@ -38,7 +38,7 @@ class InteractThread(threading.Thread):
         InteractThread._instance = None
 
 def main():
-    LOGGER.info("Palworld Pal Editor, made by _connlost with ❤.")
+    LOGGER.info("Paldeck interactive console started.")
     save_manager = SaveManager()
     try:
         if Config.path and save_manager.open(Config.path):

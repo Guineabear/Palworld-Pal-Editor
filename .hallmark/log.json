@@ -1,6 +1,14 @@
 [
   {
     "date": "2026-07-20",
+    "scope": "workspace",
+    "macrostructure": "Split inventory workbench",
+    "theme": "Palworld cyan workbench",
+    "enrichment": "none",
+    "brief": "Direct Inventory destination with current-container ledger, searchable item catalogue, and explicit linked-record safety states"
+  },
+  {
+    "date": "2026-07-20",
     "scope": "component",
     "macrostructure": "Workbench",
     "theme": "Palworld cyan workbench",

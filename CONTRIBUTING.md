@@ -16,6 +16,7 @@ Paldeck is a community-maintained GPL-3.0 project. Small, focused pull requests 
 - Keep save-format compatibility in the Python layer and presentation changes in Vue.
 - Do not invent meanings for undocumented game fields. Label uncertain content experimental.
 - Preserve GPL attribution and describe new save fields with a source or reproducible save comparison.
+- Treat `assets/data/item_data.json` as generated game data. Refresh it with `python src/palworld_pal_editor/assets/tools/update_items.py --source-root <extracted-data-json>` and review the resulting item counts.
 
 ## Pull requests
 

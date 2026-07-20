@@ -404,6 +404,10 @@ export const usePalEditorStore = defineStore("paleditor", () => {
     const PLAYER_MAP = ref(new Map());
     const PAL_PASSIVE_SELECTED_ITEM = ref("");
     const PAL_ACTIVE_SELECTED_ITEM = ref("");
+    const ITEM_CATALOG = ref([]);
+    const PLAYER_INVENTORY = ref([]);
+    const INVENTORY_LOADING = ref(false);
+    const INVENTORY_ERROR = ref("");
 
     // display data
     const SELECTED_PAL_DATA = ref(new Map());
@@ -702,7 +706,7 @@ export const usePalEditorStore = defineStore("paleditor", () => {
     }
 
     async function updateI18n() {
-        sorryandfuckyou();
+        showChineseScamWarning();
         let no_set_loading_flag = LOADING_FLAG.value;
         if (!no_set_loading_flag) LOADING_FLAG.value = true;
 
@@ -711,12 +715,14 @@ export const usePalEditorStore = defineStore("paleditor", () => {
 
         if (response.status == 0) {
             localStorage.setItem("PAL_I18n", I18n.value);
+            ITEM_CATALOG.value = [];
             // if on pal editor panel, refresh all translated texts (except for hardcoded ui)
             if (SAVE_LOADED_FLAG.value) {
                 PLAYER_MAP.value.forEach((player, playerUId) => {
                     fetchPlayerPal(playerUId);
                 });
                 fetchPlayerPal(PAL_BASE_WORKER_BTN.value);
+                if (SELECTED_PLAYER_ID.value) await loadItemCatalog();
             }
             if (!IS_LOCKED.value) fetchStaticData();
         } else if (response.status == 2) {
@@ -805,6 +811,8 @@ export const usePalEditorStore = defineStore("paleditor", () => {
         PLAYER_MAP.value = new Map();
         PAL_PASSIVE_SELECTED_ITEM.value = "";
         PAL_ACTIVE_SELECTED_ITEM.value = "";
+        PLAYER_INVENTORY.value = [];
+        INVENTORY_ERROR.value = "";
 
         PAL_LIST_SEARCH_KEYWORD.value = "";
         SHOW_UNREF_PAL_FLAG.value = false;
@@ -982,7 +990,7 @@ export const usePalEditorStore = defineStore("paleditor", () => {
         if (!no_set_loading_flag) LOADING_FLAG.value = false;
     }
 
-    async function sorryandfuckyou() {
+    async function showChineseScamWarning() {
         if ((I18n.value == "zh-CN") & CN_WARNING_ON_LOAD.value) {
             alert(
                 "警告：本软件开源免费，如果你从任何平台付费购买此工具，请立即退款。你可以选择支持作者，具体方式会在首次保存修改时显示（或者GitHub上查看）。"
@@ -1112,6 +1120,51 @@ export const usePalEditorStore = defineStore("paleditor", () => {
         }
 
         if (!no_set_loading_flag) LOADING_FLAG.value = false;
+    }
+
+    async function loadItemCatalog() {
+        if (ITEM_CATALOG.value.length) return true;
+        INVENTORY_LOADING.value = true;
+        const response = await GET("/api/save/item_data");
+        INVENTORY_LOADING.value = false;
+        if (response?.status === 0) {
+            ITEM_CATALOG.value = response.data;
+            return true;
+        }
+        INVENTORY_ERROR.value = response?.msg || "Could not load the item catalogue.";
+        return false;
+    }
+
+    async function fetchInventory() {
+        if (!SELECTED_PLAYER_ID.value) return false;
+        INVENTORY_LOADING.value = true;
+        INVENTORY_ERROR.value = "";
+        const response = await POST("/api/player/inventory", {
+            PlayerUId: SELECTED_PLAYER_ID.value,
+        });
+        INVENTORY_LOADING.value = false;
+        if (response?.status === 0) {
+            PLAYER_INVENTORY.value = response.data;
+            return true;
+        }
+        INVENTORY_ERROR.value = response?.msg || "Could not read this inventory safely.";
+        return false;
+    }
+
+    async function patchInventory(action) {
+        INVENTORY_LOADING.value = true;
+        INVENTORY_ERROR.value = "";
+        const response = await PATCH("/api/player/inventory", {
+            PlayerUId: SELECTED_PLAYER_ID.value,
+            ...action,
+        });
+        INVENTORY_LOADING.value = false;
+        if (response?.status === 0) {
+            PLAYER_INVENTORY.value = response.data;
+            return true;
+        }
+        INVENTORY_ERROR.value = response?.msg || "The inventory change was rejected.";
+        return false;
     }
 
     async function selectPlayer(playerUId, manual = false) {
@@ -1744,6 +1797,10 @@ export const usePalEditorStore = defineStore("paleditor", () => {
         ACTIVE_SKILLS_LIST,
         ACTIVE_PRESETS,
         ACTIVE_PRESETS_LOADING,
+        ITEM_CATALOG,
+        PLAYER_INVENTORY,
+        INVENTORY_LOADING,
+        INVENTORY_ERROR,
         TECH_LV_DICT,
 
         getTranslatedText,
@@ -1777,6 +1834,9 @@ export const usePalEditorStore = defineStore("paleditor", () => {
         exportActivePresets,
         importActivePresets,
         updatePlayer,
+        loadItemCatalog,
+        fetchInventory,
+        patchInventory,
         writeSave,
         fetch_config,
         dumpPalData,

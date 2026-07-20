@@ -20,7 +20,7 @@ def setup_config_from_args():
     except:
         LOGGER.warning(f"Failed Loading Config from {CONFIG_PATH}: {traceback.format_exc()}")
 
-    parser = argparse.ArgumentParser(description="Palworld Pal Editor, developed by _connlost with ❤.")
+    parser = argparse.ArgumentParser(description="Paldeck, a community-maintained Palworld save editor.")
 
     parser.add_argument('--lang', type=str, help=f'Language for the application. options: {", ".join(DataProvider.get_i18n_options())}', default=Config.i18n)
     parser.add_argument('--path', type=str, help='Path to the save folder.', default=Config.path)
